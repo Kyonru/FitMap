@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50CD9B7F1E008D1A00B79DF9 /* DetalleRuta.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50CD9B7E1E008D1A00B79DF9 /* DetalleRuta.storyboard */; };
+		50CD9B811E008EB000B79DF9 /* DetalleRutaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD9B801E008EB000B79DF9 /* DetalleRutaViewController.swift */; };
 		DDE048351DF8CDBB0043085A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE048341DF8CDBB0043085A /* AppDelegate.swift */; };
 		DDE048371DF8CDBB0043085A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE048361DF8CDBB0043085A /* ViewController.swift */; };
 		DDE0483A1DF8CDBB0043085A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE048381DF8CDBB0043085A /* Main.storyboard */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		50CD9B7E1E008D1A00B79DF9 /* DetalleRuta.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DetalleRuta.storyboard; sourceTree = "<group>"; };
+		50CD9B801E008EB000B79DF9 /* DetalleRutaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalleRutaViewController.swift; sourceTree = "<group>"; };
 		DDE048311DF8CDBB0043085A /* FitMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDE048341DF8CDBB0043085A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDE048361DF8CDBB0043085A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 				DDE048341DF8CDBB0043085A /* AppDelegate.swift */,
 				DDE048361DF8CDBB0043085A /* ViewController.swift */,
 				DDE048381DF8CDBB0043085A /* Main.storyboard */,
+				50CD9B7E1E008D1A00B79DF9 /* DetalleRuta.storyboard */,
+				50CD9B801E008EB000B79DF9 /* DetalleRutaViewController.swift */,
 				DDE0483E1DF8CDBB0043085A /* Assets.xcassets */,
 				DDE048401DF8CDBB0043085A /* LaunchScreen.storyboard */,
 				DDE048431DF8CDBB0043085A /* Info.plist */,
@@ -235,6 +241,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50CD9B7F1E008D1A00B79DF9 /* DetalleRuta.storyboard in Resources */,
 				DDE048421DF8CDBB0043085A /* LaunchScreen.storyboard in Resources */,
 				DDE0483F1DF8CDBB0043085A /* Assets.xcassets in Resources */,
 				DDE0483A1DF8CDBB0043085A /* Main.storyboard in Resources */,
@@ -262,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50CD9B811E008EB000B79DF9 /* DetalleRutaViewController.swift in Sources */,
 				DDE048371DF8CDBB0043085A /* ViewController.swift in Sources */,
 				DDE0483D1DF8CDBB0043085A /* FitMap.xcdatamodeld in Sources */,
 				DDE048351DF8CDBB0043085A /* AppDelegate.swift in Sources */,

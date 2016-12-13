@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5090D1741E00AA7900331A5C /* AgregarRuta.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5090D1731E00AA7900331A5C /* AgregarRuta.storyboard */; };
+		5090D1761E00AAFD00331A5C /* AgregarRutaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090D1751E00AAFD00331A5C /* AgregarRutaViewController.swift */; };
 		DDE048351DF8CDBB0043085A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE048341DF8CDBB0043085A /* AppDelegate.swift */; };
 		DDE048371DF8CDBB0043085A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE048361DF8CDBB0043085A /* ViewController.swift */; };
 		DDE0483A1DF8CDBB0043085A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE048381DF8CDBB0043085A /* Main.storyboard */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5090D1731E00AA7900331A5C /* AgregarRuta.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AgregarRuta.storyboard; sourceTree = "<group>"; };
+		5090D1751E00AAFD00331A5C /* AgregarRutaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgregarRutaViewController.swift; sourceTree = "<group>"; };
 		DDE048311DF8CDBB0043085A /* FitMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDE048341DF8CDBB0043085A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDE048361DF8CDBB0043085A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,8 +106,10 @@
 				DDE048341DF8CDBB0043085A /* AppDelegate.swift */,
 				DDE048361DF8CDBB0043085A /* ViewController.swift */,
 				DDE048381DF8CDBB0043085A /* Main.storyboard */,
-				DDE0483E1DF8CDBB0043085A /* Assets.xcassets */,
+				5090D1731E00AA7900331A5C /* AgregarRuta.storyboard */,
+				5090D1751E00AAFD00331A5C /* AgregarRutaViewController.swift */,
 				DDE048401DF8CDBB0043085A /* LaunchScreen.storyboard */,
+				DDE0483E1DF8CDBB0043085A /* Assets.xcassets */,
 				DDE048431DF8CDBB0043085A /* Info.plist */,
 				DDE0483B1DF8CDBB0043085A /* FitMap.xcdatamodeld */,
 			);
@@ -237,6 +243,7 @@
 			files = (
 				DDE048421DF8CDBB0043085A /* LaunchScreen.storyboard in Resources */,
 				DDE0483F1DF8CDBB0043085A /* Assets.xcassets in Resources */,
+				5090D1741E00AA7900331A5C /* AgregarRuta.storyboard in Resources */,
 				DDE0483A1DF8CDBB0043085A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,6 +271,7 @@
 			files = (
 				DDE048371DF8CDBB0043085A /* ViewController.swift in Sources */,
 				DDE0483D1DF8CDBB0043085A /* FitMap.xcdatamodeld in Sources */,
+				5090D1761E00AAFD00331A5C /* AgregarRutaViewController.swift in Sources */,
 				DDE048351DF8CDBB0043085A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -20,13 +20,82 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="akX-Ux-P25">
+                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem title="Detalle Ruta" id="QDg-nL-i9E"/>
+                                    <tabBarItem systemItem="favorites" id="G9a-4P-TJL"/>
+                                    <tabBarItem title="Item" id="4gD-zv-xW8"/>
+                                    <tabBarItem systemItem="more" id="OwQ-7f-gKT"/>
+                                </items>
+                            </tabBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Psw-1o-1fk">
+                                <rect key="frame" x="28" y="627" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="FfC-el-fhp" kind="presentation" id="Iv4-PN-zJJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xt-HP-gOS">
+                                <rect key="frame" x="215" y="627" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="6yG-hS-nRw" kind="presentation" id="4b5-KP-myC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3e0-qK-q6u">
+                                <rect key="frame" x="313" y="627" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="PZx-bE-4cC" kind="presentation" id="IAA-24-XGF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KYK-eM-0St">
+                                <rect key="frame" x="119" y="627" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="5wP-0P-u8C" kind="presentation" id="dda-0k-IF7"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="KJe-M6-c9U"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="591" y="71"/>
+            <point key="canvasLocation" x="610" y="71"/>
+        </scene>
+        <!--Loop-->
+        <scene sceneID="2r6-WE-ZEd">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Loop" id="5wP-0P-u8C" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="35H-AV-bXC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="438" y="594"/>
+        </scene>
+        <!--AgregarRuta-->
+        <scene sceneID="EbY-5D-XDx">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AgregarRuta" id="6yG-hS-nRw" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oif-eD-csP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="775" y="594"/>
+        </scene>
+        <!--Me-->
+        <scene sceneID="mQv-cs-9Hf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Me" id="PZx-bE-4cC" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UVC-t8-Qbk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1055" y="477"/>
         </scene>
         <!--DetalleRuta-->
         <scene sceneID="Nhw-gw-oxh">
@@ -34,7 +103,7 @@
                 <viewControllerPlaceholder storyboardName="DetalleRuta" id="FfC-el-fhp" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jq0-JK-wY4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1278" y="70"/>
+            <point key="canvasLocation" x="202" y="477"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dAG-xB-EwV">

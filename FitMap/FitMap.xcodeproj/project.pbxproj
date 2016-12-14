@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5090D1741E00AA7900331A5C /* AgregarRuta.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5090D1731E00AA7900331A5C /* AgregarRuta.storyboard */; };
-		5090D1761E00AAFD00331A5C /* AgregarRutaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090D1751E00AAFD00331A5C /* AgregarRutaViewController.swift */; };
 		5088E81F1E00AAB90004AB50 /* Loop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5088E81E1E00AAB90004AB50 /* Loop.storyboard */; };
 		5088E8211E00AAFF0004AB50 /* LoopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5088E8201E00AAFF0004AB50 /* LoopViewController.swift */; };
+		5090D1741E00AA7900331A5C /* AgregarRuta.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5090D1731E00AA7900331A5C /* AgregarRuta.storyboard */; };
+		5090D1761E00AAFD00331A5C /* AgregarRutaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090D1751E00AAFD00331A5C /* AgregarRutaViewController.swift */; };
 		50CD9B7F1E008D1A00B79DF9 /* DetalleRuta.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50CD9B7E1E008D1A00B79DF9 /* DetalleRuta.storyboard */; };
 		50CD9B811E008EB000B79DF9 /* DetalleRutaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD9B801E008EB000B79DF9 /* DetalleRutaViewController.swift */; };
 		DDE048351DF8CDBB0043085A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE048341DF8CDBB0043085A /* AppDelegate.swift */; };
@@ -41,10 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5090D1731E00AA7900331A5C /* AgregarRuta.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AgregarRuta.storyboard; sourceTree = "<group>"; };
-		5090D1751E00AAFD00331A5C /* AgregarRutaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgregarRutaViewController.swift; sourceTree = "<group>"; };
 		5088E81E1E00AAB90004AB50 /* Loop.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Loop.storyboard; sourceTree = "<group>"; };
 		5088E8201E00AAFF0004AB50 /* LoopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoopViewController.swift; sourceTree = "<group>"; };
+		5090D1731E00AA7900331A5C /* AgregarRuta.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AgregarRuta.storyboard; sourceTree = "<group>"; };
+		5090D1751E00AAFD00331A5C /* AgregarRutaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgregarRutaViewController.swift; sourceTree = "<group>"; };
 		50CD9B7E1E008D1A00B79DF9 /* DetalleRuta.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DetalleRuta.storyboard; sourceTree = "<group>"; };
 		50CD9B801E008EB000B79DF9 /* DetalleRutaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalleRutaViewController.swift; sourceTree = "<group>"; };
 		DDE048311DF8CDBB0043085A /* FitMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,7 +120,6 @@
 				5088E8201E00AAFF0004AB50 /* LoopViewController.swift */,
 				50CD9B7E1E008D1A00B79DF9 /* DetalleRuta.storyboard */,
 				50CD9B801E008EB000B79DF9 /* DetalleRutaViewController.swift */,
-				DDE0483E1DF8CDBB0043085A /* Assets.xcassets */,
 				DDE048401DF8CDBB0043085A /* LaunchScreen.storyboard */,
 				DDE0483E1DF8CDBB0043085A /* Assets.xcassets */,
 				DDE048431DF8CDBB0043085A /* Info.plist */,
@@ -210,7 +209,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = FormuladoresDiscretos;
 				TargetAttributes = {
 					DDE048301DF8CDBB0043085A = {
@@ -358,8 +357,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -403,8 +404,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -423,6 +426,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

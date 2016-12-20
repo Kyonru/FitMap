@@ -21,7 +21,9 @@ class LoopViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func fooAction(_ sender: AnyObject) {
+    }
+    
     /*
     // MARK: - Navigation
 

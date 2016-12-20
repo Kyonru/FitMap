@@ -1,11 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Rdn-vJ-BU2">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Rdn-vJ-BU2">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -85,7 +82,7 @@
         <!--Me-->
         <scene sceneID="mQv-cs-9Hf">
             <objects>
-                <viewControllerPlaceholder storyboardName="Me" id="PZx-bE-4cC" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="Me" storyboardName="Me" id="PZx-bE-4cC" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="9Bq-IN-lOF"/>
                     <navigationItem key="navigationItem" id="c4f-Js-cJv"/>
                 </viewControllerPlaceholder>

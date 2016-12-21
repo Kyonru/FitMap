@@ -1,0 +1,6 @@
+framework module Pods_FitMapUITests {
+  umbrella header "Pods-FitMapUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

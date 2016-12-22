@@ -107,6 +107,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5088248C1E0C234F00738DC4 /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				5083DB2D1E01F7F100F4113C /* Me.storyboard */,
+				5083DB2F1E01F84300F4113C /* MeViewController.swift */,
+			);
+			name = Me;
+			sourceTree = "<group>";
+		};
+		5088248D1E0C235A00738DC4 /* AgregarRuta */ = {
+			isa = PBXGroup;
+			children = (
+				5090D1731E00AA7900331A5C /* AgregarRuta.storyboard */,
+				5090D1751E00AAFD00331A5C /* AgregarRutaViewController.swift */,
+			);
+			name = AgregarRuta;
+			sourceTree = "<group>";
+		};
+		5088248E1E0C236700738DC4 /* Loop */ = {
+			isa = PBXGroup;
+			children = (
+				5088E81E1E00AAB90004AB50 /* Loop.storyboard */,
+				5088E8201E00AAFF0004AB50 /* LoopViewController.swift */,
+			);
+			name = Loop;
+			sourceTree = "<group>";
+		};
+		5088248F1E0C237000738DC4 /* DetalleRuta */ = {
+			isa = PBXGroup;
+			children = (
+				50CD9B7E1E008D1A00B79DF9 /* DetalleRuta.storyboard */,
+				50CD9B801E008EB000B79DF9 /* DetalleRutaViewController.swift */,
+			);
+			name = DetalleRuta;
+			sourceTree = "<group>";
+		};
+		508824901E0C238100738DC4 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DDE048361DF8CDBB0043085A /* ViewController.swift */,
+				DDE048381DF8CDBB0043085A /* Main.storyboard */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		508824911E0C239300738DC4 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				DDE048341DF8CDBB0043085A /* AppDelegate.swift */,
+				DDE048401DF8CDBB0043085A /* LaunchScreen.storyboard */,
+				DDE0483E1DF8CDBB0043085A /* Assets.xcassets */,
+				DDE048431DF8CDBB0043085A /* Info.plist */,
+				DDE0483B1DF8CDBB0043085A /* FitMap.xcdatamodeld */,
+			);
+			name = SupportingFiles;
+			path = FitMap;
+			sourceTree = "<group>";
+		};
 		660069D98485161320EC5E72 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				DDE048331DF8CDBB0043085A /* FitMap */,
+				508824911E0C239300738DC4 /* SupportingFiles */,
 				DDE0484B1DF8CDBB0043085A /* FitMapTests */,
 				DDE048561DF8CDBB0043085A /* FitMapUITests */,
 				DDE048321DF8CDBB0043085A /* Products */,
@@ -155,21 +214,11 @@
 		DDE048331DF8CDBB0043085A /* FitMap */ = {
 			isa = PBXGroup;
 			children = (
-				DDE048341DF8CDBB0043085A /* AppDelegate.swift */,
-				DDE048361DF8CDBB0043085A /* ViewController.swift */,
-				DDE048381DF8CDBB0043085A /* Main.storyboard */,
-				5083DB2D1E01F7F100F4113C /* Me.storyboard */,
-				5083DB2F1E01F84300F4113C /* MeViewController.swift */,
-				5090D1731E00AA7900331A5C /* AgregarRuta.storyboard */,
-				5090D1751E00AAFD00331A5C /* AgregarRutaViewController.swift */,
-				5088E81E1E00AAB90004AB50 /* Loop.storyboard */,
-				5088E8201E00AAFF0004AB50 /* LoopViewController.swift */,
-				50CD9B7E1E008D1A00B79DF9 /* DetalleRuta.storyboard */,
-				50CD9B801E008EB000B79DF9 /* DetalleRutaViewController.swift */,
-				DDE048401DF8CDBB0043085A /* LaunchScreen.storyboard */,
-				DDE0483E1DF8CDBB0043085A /* Assets.xcassets */,
-				DDE048431DF8CDBB0043085A /* Info.plist */,
-				DDE0483B1DF8CDBB0043085A /* FitMap.xcdatamodeld */,
+				508824901E0C238100738DC4 /* Main */,
+				5088248C1E0C234F00738DC4 /* Me */,
+				5088248D1E0C235A00738DC4 /* AgregarRuta */,
+				5088248E1E0C236700738DC4 /* Loop */,
+				5088248F1E0C237000738DC4 /* DetalleRuta */,
 			);
 			path = FitMap;
 			sourceTree = "<group>";

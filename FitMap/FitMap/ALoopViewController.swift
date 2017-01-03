@@ -1,24 +1,18 @@
 //
-//  LoopViewController.swift
+//  ALoopViewController.swift
 //  FitMap
 //
-//  Created by fitmap on 12/13/16.
-//  Copyright © 2016 FormuladoresDiscretos. All rights reserved.
+//  Created by fitmap on 1/2/17.
+//  Copyright © 2017 FormuladoresDiscretos. All rights reserved.
 //
 
 import UIKit
 
-class LoopViewController: UIViewController {
-  
-    @IBOutlet weak var LoopPicker: UIPickerView!
-    let pickerData = [
-        ["0","1","2","3","4","5"],
-        ["01", "02","03","04","05","06", "07","08","09","10"]
-    ]
-  
-      override func viewDidLoad() {
-        super.viewDidLoad()
+class ALoopViewController: UIViewController {
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    
         // Do any additional setup after loading the view.
     }
 
@@ -27,9 +21,7 @@ class LoopViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func fooAction(_ sender: AnyObject) {
-    }
-    
+
     /*
     // MARK: - Navigation
 

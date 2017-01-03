@@ -10,6 +10,9 @@
 		04B5BECD0B4E7AD3EFCA3525 /* Pods_FitMapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6DDC1149E183D5E329956EC /* Pods_FitMapTests.framework */; };
 		5083DB2E1E01F7F100F4113C /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5083DB2D1E01F7F100F4113C /* Me.storyboard */; };
 		5083DB301E01F84300F4113C /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5083DB2F1E01F84300F4113C /* MeViewController.swift */; };
+		50886A9F1E1AECE100B2E6AB /* ALoopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50886A9E1E1AECE100B2E6AB /* ALoopViewController.swift */; };
+		50886AA01E1AECE100B2E6AB /* ALoopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50886A9E1E1AECE100B2E6AB /* ALoopViewController.swift */; };
+		50886AA11E1AECE100B2E6AB /* ALoopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50886A9E1E1AECE100B2E6AB /* ALoopViewController.swift */; };
 		5088E81F1E00AAB90004AB50 /* Loop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5088E81E1E00AAB90004AB50 /* Loop.storyboard */; };
 		5088E8211E00AAFF0004AB50 /* LoopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5088E8201E00AAFF0004AB50 /* LoopViewController.swift */; };
 		5090D1741E00AA7900331A5C /* AgregarRuta.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5090D1731E00AA7900331A5C /* AgregarRuta.storyboard */; };
@@ -51,6 +54,7 @@
 		42CC6238EA2BD7730C47E60A /* Pods-FitMapTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitMapTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FitMapTests/Pods-FitMapTests.release.xcconfig"; sourceTree = "<group>"; };
 		5083DB2D1E01F7F100F4113C /* Me.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
 		5083DB2F1E01F84300F4113C /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
+		50886A9E1E1AECE100B2E6AB /* ALoopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALoopViewController.swift; sourceTree = "<group>"; };
 		5088E81E1E00AAB90004AB50 /* Loop.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Loop.storyboard; sourceTree = "<group>"; };
 		5088E8201E00AAFF0004AB50 /* LoopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoopViewController.swift; sourceTree = "<group>"; };
 		5090D1731E00AA7900331A5C /* AgregarRuta.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AgregarRuta.storyboard; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 			children = (
 				5088E81E1E00AAB90004AB50 /* Loop.storyboard */,
 				5088E8201E00AAFF0004AB50 /* LoopViewController.swift */,
+				50886A9E1E1AECE100B2E6AB /* ALoopViewController.swift */,
 			);
 			name = Loop;
 			sourceTree = "<group>";
@@ -532,6 +537,7 @@
 				DDE048371DF8CDBB0043085A /* ViewController.swift in Sources */,
 				DDE0483D1DF8CDBB0043085A /* FitMap.xcdatamodeld in Sources */,
 				5090D1761E00AAFD00331A5C /* AgregarRutaViewController.swift in Sources */,
+				50886A9F1E1AECE100B2E6AB /* ALoopViewController.swift in Sources */,
 				DDE048351DF8CDBB0043085A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -540,6 +546,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50886AA01E1AECE100B2E6AB /* ALoopViewController.swift in Sources */,
 				DDE0484D1DF8CDBB0043085A /* FitMapTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -548,6 +555,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50886AA11E1AECE100B2E6AB /* ALoopViewController.swift in Sources */,
 				DDE048581DF8CDBB0043085A /* FitMapUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

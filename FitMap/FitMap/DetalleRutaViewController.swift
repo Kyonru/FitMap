@@ -14,11 +14,10 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate {
 
     //Initializing
     var locationManager = CLLocationManager()
-    let path = GMSMutablePath()
+
 
     @IBOutlet weak var MapView: GMSMapView!
-    
-    var rectangle = GMSPolyline() //
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,10 +56,8 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate {
         
         view = MapView
         
-        path.add(locValue.coordinate)
-        rectangle = GMSPolyline(path: path)
-        rectangle.map = MapView
-        //locationManager.stopUpdatingLocation()
+
+        locationManager.stopUpdatingLocation()
     }
     
     

@@ -38,6 +38,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="mCb-sv-9Tz"/>
+                    <connections>
+                        <outlet property="MapView" destination="fcu-9Y-XPg" id="Kme-0T-jKC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zc6-eq-W1i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -123,6 +126,10 @@
         <scene sceneID="rqS-ZX-Z2r">
             <objects>
                 <viewController id="CnA-9l-mHg" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="b0o-ZH-N9v"/>
+                        <viewControllerLayoutGuide type="bottom" id="gZi-gA-B2d"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6I6-y4-GXR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="539"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -146,6 +153,10 @@
         <scene sceneID="tFN-CA-i7n">
             <objects>
                 <viewController id="kNY-Vc-BLa" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SGk-vZ-bkX"/>
+                        <viewControllerLayoutGuide type="bottom" id="ESK-Kh-006"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vBY-v8-usk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="531"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -56,7 +56,7 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
         MapView.isMyLocationEnabled = true
         
         
-        view = MapView
+        //view = MapView
         
         path.add(locValue.coordinate)
         rectangle = GMSPolyline(path: path)

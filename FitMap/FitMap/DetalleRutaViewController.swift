@@ -19,6 +19,14 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var MapView: GMSMapView!
 
     
+    @IBOutlet weak var FirstViewContainer: UIView!
+    
+    @IBOutlet weak var SecondViewContainer: UIView!
+    
+    @IBOutlet weak var SegmentedControl: UISegmentedControl!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -53,26 +61,28 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate {
         
         MapView.isMyLocationEnabled = true
         
-        
-        view = MapView
-        
+        //view = MapView
 
         locationManager.stopUpdatingLocation()
     }
     
-    
 
+    
+    @IBAction func DummyButton(_ sender: Any) {
+//        
+//        MapView.isHidden = true
+//       
+//        SecondViewContainer.isHidden = true
+//        FirstViewContainer.isHidden = false
+       
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    
-    @IBOutlet weak var FirstViewContainer: UIView!
-    
-    @IBOutlet weak var SecondViewContainer: UIView!
-    
-    @IBOutlet weak var SegmentedControl: UISegmentedControl!
     
     
     //Switching between views (first = details; second = review)

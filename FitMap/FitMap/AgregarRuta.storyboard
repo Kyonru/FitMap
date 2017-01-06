@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Agregar Ruta View Controller-->
         <scene sceneID="nsr-Ou-5rP">
             <objects>
-                <viewController id="ugJ-YI-fPQ" sceneMemberID="viewController">
+                <viewController id="ugJ-YI-fPQ" customClass="AgregarRutaViewController" customModule="FitMap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="83E-D5-YdG"/>
                         <viewControllerLayoutGuide type="bottom" id="Mcq-4w-yB8"/>
@@ -22,13 +22,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a5P-Zo-lZC" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="64" width="375" height="556"/>
+                                <rect key="frame" x="0.0" y="60" width="375" height="547"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ElU-Mg-yLS">
-                                        <rect key="frame" x="305" y="494" width="46" height="30"/>
+                                        <rect key="frame" x="168" y="258" width="38" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="HEEY"/>
                                         <connections>
                                             <segue destination="O39-15-L3j" kind="show" id="Z5H-NP-IFd"/>
                                         </connections>
@@ -36,14 +36,21 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="v0g-Qd-SdB">
+                                <rect key="frame" x="321" y="617" width="38" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="RwD-2l-PQ9"/>
+                    <connections>
+                        <outlet property="MapView" destination="a5P-Zo-lZC" id="AxA-4K-KPE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iXr-pt-evX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="649" y="-371"/>
+            <point key="canvasLocation" x="648.79999999999995" y="-371.06446776611699"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Wkw-iz-TNR">

@@ -15,7 +15,7 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
 
     var locationManager = CLLocationManager()
     let path = GMSMutablePath()
-    
+    var locaciones : [CLLocation] = []
     
     @IBOutlet weak var MapView: GMSMapView!
     
@@ -46,7 +46,13 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         //Locaciones.append(locations.last!)
+        
+        
+        
         let locValue = locations.last!
+        
+        // Adding locations to a list
+        locaciones.append(locValue)
         
         let long = locValue.coordinate.longitude
         let lat = locValue.coordinate.latitude

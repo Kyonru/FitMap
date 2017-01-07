@@ -19,11 +19,11 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var MapView: GMSMapView!
 
     
-    @IBOutlet weak var FirstViewContainer: UIView!
-    
-    @IBOutlet weak var SecondViewContainer: UIView!
-    
-    @IBOutlet weak var SegmentedControl: UISegmentedControl!
+//    @IBOutlet weak var FirstViewContainer: UIView!
+//    
+//    @IBOutlet weak var SecondViewContainer: UIView!
+//    
+//    @IBOutlet weak var SegmentedControl: UISegmentedControl!
     
     
     
@@ -41,10 +41,10 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.requestAlwaysAuthorization()
             locationManager.startUpdatingLocation()
+           
         }
         
-        MapView.isMyLocationEnabled = true
-
+      
         
     }
     
@@ -69,7 +69,11 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate {
 
     
     @IBAction func DummyButton(_ sender: Any) {
-//        
+        
+        
+        //MapView.isMyLocationEnabled = false
+        //locationManager.stopUpdatingLocation()
+        
 //        MapView.isHidden = true
 //       
 //        SecondViewContainer.isHidden = true
@@ -83,27 +87,27 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    
-    //Switching between views (first = details; second = review)
-
-    @IBAction func ChangeView(_ sender: UISegmentedControl) {
-        
-        switch SegmentedControl.selectedSegmentIndex {
-        case 1:
-            FirstViewContainer.isHidden = false
-            SecondViewContainer.isHidden = true
-            break
-            
-        default:
-            FirstViewContainer.isHidden = true
-            SecondViewContainer.isHidden = false
-            
-        }
-        
-    }
-    
-    
+//    
+//    
+//    //Switching between views (first = details; second = review)
+//
+//    @IBAction func ChangeView(_ sender: UISegmentedControl) {
+//        
+//        switch SegmentedControl.selectedSegmentIndex {
+//        case 1:
+//            FirstViewContainer.isHidden = false
+//            SecondViewContainer.isHidden = true
+//            break
+//            
+//        default:
+//            FirstViewContainer.isHidden = true
+//            SecondViewContainer.isHidden = false
+//            
+//        }
+//        
+//    }
+//    
+//    
     
     
     

@@ -37,7 +37,7 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
             locationManager.startUpdatingLocation()
         }
         
-        MapView.isMyLocationEnabled = true
+       // MapView.isMyLocationEnabled = true
 
     
 

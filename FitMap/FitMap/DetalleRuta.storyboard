@@ -47,10 +47,10 @@
             </objects>
             <point key="canvasLocation" x="1407.2" y="-12.143928035982009"/>
         </scene>
-        <!--Detalle Ruta View Controller-->
+        <!--Details Review View Controller-->
         <scene sceneID="7GS-If-6BI">
             <objects>
-                <viewController id="Fzp-Vx-Onu" customClass="DetalleRutaViewController" customModule="FitMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Fzp-Vx-Onu" customClass="DetailsReviewViewController" customModule="FitMap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UwJ-va-4Zv"/>
                         <viewControllerLayoutGuide type="bottom" id="fpt-sd-Qdv"/>
@@ -110,7 +110,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="K7v-7g-4qi" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="3zV-pL-071">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3zV-pL-071">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

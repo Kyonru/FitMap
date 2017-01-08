@@ -30,6 +30,7 @@
 		DDE048421DF8CDBB0043085A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE048401DF8CDBB0043085A /* LaunchScreen.storyboard */; };
 		DDE0484D1DF8CDBB0043085A /* FitMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0484C1DF8CDBB0043085A /* FitMapTests.swift */; };
 		DDE048581DF8CDBB0043085A /* FitMapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE048571DF8CDBB0043085A /* FitMapUITests.swift */; };
+		DDEFC7581E22D26100521809 /* MapLoopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEFC7571E22D26000521809 /* MapLoopViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		DDE048531DF8CDBB0043085A /* FitMapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FitMapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDE048571DF8CDBB0043085A /* FitMapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitMapUITests.swift; sourceTree = "<group>"; };
 		DDE048591DF8CDBB0043085A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDEFC7571E22D26000521809 /* MapLoopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapLoopViewController.swift; sourceTree = "<group>"; };
 		E9119F96A79A4FFAFD93B910 /* Pods-FitMapUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitMapUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FitMapUITests/Pods-FitMapUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F6DDC1149E183D5E329956EC /* Pods_FitMapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FitMapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -137,6 +139,7 @@
 				5088E81E1E00AAB90004AB50 /* Loop.storyboard */,
 				5088E8201E00AAFF0004AB50 /* LoopViewController.swift */,
 				50886A9E1E1AECE100B2E6AB /* ALoopViewController.swift */,
+				DDEFC7571E22D26000521809 /* MapLoopViewController.swift */,
 			);
 			name = Loop;
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 				5088E8211E00AAFF0004AB50 /* LoopViewController.swift in Sources */,
 				DDE048371DF8CDBB0043085A /* ViewController.swift in Sources */,
 				504A1E661E2063AF00D3118A /* DetailsReviewViewController.swift in Sources */,
+				DDEFC7581E22D26100521809 /* MapLoopViewController.swift in Sources */,
 				DDE0483D1DF8CDBB0043085A /* FitMap.xcdatamodeld in Sources */,
 				5090D1761E00AAFD00331A5C /* AgregarRutaViewController.swift in Sources */,
 				50886A9F1E1AECE100B2E6AB /* ALoopViewController.swift in Sources */,

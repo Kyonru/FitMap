@@ -27,11 +27,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ElU-Mg-yLS">
-                                <rect key="frame" x="168" y="318" width="38" height="30"/>
+                                <rect key="frame" x="170" y="318" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="HEEY"/>
+                                <state key="normal" title="Start"/>
                                 <connections>
-                                    <segue destination="O39-15-L3j" kind="show" id="Z5H-NP-IFd"/>
+                                    <action selector="trackRoute:" destination="ugJ-YI-fPQ" eventType="touchUpInside" id="2Zy-nB-bRH"/>
                                 </connections>
                             </button>
                         </subviews>

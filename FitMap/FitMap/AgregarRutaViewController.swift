@@ -14,13 +14,15 @@ import CoreLocation
 class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
 
     var locationManager = CLLocationManager()
-    let path = GMSMutablePath()
-    var locaciones : [CLLocation] = []
+    var path = GMSMutablePath()
+    var trackedLocations : [CLLocation] = []
+    var trackedDistance = 0.00
     
     @IBOutlet weak var MapView: GMSMapView!
     
     var rectangle = GMSPolyline()
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,7 +36,7 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
             self.locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.requestAlwaysAuthorization()
-            locationManager.startUpdatingLocation()
+            
         }
         
        // MapView.isMyLocationEnabled = true
@@ -42,32 +44,40 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
     
 
     }
-
+    @IBAction func trackRoute(_ sender: UIButton) {
+        if sender.currentTitle == "Start"{
+            sender.setTitle("Stop", for:.normal)
+            locationManager.startUpdatingLocation()
+    
+        }else{
+            sender.setTitle("Start",for:.normal)
+            
+            locationManager.stopUpdatingLocation()
+            path = GMSMutablePath()
+            trackedLocations = []
+            trackedDistance = 0.00
+        }
+    }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-        //Locaciones.append(locations.last!)
-        
-        
+
         
         let locValue = locations.last!
         
         // Adding locations to a list
-        locaciones.append(locValue)
-        
+        trackedLocations.append(locValue)
+      //  locValue.d
         let long = locValue.coordinate.longitude
         let lat = locValue.coordinate.latitude
         let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 15.0)
+        
         MapView.camera = camera
         
         MapView.isMyLocationEnabled = true
-        
-        
-        //view = MapView
-        
+
         path.add(locValue.coordinate)
         rectangle = GMSPolyline(path: path)
         rectangle.map = MapView
-        //locationManager.stopUpdatingLocation()
+
     }
     
     
@@ -75,16 +85,5 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

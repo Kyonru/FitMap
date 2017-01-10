@@ -7,20 +7,36 @@
 //
 
 import UIKit
+import Cosmos
 
-class ReviewViewController: UIViewController {
+class ReviewViewController: UIViewController{
 
+    @IBOutlet weak var starView: CosmosView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        
+        starView.settings.updateOnTouch = false
+        
+        starView.rating = 4
+        
+        starView.didFinishTouchingCosmos { }
+        
     }
 
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+    
+  
+    
     
     
     

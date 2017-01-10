@@ -19,4 +19,5 @@ target 'FitMap' do
 
 pod 'GoogleMaps'
 pod 'GooglePlaces'
+pod 'Cosmos', '~> 7.0'
 end

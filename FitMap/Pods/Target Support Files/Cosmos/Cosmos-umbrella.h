@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_FitMapTestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_FitMapTestsVersionString[];
+FOUNDATION_EXPORT double CosmosVersionNumber;
+FOUNDATION_EXPORT const unsigned char CosmosVersionString[];
 

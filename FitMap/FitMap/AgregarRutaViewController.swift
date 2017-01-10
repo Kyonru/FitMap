@@ -17,17 +17,13 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
     var path = GMSMutablePath()
     var trackedLocations : [CLLocation] = []
     var trackedDistance = 0.00
-    
-    @IBOutlet weak var MapView: GMSMapView!
-    
     var rectangle = GMSPolyline()
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
-    
+        
         
         self.locationManager.requestAlwaysAuthorization()
         self.locationManager.requestWhenInUseAuthorization()
@@ -39,11 +35,41 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
             
         }
         
-       // MapView.isMyLocationEnabled = true
-
-    
-
+        // MapView.isMyLocationEnabled = true
     }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    @IBOutlet weak var MapView: GMSMapView!
+    
+    @IBAction func showAlertButtonTapped(_ sender: UIButton) {
+        
+        // create the alert
+        let alert = UIAlertController(title: "That was awesome!", message: "Would you like to save this route?", preferredStyle: UIAlertControllerStyle.alert)
+        
+        // add the actions (buttons)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.destructive, handler: nil))
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+            switch action.style{
+            case .default:
+                print("default")
+                
+            case .cancel:
+                print("cancel")
+                
+            case .destructive:
+                self.cleanData()
+                
+            }
+        }))
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+    }
+
     @IBAction func trackRoute(_ sender: UIButton) {
         if sender.currentTitle == "Start"{
             sender.setTitle("Stop", for:.normal)
@@ -53,11 +79,13 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
             sender.setTitle("Start",for:.normal)
             
             locationManager.stopUpdatingLocation()
-            path = GMSMutablePath()
-            trackedLocations = []
-            trackedDistance = 0.00
+            cleanData()
+            showAlertButtonTapped(sender)
+            
         }
     }
+    
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 
         
@@ -65,7 +93,7 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
         
         // Adding locations to a list
         trackedLocations.append(locValue)
-      //  locValue.d
+
         let long = locValue.coordinate.longitude
         let lat = locValue.coordinate.latitude
         let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 15.0)
@@ -80,10 +108,10 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
 
     }
     
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func cleanData(){
+        path = GMSMutablePath()
+        trackedLocations = []
+        trackedDistance = 0.00
     }
 
 }

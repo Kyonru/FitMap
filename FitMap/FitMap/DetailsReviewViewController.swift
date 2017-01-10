@@ -33,7 +33,7 @@ class DetailsReviewViewController: UIViewController {
     @IBAction func ChangeView(_ sender: UISegmentedControl) {
         
         switch SegmentedControl.selectedSegmentIndex {
-        case 1:
+        case 0:
             FirstViewContainer.isHidden = false
             SecondViewContainer.isHidden = true
             break

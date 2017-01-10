@@ -20,6 +20,8 @@
 		5090D1761E00AAFD00331A5C /* AgregarRutaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090D1751E00AAFD00331A5C /* AgregarRutaViewController.swift */; };
 		50CD9B7F1E008D1A00B79DF9 /* DetalleRuta.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50CD9B7E1E008D1A00B79DF9 /* DetalleRuta.storyboard */; };
 		50CD9B811E008EB000B79DF9 /* DetalleRutaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD9B801E008EB000B79DF9 /* DetalleRutaViewController.swift */; };
+		50E9AB2A1E2571740028DAB2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E9AB291E2571740028DAB2 /* DetailViewController.swift */; };
+		50E9AB2C1E2577470028DAB2 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E9AB2B1E2577470028DAB2 /* ReviewViewController.swift */; };
 		8C9C4158300A2971CB11C7D6 /* Pods_FitMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D55EA507A77E411923E6F90 /* Pods_FitMap.framework */; };
 		B3C5B1E894B07DCAF2B161D2 /* Pods_FitMapUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B06BAD84722B5DA0BE8C0C5 /* Pods_FitMapUITests.framework */; };
 		DDE048351DF8CDBB0043085A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE048341DF8CDBB0043085A /* AppDelegate.swift */; };
@@ -64,6 +66,8 @@
 		5090D1751E00AAFD00331A5C /* AgregarRutaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgregarRutaViewController.swift; sourceTree = "<group>"; };
 		50CD9B7E1E008D1A00B79DF9 /* DetalleRuta.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DetalleRuta.storyboard; sourceTree = "<group>"; };
 		50CD9B801E008EB000B79DF9 /* DetalleRutaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalleRutaViewController.swift; sourceTree = "<group>"; };
+		50E9AB291E2571740028DAB2 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		50E9AB2B1E2577470028DAB2 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		5B06BAD84722B5DA0BE8C0C5 /* Pods_FitMapUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FitMapUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69CA57A03EA753CF45B82EAA /* Pods-FitMapUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitMapUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FitMapUITests/Pods-FitMapUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6D55EA507A77E411923E6F90 /* Pods_FitMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FitMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				50CD9B7E1E008D1A00B79DF9 /* DetalleRuta.storyboard */,
+				50E9AB2B1E2577470028DAB2 /* ReviewViewController.swift */,
+				50E9AB291E2571740028DAB2 /* DetailViewController.swift */,
 				50CD9B801E008EB000B79DF9 /* DetalleRutaViewController.swift */,
 				504A1E651E2063AF00D3118A /* DetailsReviewViewController.swift */,
 			);
@@ -537,7 +543,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50E9AB2A1E2571740028DAB2 /* DetailViewController.swift in Sources */,
 				50CD9B811E008EB000B79DF9 /* DetalleRutaViewController.swift in Sources */,
+				50E9AB2C1E2577470028DAB2 /* ReviewViewController.swift in Sources */,
 				5083DB301E01F84300F4113C /* MeViewController.swift in Sources */,
 				5088E8211E00AAFF0004AB50 /* LoopViewController.swift in Sources */,
 				DDE048371DF8CDBB0043085A /* ViewController.swift in Sources */,

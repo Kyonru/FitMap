@@ -11,7 +11,7 @@ import Cosmos
 
 class RouteSummaryViewController: UIViewController {
 
-    @IBOutlet weak var starView: CosmosView! //Missing method for data capture from stars 
+    @IBOutlet weak var starView: CosmosView! //Missing method for data capture from stars
     
     
     override func viewDidLoad() {
@@ -27,6 +27,19 @@ class RouteSummaryViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    @IBAction func submitButton(_ sender: UIButton) {
+        
+        self.dismiss(animated: true, completion: nil)
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "DetalleRuta", bundle:nil)
+        
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "DetailsReviewViewController") as! DetailsReviewViewController
+        self.present(nextViewController, animated:true, completion:nil)
+    
+        
+       
+    }
 
     /*
     // MARK: - Navigation

@@ -150,11 +150,32 @@ class MeCollectionViewController: UICollectionViewController, UICollectionViewDe
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
         
         // Configure the cell
-       
+        
         let TextT: UILabel = {
             let label = UILabel()
             label.translatesAutoresizingMaskIntoConstraints = false
             //label.text = "Algo a modificar"
+            let themeColor = UIColor(red:0.1, green: 0.41, blue: 0.22, alpha: 1.0)
+            
+            label.backgroundColor = themeColor
+            return label
+        }()
+        
+        
+        
+        let TextFecha: UILabel = {
+            let label =  UILabel()
+            label.translatesAutoresizingMaskIntoConstraints = false
+            let themeColor = UIColor(red:0.25, green: 0.15, blue: 0.31, alpha: 1.0)
+            label.backgroundColor = themeColor
+            return label
+        }()
+        
+        let TextTiempo: UILabel = {
+            let label =  UILabel()
+            label.translatesAutoresizingMaskIntoConstraints = false
+            let themeColor = UIColor(red:0.13, green: 0.12, blue: 1.2, alpha: 2.0)
+            label.backgroundColor = themeColor
             return label
         }()
         
@@ -163,19 +184,28 @@ class MeCollectionViewController: UICollectionViewController, UICollectionViewDe
         
         let profileImageView: UIImageView = {
             let imageView = UIImageView()
-            imageView.backgroundColor = .red
+            let themeColor = UIColor(red:0.42, green: 0.11, blue: 0.3, alpha: 1.5)
+            imageView.backgroundColor = themeColor
             return imageView
         }()
-        cell.addSubview(TextT)
-        cell.addSubview(profileImageView)
         
+        
+        cell.addSubview(profileImageView)
+        cell.addSubview(TextT)
+        cell.addSubview(TextFecha)
+        cell.addSubview(TextTiempo)
         
         //profileImageView.image = Imagen // HIPOTETICA IMAGEN
         profileImageView.anchor(cell.topAnchor, left: cell.leftAnchor, bottom: nil, right: nil, topConstant: 12, leftConstant: 12, bottomConstant: 0, rightConstant: 0, widthConstant: 100, heightConstant: 100)
         
         
-        TextT.anchor(profileImageView.topAnchor, left: profileImageView.rightAnchor, bottom: nil, right: cell.rightAnchor, topConstant: 0, leftConstant: 4, bottomConstant: 0, rightConstant: 12, widthConstant: 0, heightConstant: 20)
+        TextT.anchor(profileImageView.topAnchor, left: profileImageView.rightAnchor, bottom: nil, right: cell.rightAnchor, topConstant: 0, leftConstant: 4, bottomConstant: 0, rightConstant: 12, widthConstant: 0, heightConstant: 25)
         
+        
+        TextFecha.anchor(TextT.bottomAnchor, left: profileImageView.rightAnchor, bottom: nil, right: cell.rightAnchor, topConstant: 10, leftConstant: 4, bottomConstant: 0, rightConstant: 12, widthConstant: 0, heightConstant: 25)
+        
+        
+        TextTiempo.anchor(TextFecha.bottomAnchor, left: profileImageView.rightAnchor, bottom: nil, right: cell.rightAnchor, topConstant: 10, leftConstant: 4, bottomConstant: 0, rightConstant: 12, widthConstant: 0, heightConstant: 25 )
         
         
         return cell

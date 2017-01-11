@@ -22,9 +22,13 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
     var rectangle = GMSPolyline()
     var stateForFirstLocation = false
     var initialLocation = CLLocation(latitude: 0.00, longitude: 0.00)
+    var startingTime = DispatchTime.now()
+    var endingTime = DispatchTime.now()
+    
     
     @IBOutlet weak var currentSpeedLabel: UILabel!
     @IBOutlet weak var currentDistanceLabel: UILabel!
+    @IBOutlet weak var currentTimeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,13 +91,17 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
     @IBAction func trackRoute(_ sender: UIButton) {
         if sender.currentTitle == "Start"{
             sender.setTitle("Stop", for:.normal)
+            
             locationManager.startUpdatingLocation()
+            startingTime = DispatchTime.now()
             
         }else{
             sender.setTitle("Start",for:.normal)
             
             locationManager.stopUpdatingLocation()
             cleanData()
+            //endingTime = DispatchTime.now()
+
             showAlertButtonTapped(sender)
             
         }
@@ -105,16 +113,23 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
         
         let locValue = locations.last!
         
-        
+        //Updating data in the UI
         currentSpeed = locValue.speed
         trackedDistance = locValue.distance(from: initialLocation)
         currentSpeedLabel.text = "\(currentSpeed)" + " m/s"
         currentDistanceLabel.text = "\(trackedDistance)" + " m"
+        
+        endingTime = DispatchTime.now()
+        currentTimeLabel.text = "\(endingTime.uptimeNanoseconds-startingTime.uptimeNanoseconds)"
+        
         // Adding locations to a list
         trackedLocations.append(locValue)
         
         let long = locValue.coordinate.longitude
         let lat = locValue.coordinate.latitude
+        
+        
+        
         
         //Here is the creation of the initial marker
         if stateForFirstLocation == false{
@@ -126,6 +141,10 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
             
             stateForFirstLocation = true
         }
+        
+        
+        
+        
         let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 15.0)
         
         MapView.camera = camera
@@ -146,8 +165,8 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
         currentSpeed = 0.00
         stateForFirstLocation = false
         currentSpeedLabel.text = " 0.00 m/s"
-        currentDistanceLabel.text = "\(trackedDistance)" + "0.00 m"
-
+        currentDistanceLabel.text = " 0.00 m"
+        currentTimeLabel.text = " 00 s "
         MapView.clear()
         
     }

@@ -119,6 +119,7 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
         path = GMSMutablePath()
         trackedLocations = []
         trackedDistance = 0.00
+        MapView.clear()
     }
     
 }

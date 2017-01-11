@@ -16,14 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     let APIKey = "AIzaSyDZVSHQcTmR1hxLHSFQJxNC5z1rbREjKbs"
-    
+    let themeColor = UIColor(red:0.1, green: 0.41, blue: 0.22, alpha: 1.0)
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         //   Override point for customization after application launch.
         
         
         GMSServices.provideAPIKey(APIKey)
-        
+        //window?.tintColor = themeColor
         return true
     
         

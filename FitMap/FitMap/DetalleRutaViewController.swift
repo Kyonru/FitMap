@@ -10,12 +10,14 @@ import UIKit
 import GoogleMaps
 import CoreLocation
 
-class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate {
+class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate{
 
     //Initializing
     var locationManager = CLLocationManager()
-
-
+    var stateForFirstLocation = false
+    var initialLocation = CLLocation(latitude: 0.00, longitude: 0.00)
+    
+    
     @IBOutlet weak var MapView: GMSMapView!
 
     
@@ -44,9 +46,11 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate {
            
         }
         
-      
+        MapView.delegate = self
         
     }
+    
+    
     
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -54,19 +58,47 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate {
         //Locaciones.append(locations.last!)
         let locValue = locations.last!
         
+        
         let long = locValue.coordinate.longitude
         let lat = locValue.coordinate.latitude
+        
+        //Here is the creation of the initial marker
+        if stateForFirstLocation == false{
+            initialLocation = CLLocation(latitude: lat, longitude: long)
+            let initialMarker = GMSMarker()
+            initialMarker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
+            
+            initialMarker.map = MapView
+            
+            stateForFirstLocation = true
+        }
+
+        
         let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 15.0)
         MapView.camera = camera
+        
+        MapView.delegate = self //following market clickable
+        
         
         MapView.isMyLocationEnabled = true
         
         //view = MapView
-
+        
         locationManager.stopUpdatingLocation()
+        
     }
     
 
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        
+        self.dismiss(animated: true, completion: nil)
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "DetalleRuta", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "DetailsReviewViewController") as! DetailsReviewViewController
+        self.present(nextViewController, animated:true, completion:nil)
+    
+        return true
+    }
     
     @IBAction func DummyButton(_ sender: Any) {
         

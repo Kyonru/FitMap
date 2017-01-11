@@ -20,6 +20,9 @@ class EditarRutaViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func submitAction(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
 
     /*

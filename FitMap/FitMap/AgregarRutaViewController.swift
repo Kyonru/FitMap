@@ -16,8 +16,15 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
     var locationManager = CLLocationManager()
     var path = GMSMutablePath()
     var trackedLocations : [CLLocation] = []
+    var trackedSpeed : [CLLocationSpeed] = []
     var trackedDistance = 0.00
+    var currentSpeed = 0.00
     var rectangle = GMSPolyline()
+    var stateForFirstLocation = false
+    var initialLocation = CLLocation(latitude: 0.00, longitude: 0.00)
+    
+    @IBOutlet weak var currentSpeedLabel: UILabel!
+    @IBOutlet weak var currentDistanceLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,11 +105,27 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
         
         let locValue = locations.last!
         
+        
+        currentSpeed = locValue.speed
+        trackedDistance = locValue.distance(from: initialLocation)
+        currentSpeedLabel.text = "\(currentSpeed)" + " m/s"
+        currentDistanceLabel.text = "\(trackedDistance)" + " m"
         // Adding locations to a list
         trackedLocations.append(locValue)
         
         let long = locValue.coordinate.longitude
         let lat = locValue.coordinate.latitude
+        
+        //Here is the creation of the initial marker
+        if stateForFirstLocation == false{
+            initialLocation = CLLocation(latitude: lat, longitude: long)
+            let initialMarker = GMSMarker()
+            initialMarker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
+            
+            initialMarker.map = MapView
+            
+            stateForFirstLocation = true
+        }
         let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 15.0)
         
         MapView.camera = camera
@@ -113,13 +136,20 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
         rectangle = GMSPolyline(path: path)
         rectangle.map = MapView
         
+        
     }
     
     func cleanData(){
         path = GMSMutablePath()
         trackedLocations = []
         trackedDistance = 0.00
+        currentSpeed = 0.00
+        stateForFirstLocation = false
+        currentSpeedLabel.text = " 0.00 m/s"
+        currentDistanceLabel.text = "\(trackedDistance)" + "0.00 m"
+
         MapView.clear()
+        
     }
     
 }

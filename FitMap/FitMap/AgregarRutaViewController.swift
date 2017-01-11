@@ -21,6 +21,10 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
     var currentSpeed = 0.00
     var rectangle = GMSPolyline()
     var stateForFirstLocation = false
+    var initialLocation = CLLocation(latitude: 0.00, longitude: 0.00)
+    
+    @IBOutlet weak var currentSpeedLabel: UILabel!
+    @IBOutlet weak var currentDistanceLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,9 +106,10 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
         let locValue = locations.last!
         
         
-        //currentSpeed = locValue.speed
-        //trackedSpeed.append(currentSpeed)
-        
+        currentSpeed = locValue.speed
+        trackedDistance = locValue.distance(from: initialLocation)
+        currentSpeedLabel.text = "\(currentSpeed)" + " m/s"
+        currentDistanceLabel.text = "\(trackedDistance)" + " m"
         // Adding locations to a list
         trackedLocations.append(locValue)
         
@@ -113,6 +118,7 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
         
         //Here is the creation of the initial marker
         if stateForFirstLocation == false{
+            initialLocation = CLLocation(latitude: lat, longitude: long)
             let initialMarker = GMSMarker()
             initialMarker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
             
@@ -139,6 +145,9 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
         trackedDistance = 0.00
         currentSpeed = 0.00
         stateForFirstLocation = false
+        currentSpeedLabel.text = " 0.00 m/s"
+        currentDistanceLabel.text = "\(trackedDistance)" + "0.00 m"
+
         MapView.clear()
         
     }

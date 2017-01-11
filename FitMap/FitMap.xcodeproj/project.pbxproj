@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04B5BECD0B4E7AD3EFCA3525 /* Pods_FitMapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6DDC1149E183D5E329956EC /* Pods_FitMapTests.framework */; };
+		1AD78E771E26632200CDFF7B /* EditarRutaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD78E761E26632200CDFF7B /* EditarRutaViewController.swift */; };
 		504A1E661E2063AF00D3118A /* DetailsReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504A1E651E2063AF00D3118A /* DetailsReviewViewController.swift */; };
 		5083DB2E1E01F7F100F4113C /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5083DB2D1E01F7F100F4113C /* Me.storyboard */; };
 		5083DB301E01F84300F4113C /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5083DB2F1E01F84300F4113C /* MeViewController.swift */; };
@@ -54,6 +55,7 @@
 
 /* Begin PBXFileReference section */
 		098EACD48315252BCBB50748 /* Pods-FitMapTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitMapTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FitMapTests/Pods-FitMapTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1AD78E761E26632200CDFF7B /* EditarRutaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditarRutaViewController.swift; sourceTree = "<group>"; };
 		269A282414D6324E2A6DEB3F /* Pods-FitMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FitMap/Pods-FitMap.debug.xcconfig"; sourceTree = "<group>"; };
 		42CC6238EA2BD7730C47E60A /* Pods-FitMapTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitMapTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FitMapTests/Pods-FitMapTests.release.xcconfig"; sourceTree = "<group>"; };
 		504A1E651E2063AF00D3118A /* DetailsReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsReviewViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				5090D1731E00AA7900331A5C /* AgregarRuta.storyboard */,
+				1AD78E761E26632200CDFF7B /* EditarRutaViewController.swift */,
 				5090D1751E00AAFD00331A5C /* AgregarRutaViewController.swift */,
 			);
 			name = AgregarRuta;
@@ -545,6 +548,7 @@
 			files = (
 				50E9AB2A1E2571740028DAB2 /* DetailViewController.swift in Sources */,
 				50CD9B811E008EB000B79DF9 /* DetalleRutaViewController.swift in Sources */,
+				1AD78E771E26632200CDFF7B /* EditarRutaViewController.swift in Sources */,
 				50E9AB2C1E2577470028DAB2 /* ReviewViewController.swift in Sources */,
 				5083DB301E01F84300F4113C /* MeViewController.swift in Sources */,
 				5088E8211E00AAFF0004AB50 /* LoopViewController.swift in Sources */,

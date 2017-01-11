@@ -12,7 +12,7 @@ import CoreLocation
 
 
 class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
-
+    
     var locationManager = CLLocationManager()
     var path = GMSMutablePath()
     var trackedLocations : [CLLocation] = []
@@ -56,6 +56,13 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
             switch action.style{
             case .default:
+                
+                
+                let storyBoard : UIStoryboard = UIStoryboard(name: "AgregarRuta", bundle:nil)
+                
+                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "EditarRutaViewController") as! EditarRutaViewController
+                self.present(nextViewController, animated:true, completion:nil)
+                //
                 print("default")
                 
             case .cancel:
@@ -69,12 +76,12 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
         // show the alert
         self.present(alert, animated: true, completion: nil)
     }
-
+    
     @IBAction func trackRoute(_ sender: UIButton) {
         if sender.currentTitle == "Start"{
             sender.setTitle("Stop", for:.normal)
             locationManager.startUpdatingLocation()
-    
+            
         }else{
             sender.setTitle("Start",for:.normal)
             
@@ -87,13 +94,13 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
     
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-
+        
         
         let locValue = locations.last!
         
         // Adding locations to a list
         trackedLocations.append(locValue)
-
+        
         let long = locValue.coordinate.longitude
         let lat = locValue.coordinate.latitude
         let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 15.0)
@@ -101,11 +108,11 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
         MapView.camera = camera
         
         MapView.isMyLocationEnabled = true
-
+        
         path.add(locValue.coordinate)
         rectangle = GMSPolyline(path: path)
         rectangle.map = MapView
-
+        
     }
     
     func cleanData(){
@@ -113,5 +120,5 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
         trackedLocations = []
         trackedDistance = 0.00
     }
-
+    
 }

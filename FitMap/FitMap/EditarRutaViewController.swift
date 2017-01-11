@@ -1,44 +1,27 @@
 //
-//  ReviewViewController.swift
+//  EditarRutaViewController.swift
 //  FitMap
 //
-//  Created by fitmap on 1/10/17.
+//  Created by Rafael Suazo on 1/11/17.
 //  Copyright © 2017 FormuladoresDiscretos. All rights reserved.
 //
 
 import UIKit
-import Cosmos
 
-class ReviewViewController: UIViewController{
+class EditarRutaViewController: UIViewController {
 
-    @IBOutlet weak var starView: CosmosView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        
-        starView.settings.updateOnTouch = false
-        
-        starView.rating = 4
-
-        
     }
 
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
-    
-  
-    
-    
-    
-    
     /*
     // MARK: - Navigation
 

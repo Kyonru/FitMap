@@ -22,6 +22,7 @@ class EditarRutaViewController: UIViewController {
     }
     @IBAction func submitAction(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
+
     }
     
 

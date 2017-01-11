@@ -95,8 +95,8 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate, GM
         
         let storyBoard : UIStoryboard = UIStoryboard(name: "DetalleRuta", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "DetailsReviewViewController") as! DetailsReviewViewController
-        self.present(nextViewController, animated:true, completion:nil)
-    
+
+        self.navigationController?.pushViewController(nextViewController, animated: true)
         return true
     }
     

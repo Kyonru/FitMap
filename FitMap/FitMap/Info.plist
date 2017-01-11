@@ -3,7 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Tal y tal vaina</string>
+	<string>tal y tal vaina</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>tal y tal vaina</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

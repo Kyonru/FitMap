@@ -7,13 +7,34 @@
 //
 
 import UIKit
+import Cosmos
 
 class DetailViewController: UIViewController {
 
+    // All those vars will need to retrieve values from database
+    
+    @IBOutlet weak var routeName: UILabel!
+    
+    @IBOutlet weak var starView: CosmosView!
+    
+    @IBOutlet weak var avgTimeLabel: UILabel!
+    
+    @IBOutlet weak var recordTimeLabel: UILabel!
+    
+    @IBOutlet weak var routeLength: UILabel!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        starView.settings.updateOnTouch = false
+        
+        starView.rating = 2 //retrieve this value from Database
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

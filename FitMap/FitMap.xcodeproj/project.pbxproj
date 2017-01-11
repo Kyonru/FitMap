@@ -21,6 +21,8 @@
 		5090D1761E00AAFD00331A5C /* AgregarRutaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090D1751E00AAFD00331A5C /* AgregarRutaViewController.swift */; };
 		50CD9B7F1E008D1A00B79DF9 /* DetalleRuta.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50CD9B7E1E008D1A00B79DF9 /* DetalleRuta.storyboard */; };
 		50CD9B811E008EB000B79DF9 /* DetalleRutaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD9B801E008EB000B79DF9 /* DetalleRutaViewController.swift */; };
+		50E017DF1E266F49001BB7B6 /* RunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E017DE1E266F49001BB7B6 /* RunViewController.swift */; };
+		50E017E11E267D4D001BB7B6 /* RouteSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E017E01E267D4D001BB7B6 /* RouteSummaryViewController.swift */; };
 		50E9AB2A1E2571740028DAB2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E9AB291E2571740028DAB2 /* DetailViewController.swift */; };
 		50E9AB2C1E2577470028DAB2 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E9AB2B1E2577470028DAB2 /* ReviewViewController.swift */; };
 		8C9C4158300A2971CB11C7D6 /* Pods_FitMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D55EA507A77E411923E6F90 /* Pods_FitMap.framework */; };
@@ -68,6 +70,8 @@
 		5090D1751E00AAFD00331A5C /* AgregarRutaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgregarRutaViewController.swift; sourceTree = "<group>"; };
 		50CD9B7E1E008D1A00B79DF9 /* DetalleRuta.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DetalleRuta.storyboard; sourceTree = "<group>"; };
 		50CD9B801E008EB000B79DF9 /* DetalleRutaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalleRutaViewController.swift; sourceTree = "<group>"; };
+		50E017DE1E266F49001BB7B6 /* RunViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunViewController.swift; sourceTree = "<group>"; };
+		50E017E01E267D4D001BB7B6 /* RouteSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteSummaryViewController.swift; sourceTree = "<group>"; };
 		50E9AB291E2571740028DAB2 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		50E9AB2B1E2577470028DAB2 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		5B06BAD84722B5DA0BE8C0C5 /* Pods_FitMapUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FitMapUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,10 +159,12 @@
 			isa = PBXGroup;
 			children = (
 				50CD9B7E1E008D1A00B79DF9 /* DetalleRuta.storyboard */,
+				50E017E01E267D4D001BB7B6 /* RouteSummaryViewController.swift */,
 				50E9AB2B1E2577470028DAB2 /* ReviewViewController.swift */,
 				50E9AB291E2571740028DAB2 /* DetailViewController.swift */,
 				50CD9B801E008EB000B79DF9 /* DetalleRutaViewController.swift */,
 				504A1E651E2063AF00D3118A /* DetailsReviewViewController.swift */,
+				50E017DE1E266F49001BB7B6 /* RunViewController.swift */,
 			);
 			name = DetalleRuta;
 			sourceTree = "<group>";
@@ -550,6 +556,7 @@
 				50CD9B811E008EB000B79DF9 /* DetalleRutaViewController.swift in Sources */,
 				1AD78E771E26632200CDFF7B /* EditarRutaViewController.swift in Sources */,
 				50E9AB2C1E2577470028DAB2 /* ReviewViewController.swift in Sources */,
+				50E017DF1E266F49001BB7B6 /* RunViewController.swift in Sources */,
 				5083DB301E01F84300F4113C /* MeViewController.swift in Sources */,
 				5088E8211E00AAFF0004AB50 /* LoopViewController.swift in Sources */,
 				DDE048371DF8CDBB0043085A /* ViewController.swift in Sources */,
@@ -558,6 +565,7 @@
 				DDE0483D1DF8CDBB0043085A /* FitMap.xcdatamodeld in Sources */,
 				5090D1761E00AAFD00331A5C /* AgregarRutaViewController.swift in Sources */,
 				50886A9F1E1AECE100B2E6AB /* ALoopViewController.swift in Sources */,
+				50E017E11E267D4D001BB7B6 /* RouteSummaryViewController.swift in Sources */,
 				DDE048351DF8CDBB0043085A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -67,8 +67,21 @@ class RouteDataSource {
                 polyline = GMSPolyline(path: path)
             }
             polyline.map = MapView
+            setMarker(route: array, map: MapView)
             
         }
+        
+    }
+    
+    
+    private func setMarker(route: [CLLocationCoordinate2D], map MapView: GMSMapView!) {
+        
+        let initialLocation = route.first!
+        let initialMarker = GMSMarker()
+    
+        initialMarker.position = CLLocationCoordinate2D(latitude:initialLocation.latitude, longitude: initialLocation.longitude)
+        initialMarker.map = MapView
+
         
     }
 

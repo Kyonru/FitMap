@@ -22,14 +22,6 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate, GM
     var rectangle2 = GMSPolyline()
     
     @IBOutlet weak var MapView: GMSMapView!
-
-    
-//    @IBOutlet weak var FirstViewContainer: UIView!
-//    
-//    @IBOutlet weak var SecondViewContainer: UIView!
-//    
-//    @IBOutlet weak var SegmentedControl: UISegmentedControl!
-    
     
     
     override func viewDidLoad() {
@@ -116,13 +108,7 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate, GM
     @IBAction func DummyButton(_ sender: Any) {
         
         
-        //MapView.isMyLocationEnabled = false
-        //locationManager.stopUpdatingLocation()
-        
-//        MapView.isHidden = true
-//       
-//        SecondViewContainer.isHidden = true
-//        FirstViewContainer.isHidden = false
+ 
        
     }
     
@@ -131,30 +117,7 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate, GM
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-//    
-//    
-//    //Switching between views (first = details; second = review)
-//
-//    @IBAction func ChangeView(_ sender: UISegmentedControl) {
-//        
-//        switch SegmentedControl.selectedSegmentIndex {
-//        case 1:
-//            FirstViewContainer.isHidden = false
-//            SecondViewContainer.isHidden = true
-//            break
-//            
-//        default:
-//            FirstViewContainer.isHidden = true
-//            SecondViewContainer.isHidden = false
-//            
-//        }
-//        
-//    }
-//    
-//    
-    
-    
+        
     
     
     

@@ -124,16 +124,16 @@
                                     <constraint firstAttribute="height" constant="44" id="MlJ-El-Zu8"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem style="plain" id="Mo9-29-up3">
+                                    <barButtonItem image="loop" style="plain" id="Mo9-29-up3">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FkQ-jo-R8r">
-                                            <rect key="frame" x="16" y="7" width="46" height="30"/>
+                                            <rect key="frame" x="16" y="7" width="65" height="31"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Button"/>
                                         </button>
                                     </barButtonItem>
                                     <barButtonItem style="plain" id="LTd-pc-GKF">
                                         <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="0HC-1c-Dg5">
-                                            <rect key="frame" x="72" y="7" width="246" height="30"/>
+                                            <rect key="frame" x="91" y="7" width="246" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -142,7 +142,7 @@
                                     </barButtonItem>
                                     <barButtonItem style="plain" id="mnq-kc-r0f">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WeD-ZU-vyA">
-                                            <rect key="frame" x="328" y="7" width="30" height="30"/>
+                                            <rect key="frame" x="347" y="7" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                             <state key="normal" title="+"/>
@@ -442,4 +442,7 @@
             <point key="canvasLocation" x="3357.5999999999999" y="1934.4827586206898"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="loop" width="60" height="31"/>
+    </resources>
 </document>

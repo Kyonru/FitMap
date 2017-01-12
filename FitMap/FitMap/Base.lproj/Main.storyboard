@@ -42,11 +42,11 @@
             </objects>
             <point key="canvasLocation" x="-778" y="1092"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Me-->
         <scene sceneID="0de-6i-s9S">
             <objects>
                 <navigationController id="IzN-rL-goQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="xT9-IF-wfO"/>
+                    <tabBarItem key="tabBarItem" title="Me" image="boy" selectedImage="boy" id="xT9-IF-wfO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="mQC-qX-MvZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -59,11 +59,13 @@
             </objects>
             <point key="canvasLocation" x="-2468" y="1093"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Detalle-->
         <scene sceneID="TxV-ok-kiQ">
             <objects>
                 <navigationController id="MBo-Bk-caJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="downloads" id="8B3-JV-uHc"/>
+                    <tabBarItem key="tabBarItem" title="Detalle" image="detalle" selectedImage="detalle" id="8B3-JV-uHc">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Cwb-Ny-jYj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -76,11 +78,11 @@
             </objects>
             <point key="canvasLocation" x="-2431" y="346"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Agregar-->
         <scene sceneID="sYf-zJ-AS4">
             <objects>
                 <navigationController id="1dj-Ye-n4X" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="zki-62-KOM"/>
+                    <tabBarItem key="tabBarItem" title="Agregar" image="agregar" selectedImage="agregar" id="zki-62-KOM"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="4Mb-5e-vQ0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -124,11 +126,11 @@
             </objects>
             <point key="canvasLocation" x="-1162" y="-1067"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Loop-->
         <scene sceneID="CDD-Uh-g2Q">
             <objects>
                 <navigationController id="xyq-ms-Y0Z" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="SJN-Ts-9fM"/>
+                    <tabBarItem key="tabBarItem" title="Loop" image="loop" id="SJN-Ts-9fM"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="rsj-Z7-z3j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -142,4 +144,10 @@
             <point key="canvasLocation" x="-2431" y="-378"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="agregar" width="50" height="50"/>
+        <image name="boy" width="50" height="50"/>
+        <image name="detalle" width="50" height="50"/>
+        <image name="loop" width="60" height="31"/>
+    </resources>
 </document>

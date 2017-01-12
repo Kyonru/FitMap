@@ -16,7 +16,10 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate, GM
     var locationManager = CLLocationManager()
     var stateForFirstLocation = false
     var initialLocation = CLLocation(latitude: 0.00, longitude: 0.00)
-    
+    var path = GMSMutablePath()
+    var path2 = GMSMutablePath()
+    var rectangle = GMSPolyline()
+    var rectangle2 = GMSPolyline()
     
     @IBOutlet weak var MapView: GMSMapView!
 
@@ -47,6 +50,16 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate, GM
         }
         
         MapView.delegate = self
+        
+        
+        //Cargar todos los polylines al mapView
+        
+
+        let routeData = RouteDataSource() //initializing the model RouteDataSource
+        
+        routeData.retrievePath(MapView: MapView) //This method draws the routes on map
+       
+        
         
     }
     

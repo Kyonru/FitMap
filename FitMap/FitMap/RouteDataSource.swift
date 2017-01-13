@@ -30,7 +30,7 @@ class RouteDataSource {
     //wrapper
     func retrievePath(MapView: GMSMapView!) {
         
-        //Init Chunk used for testing
+        //Init: Chunk used for testing
         var locationsArray: [CLLocationCoordinate2D] = []
         var locationsArray2: [CLLocationCoordinate2D] = []
         var routesArray: [[CLLocationCoordinate2D]] = []
@@ -47,7 +47,7 @@ class RouteDataSource {
         
         routesArray.append(locationsArray)
         routesArray.append(locationsArray2)
-        //End Chunk used for testing
+        //End: Chunk used for testing
         
         retrievePath(routesArray, map: MapView)
         
@@ -115,17 +115,20 @@ class RouteDataSource {
          Given that ID we got to query the route, AKA:
          retrieve the coordinates array of that route from API (who is connected to our DB)
         */
+        
+        //Init: Chunk used for testing
         locationsArray.append(CLLocationCoordinate2D(latitude: 18.488031, longitude: -69.963176))
         locationsArray.append(CLLocationCoordinate2D(latitude: 18.487952, longitude: -69.963170))
         locationsArray.append(CLLocationCoordinate2D(latitude: 18.487548, longitude: -69.963169))
         locationsArray.append(CLLocationCoordinate2D(latitude: 18.487439, longitude: -69.963059))
+        //End: Chunk used for testing
 
         
         drawRoute(locationsArray, map: mapView)
         
     }
     
-    
+     //This func draw a route given the ID of that route, and center the camera map on it
     private func drawRoute(_ route: [CLLocationCoordinate2D], map mapView: GMSMapView) {
         
         let path = GMSMutablePath()
@@ -149,6 +152,13 @@ class RouteDataSource {
         
         
     }
+    
+    
+    //Retrieve from database routeData, and send it to the viewController
+    
+    
+    
+    
     
     
 

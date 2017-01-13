@@ -21,6 +21,10 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate, GM
     var rectangle = GMSPolyline()
     var rectangle2 = GMSPolyline()
     
+    var discipline = "" //discipline selected
+    
+    @IBOutlet weak var disciplinesView: UIView!
+    
     @IBOutlet weak var MapView: GMSMapView!
     
     
@@ -44,13 +48,35 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate, GM
         MapView.delegate = self
         
         
-        //Cargar todos los polylines al mapView
+        // Loading polylines to mapView
         
-
         let routeData = RouteDataSource() //initializing the model RouteDataSource
-        
         routeData.retrievePath(MapView: MapView) //This method draws the routes on map
        
+        
+        
+        // Making the disciplines View blur
+        
+        
+        /*
+        This hides me the buttons I got on top of view
+        Thats why is commented. I (Jhonny) will fix this later
+        */
+        
+        //  only apply the blur if the user hasn't disabled transparency effects
+//        if !UIAccessibilityIsReduceTransparencyEnabled() {
+//            disciplinesView.backgroundColor = UIColor.clear
+//            
+//            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
+//            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+//            //always fill the view
+//            blurEffectView.frame = disciplinesView.bounds
+//            blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//            
+//            disciplinesView.addSubview(blurEffectView) //if you have more UIViews, use an insertSubview API to place it where needed
+//        } else {
+//            disciplinesView.backgroundColor = UIColor.clear
+//        }
         
         
     }
@@ -112,7 +138,31 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate, GM
     }
     
     
+    //Capturing the discipline buttons info
     
+
+    @IBAction func disciplineSelected(_ sender: UIButton){
+        
+        let buttonTouched = sender.currentTitle!
+        
+        /*
+        Pourpose: when a user tap 1 button, we got to query
+        the routes based on that category
+        */
+        
+        switch buttonTouched {
+        case "Cycling":
+            discipline = "cycling"
+        case "Running":
+            discipline = "running"
+        case "Skating":
+            discipline = "skating"
+        default:
+            discipline = ""
+        }
+        
+    }
+
     
 
     /*

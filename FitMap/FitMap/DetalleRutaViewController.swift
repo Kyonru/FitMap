@@ -97,6 +97,7 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate, GM
         if stateForFirstLocation == false{
             initialLocation = CLLocation(latitude: lat, longitude: long)
             let initialMarker = GMSMarker()
+            initialMarker.title = "0"
             initialMarker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
             
             initialMarker.map = MapView

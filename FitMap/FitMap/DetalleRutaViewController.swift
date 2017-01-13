@@ -108,7 +108,7 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate, GM
         let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 15.0)
         MapView.camera = camera
         
-        MapView.delegate = self //following market clickable
+        MapView.delegate = self
         
         
         MapView.isMyLocationEnabled = true
@@ -119,14 +119,29 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate, GM
         
     }
     
-
+    //// Marker
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        
+        /*
+         Given the marker itle (route ID), we will call a method on RouteDataSource
+         that will draw the given route on the detailViewController, and will center the camera 
+         on the route coordinates
+        */
+        
+        var markerId = 0
+        markerId = Int(marker.title!)!
+        
+        let routeData = RouteDataSource()
+        routeData.setRouteId(markerId)
+
+        ////////////
         
         self.dismiss(animated: true, completion: nil)
         
         let storyBoard : UIStoryboard = UIStoryboard(name: "DetalleRuta", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "DetailsReviewViewController") as! DetailsReviewViewController
 
+        
         self.navigationController?.pushViewController(nextViewController, animated: true)
         return true
     }

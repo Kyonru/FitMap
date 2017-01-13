@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class DetailsReviewViewController: UIViewController {
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,7 +51,6 @@ class DetailsReviewViewController: UIViewController {
     }
     
     
-
 
     /*
     // MARK: - Navigation

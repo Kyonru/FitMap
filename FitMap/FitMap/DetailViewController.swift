@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMaps
 import Cosmos
 
 class DetailViewController: UIViewController {
@@ -23,7 +24,9 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var routeLength: UILabel!
     
+    @IBOutlet weak var mapView: GMSMapView!
     
+    var routeId = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +38,13 @@ class DetailViewController: UIViewController {
         starView.rating = 2 //retrieve this value from Database
         
         
+        //Drawing the selected route on map
+        
+        let routeData = RouteDataSource()
+        routeId = routeData.getRouteId()
+        routeData.drawRoute(routeId: routeId, map: mapView)
+
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,6 +52,11 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func setRouteIdToDraw(_ id: Int){
+        routeId = id
+    }
+
 
     /*
     // MARK: - Navigation

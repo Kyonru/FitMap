@@ -9,10 +9,12 @@
 import UIKit
 import Cosmos
 
-class ReviewViewController: UIViewController{
+class ReviewViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
 
     @IBOutlet weak var starView: CosmosView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var RatingCollection: UICollectionView!
+    let ReviewData = ReviewDataSourse()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +26,16 @@ class ReviewViewController: UIViewController{
         starView.settings.updateOnTouch = false
         
         starView.rating = 4 //retrieve this value from database
-
+        
+        self.RatingCollection!.register(ReviewCell.self, forCellWithReuseIdentifier: "Review")
+        RatingCollection?.backgroundColor = .gray
+        
+        RatingCollection.delegate = self
+        RatingCollection.dataSource = self
+        
+        
+        
+        
         // Called when user finishes changing the rating by lifting the finger from the view.
         // This may be a good place to save the rating in the database or send to the server.
         //starView.didFinishTouchingCosmos = { rating in }
@@ -66,9 +77,19 @@ class ReviewViewController: UIViewController{
     }
 
     
-  
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return ReviewData.numberOfItems(0)
+    }
     
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Review", for: indexPath) as! ReviewCell
+        cell.backgroundColor = .white
+        return cell
+    }
     
     
     /*

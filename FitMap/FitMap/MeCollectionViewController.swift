@@ -12,85 +12,7 @@ import LBTAComponents
 private let reuseIdentifier = "Cell"
 
 
-class Cells: DatasourceCell {
-   
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupViews()
-    }
-    
-    
-    override var datasourceItem: Any?{
-        didSet{
-            //TextT.text = datasourceItem as? String
-        }
-    }
-    
-    
-    var TextT: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = .green
-       // label.text = "Algo a modificar"
-        return label
-    }()
-    
-    var profileImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.backgroundColor = .red
-        return imageView
-    }()
-    
-    func agregarImagen(Imagen: UIImage){
-        profileImageView.image = Imagen
-        profileImageView.anchor(self.topAnchor, left: self.leftAnchor, bottom: nil, right: nil, topConstant: 12, leftConstant: 12, bottomConstant: 0, rightConstant: 0, widthConstant: 100, heightConstant: 100)
-        
-    }
-    
-    override func setupViews(){
-        super.setupViews()
-        backgroundColor = .white
-        addSubview(TextT)
-        addSubview(profileImageView)
-        profileImageView.anchor(self.topAnchor, left: self.leftAnchor, bottom: nil, right: nil, topConstant: 12, leftConstant: 12, bottomConstant: 0, rightConstant: 0, widthConstant: 100, heightConstant: 100)
-        TextT.anchor(profileImageView.topAnchor, left: profileImageView.rightAnchor, bottom: nil, right: self.rightAnchor, topConstant: 0, leftConstant: 4, bottomConstant: 0, rightConstant: 12, widthConstant: 0, heightConstant: 20)
-        
-        /*
-        profileImageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true;
-        profileImageView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true;
-        profileImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true;
-        profileImageView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true;*/
-        
-       /*
-        TextT.topAnchor.constraint(equalTo: self.topAnchor).isActive = true;
-        TextT.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true;
-        TextT.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true;
-        TextT.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true;*/
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
 
-class MeDataSourse: Datasource{
-    let history = ["Todavia", "Por", "Identificar", "Atun"]
-    
-    override func cellClasses() -> [DatasourceCell.Type] {
-        return [Cells.self]
-    }
-    
-    override func item(_ indexPath: IndexPath) -> Any? {
-        return history[indexPath.item]
-    }
-    
-    override func numberOfItems(_ section: Int) -> Int {
-        return history.count
-    }
-
-
-
-}
 
 class MeCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
@@ -151,44 +73,13 @@ class MeCollectionViewController: UICollectionViewController, UICollectionViewDe
         
         // Configure the cell
         
-        let TextT: UILabel = {
-            let label = UILabel()
-            label.translatesAutoresizingMaskIntoConstraints = false
-            //label.text = "Algo a modificar"
-            let themeColor = UIColor(red:0.1, green: 0.41, blue: 0.22, alpha: 1.0)
-            
-            label.backgroundColor = themeColor
-            return label
-        }()
+        let TextT = UILabel()
+        let TextFecha = UILabel ()
+        let TextTiempo = UILabel ()
+        let profileImageView = UIImageView()
         
-        
-        
-        let TextFecha: UILabel = {
-            let label =  UILabel()
-            label.translatesAutoresizingMaskIntoConstraints = false
-            let themeColor = UIColor(red:0.25, green: 0.15, blue: 0.31, alpha: 1.0)
-            label.backgroundColor = themeColor
-            return label
-        }()
-        
-        let TextTiempo: UILabel = {
-            let label =  UILabel()
-            label.translatesAutoresizingMaskIntoConstraints = false
-            let themeColor = UIColor(red:0.13, green: 0.12, blue: 1.2, alpha: 2.0)
-            label.backgroundColor = themeColor
-            return label
-        }()
         
         TextT.text = historyData.item(indexPath) as! String?
-       
-        
-        let profileImageView: UIImageView = {
-            let imageView = UIImageView()
-            let themeColor = UIColor(red:0.42, green: 0.11, blue: 0.3, alpha: 1.5)
-            imageView.backgroundColor = themeColor
-            return imageView
-        }()
-        
         
         cell.addSubview(profileImageView)
         cell.addSubview(TextT)

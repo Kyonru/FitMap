@@ -57,10 +57,15 @@ class RunViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func doneButton(_ sender: UIButton) {
         
+        locationManager.stopUpdatingLocation()
         cleanData()
         let storyBoard : UIStoryboard = UIStoryboard(name: "DetalleRuta", bundle:nil)
         
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "RouteSummaryViewController") as! RouteSummaryViewController
+        
+        doneRouteButton.isHidden = true
+        doRouteButton.isHidden = false
+        
         self.present(nextViewController, animated:true, completion:nil)
         
     }

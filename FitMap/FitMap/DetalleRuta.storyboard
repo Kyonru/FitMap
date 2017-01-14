@@ -146,54 +146,38 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ehd-uJ-GCH">
-                                <rect key="frame" x="0.0" y="541" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="LRL-DV-d61"/>
-                                    <constraint firstAttribute="height" constant="44" id="MlJ-El-Zu8"/>
-                                </constraints>
-                                <items>
-                                    <barButtonItem image="loop" style="plain" id="Mo9-29-up3">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FkQ-jo-R8r">
-                                            <rect key="frame" x="16" y="7" width="65" height="31"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Button"/>
-                                        </button>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" id="LTd-pc-GKF">
-                                        <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="0HC-1c-Dg5">
-                                            <rect key="frame" x="91" y="7" width="246" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <nil key="textColor"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" id="mnq-kc-r0f">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WeD-ZU-vyA">
-                                            <rect key="frame" x="347" y="7" width="30" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                            <state key="normal" title="+"/>
-                                        </button>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6vE-FZ-r5q">
+                                <rect key="frame" x="0.0" y="86" width="375" height="517"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cOX-P3-aUr">
+                                    <size key="itemSize" width="375" height="169"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Review" id="Kx2-cv-BHE">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="169"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="169"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="gZi-gA-B2d" firstAttribute="top" secondItem="Ehd-uJ-GCH" secondAttribute="bottom" constant="18" id="E93-KZ-N4K"/>
-                            <constraint firstItem="Ehd-uJ-GCH" firstAttribute="leading" secondItem="6I6-y4-GXR" secondAttribute="leading" id="Oks-b3-ZLF"/>
-                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="bottomConstraint" destination="E93-KZ-N4K" id="OPK-9q-5tV"/>
+                        <outlet property="RatingCollection" destination="6vE-FZ-r5q" id="eqk-gb-CL0"/>
                         <outlet property="starView" destination="irO-qY-fjL" id="CsE-6C-xDw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5yM-GG-ZnY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3357.5999999999999" y="-455.62218890554726"/>
+            <point key="canvasLocation" x="3541.5999999999999" y="-450.22488755622192"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="tFN-CA-i7n">
@@ -475,7 +459,4 @@
             <point key="canvasLocation" x="3357.5999999999999" y="1934.4827586206898"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="loop" width="60" height="31"/>
-    </resources>
 </document>

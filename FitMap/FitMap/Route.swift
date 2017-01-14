@@ -11,108 +11,95 @@ import CoreLocation
 
 class Route {
     
-    var routeId : Int {
-        set(id){
-            self.routeId = id
-        }
-        
-        get {
-            return self.routeId
-        }
+    var id = 0
+    var discipline = " "
+    var name = " "
+    var distance = 0
+    var path : [CLLocationCoordinate2D] = []
+    var recordTime: Int64 = 0
+    var avgTime: Int64 = 0
+    var time: Int64 = 0
+    var rating = 0
+    var comment = " "
+    
+    
+    
+    
+    
+    
+    func setRouteId(id: Int) {
+        self.id = id
     }
-    
-    var routeName : String {
-        
-        set(name){
-            self.routeName = name
-        }
-        get{
-            return getRouteName(id: self.routeId)
-        }
-    }
-    
-    
-    var routeDiscipline : String {
-        
 
-        set(discipline){
-            self.routeDiscipline = discipline
-        }
-        get{
-            return getRouteDiscipline(routeId: self.routeId)
-        }
-        
+    func setName(name: String) {
+        self.name = name
+    }
+    func getName(routeId: Int) -> String {
+        return getRouteName(id: routeId)
     }
     
     
-    var routeDistance : Int {
-        
-        set(distance){
-            self.routeDistance = distance
-        }
-        get{
-            return getRouteDistance(routeId: self.routeId)
-        }
-        
+    func setDiscipline(discipline: String) {
+        self.discipline = discipline
     }
-    
-    var path: [CLLocationCoordinate2D] {
-        
-        set(coordinates){
-            self.path = coordinates
-        }
-        get{
-            return getRoutePath(routeId: self.routeId)
-        }
-    }
-    
-    var recordTime: Int64 {
-        set(time){
-            self.recordTime = 90//time
-        }
-        get{
-            return getRouteRecordTime(routeId: self.routeId)
-        }
-    }
-    
-    var avgTime: Int64 {
-        set(time){
-            self.recordTime = time
-        }
-        get{
-            return getRouteAverageTime(routeId: self.routeId)
-        }
-    }
-    
-    var time: Int64 {
-        set(time){
-            self.recordTime = time
-        }
-        get{
-            return getRouteTime(routeId: self.routeId)
-        }
-    }
-    
-    var rating : Int {
-        set(val){
-            self.rating = val
-        }
-        get{
-            return getRouteRating(routeId: self.routeId)
-        }
-    }
-    
-    var comment: String {
-        set(text){
-            self.comment = text
-        }
-        get {
-            return getRouteCommets(routeId: self.routeId)
-        }
-        
+    func getDiscipline(routeId: Int) -> String {
+        return getRouteDiscipline(routeId: routeId)
     }
     
     
+    func setDistance(distance: Int){
+        self.distance = distance
+    }
+    func getDistance(routeId: Int) -> Int {
+        return getRouteDistance(routeId: routeId)
+    }
+    
+    
+    func setPath(coordinates: CLLocationCoordinate2D) {
+        self.path = [coordinates]
+    }
+    func getPath(routeId: Int) -> [CLLocationCoordinate2D] {
+        return getRoutePath(routeId: routeId)
+    }
+    
+    func setRecordTime(record: Int64) {
+        self.recordTime = record
+    }
+    func getRecordTime(routeId: Int) -> Int64 {
+        return getRouteRecordTime(routeId: routeId)
+    }
+    
+    
+    func setAverageTime(average: Int64) {
+        self.avgTime = average
+    }
+    func getAverageTime(routeId: Int) -> Int64 {
+        return getRouteAverageTime(routeId: routeId)
+    }
+    
+    
+    func setTime(time: Int64) {
+        self.time = time
+    }
+    func getTime(routeId: Int) -> Int64 {
+        return getRouteTime(routeId: routeId)
+    }
+
+    
+    func setRating(rating: Int) {
+        self.rating = rating
+    }
+    func getRating(routeId: Int) -> Int {
+        return getRouteRating(routeId: routeId)
+    }
+    
+    func setCommet(comment: String) {
+        self.comment = comment
+    }
+    func getComment(routeId: Int) -> String {
+        return getRouteCommets(routeId: routeId)
+    }
+
     
     //////////////////////////////////////////////////////////////
     

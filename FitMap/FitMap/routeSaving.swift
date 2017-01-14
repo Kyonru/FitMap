@@ -14,6 +14,8 @@ class routeSaving {
     
     var route = Route()
     
+    
+    
     func insertRoute(route: Route) {
         
         //Querys etc to insert a route

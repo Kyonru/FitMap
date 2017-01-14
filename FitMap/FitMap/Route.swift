@@ -34,6 +34,7 @@ class Route {
     
     var routeDiscipline : String {
         
+
         set(discipline){
             self.routeDiscipline = discipline
         }
@@ -67,7 +68,7 @@ class Route {
     
     var recordTime: Int64 {
         set(time){
-            self.recordTime = time
+            self.recordTime = 90//time
         }
         get{
             return getRouteRecordTime(routeId: self.routeId)
@@ -83,6 +84,15 @@ class Route {
         }
     }
     
+    var time: Int64 {
+        set(time){
+            self.recordTime = time
+        }
+        get{
+            return getRouteTime(routeId: self.routeId)
+        }
+    }
+    
     var rating : Int {
         set(val){
             self.rating = val
@@ -92,7 +102,15 @@ class Route {
         }
     }
     
-    
+    var comment: String {
+        set(text){
+            self.comment = text
+        }
+        get {
+            return getRouteCommets(routeId: self.routeId)
+        }
+        
+    }
     
     
     
@@ -171,6 +189,19 @@ class Route {
         
     }
     
+    func getRouteTime(routeId: Int) -> Int64 {
+        
+        //Query to retrieve average time from the DB
+        
+        
+        // Dummy
+        
+        let time: Int64 = 87325917984356983
+        return time
+        
+    }
+
+    
     func getRouteRating(routeId: Int) -> Int {
         
         //Query to retrieve rating from the DB
@@ -182,6 +213,16 @@ class Route {
         
     }
 
+    func getRouteCommets(routeId: Int) -> String {
+        
+        //Query to retrieve all comments
+        
+        
+        //Dummy comment
+        let comment = "Awesome route!"
+        return comment
+        
+    }
     
     
     

@@ -7,9 +7,25 @@
 //
 
 import UIKit
+import Cosmos
 
 class EditarRutaViewController: UIViewController {
+    
+    var route = Route() //Route instance. Object to be stored on DB (passed to the model)
+    
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    
+    
+    @IBOutlet weak var starView: CosmosView!
+    
+    @IBOutlet weak var routeNameTextField: UITextField!
+    
+    
+    @IBOutlet weak var timeLabel: UILabel!
+    
+    @IBOutlet weak var distanceLabel: UILabel!
+    
+    var discipline = " "
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +33,16 @@ class EditarRutaViewController: UIViewController {
 
 
         // Do any additional setup after loading the view.
+        
+        
+        //Capturing the rating data
+        
+        // Called when user finishes changing the rating by lifting the finger from the view.
+        // This may be a good place to save the rating in the database or send to the server.
+//        cosmosView.didFinishTouchingCosmos = { rating in  //route.rating = x }
+        
+        
+        
     }
     
     deinit {
@@ -48,16 +74,71 @@ class EditarRutaViewController: UIViewController {
         }
     }
     
+    
+    @IBAction func disciplineButton(_ sender: UIButton) {
+        
+        let buttonTouched = sender.currentTitle!
+        
+        /*
+         Pourpose: when a user tap 1 button, we got to query
+         the routes based on that category
+         */
+        
+        switch buttonTouched {
+        case "Cycling":
+//            route.routeDiscipline = "cycling"
+           discipline = "cycling"
+
+        case "Running":
+//            route.routeDiscipline =  "running"
+            discipline = "running"
+        case "Skating":
+//            route.routeDiscipline =  "skating"
+            discipline = "skating"
+        default:
+//            route.routeDiscipline = ""
+            discipline = " "
+        }
+
+    }
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
     @IBAction func submitAction(_ sender: UIButton) {
+        
+        if routeNameTextField.text != nil{
+//            route.routeName = routeNameTextField.text!
+        }
+        
+        
+//        starView.didFinishTouchingCosmos = { rating in self.route.rating = Int(self.starView.rating)}
+//        
+//        route.time = Int64(timeLabel.text!)!
+//        route.routeDistance = Int(distanceLabel.text!)!
+//        route.routeDiscipline = discipline
+       
+        // Send this route object to the model, to insert it into the database
+        let save = routeSaving()
+        save.insertRoute(route: route)
+        
+        
         self.dismiss(animated: true, completion: nil)
 
+        
     }
     
 
+    
+    
+    
+    
     /*
     // MARK: - Navigation
 

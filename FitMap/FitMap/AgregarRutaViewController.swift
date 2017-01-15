@@ -15,6 +15,7 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
     
     var locationManager = CLLocationManager()
     var path = GMSMutablePath()
+    var camera = GMSCameraPosition()
     var trackedLocations : [CLLocation] = []
     var trackedSpeed : [CLLocationSpeed] = []
     var trackedDistance = 0.00
@@ -161,15 +162,18 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
             
             initialMarker.map = MapView
             
+            camera = GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 15.0)
+            
+            MapView.camera = camera
+            
             stateForFirstLocation = true
         }
         
+        //Following the user location
+        let updateCam = GMSCameraUpdate.setTarget(locations.last!.coordinate)
+        MapView.animate(with: updateCam)
         
-        
-        
-        let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 15.0)
-        
-        MapView.camera = camera
+
         
         MapView.isMyLocationEnabled = true
         
@@ -183,7 +187,7 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
     func cleanData(){
         path = GMSMutablePath()
         trackedLocations = []
-        trackedDistance = 0.00
+//        trackedDistance = 0.00
         currentSpeed = 0.00
         stateForFirstLocation = false
         currentSpeedLabel.text = " 0.00 m/s"

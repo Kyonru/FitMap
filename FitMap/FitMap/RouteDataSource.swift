@@ -147,7 +147,7 @@ class RouteDataSource {
         
         
         //center the camera
-        let camera = GMSCameraPosition.camera(withLatitude: route.first!.latitude, longitude: route.last!.longitude, zoom: 15.0)
+        let camera = GMSCameraPosition.camera(withLatitude: route.first!.latitude, longitude: route.last!.longitude, zoom: 18.0)
         mapView.camera = camera
         
         

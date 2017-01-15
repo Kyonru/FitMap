@@ -13,6 +13,7 @@ class RunViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var doRouteButton: UIButton!
     @IBOutlet weak var MapView: GMSMapView!
+    var camera = GMSCameraPosition()
     @IBOutlet weak var currentDistanceLabel: UILabel!
     @IBOutlet weak var currentTimeLabel: UILabel!
     @IBOutlet weak var doneRouteButton: UIButton!
@@ -126,7 +127,6 @@ class RunViewController: UIViewController, CLLocationManagerDelegate {
         let lat = locValue.coordinate.latitude
         
         
-        
         //Here is the creation of the initial marker
         if stateForFirstLocation == false{
             initialLocation = CLLocation(latitude: lat, longitude: long)
@@ -134,16 +134,17 @@ class RunViewController: UIViewController, CLLocationManagerDelegate {
             initialMarker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
             initialMarker.isTappable = false
             initialMarker.map = MapView
-        
+            
+            camera = GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 15.0)
+            MapView.camera = camera
+            
             stateForFirstLocation = true
         }
         
+        //Following the user location
+        let updateCam = GMSCameraUpdate.setTarget(locations.last!.coordinate)
+        MapView.animate(with: updateCam)
         
-        
-        
-        let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 22.0)
-        
-        MapView.camera = camera
         
         MapView.isMyLocationEnabled = true
         

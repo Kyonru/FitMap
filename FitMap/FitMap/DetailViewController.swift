@@ -28,6 +28,7 @@ class DetailViewController: UIViewController {
     
     var routeId = 0
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -17,6 +17,8 @@ class RunViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var currentTimeLabel: UILabel!
     @IBOutlet weak var doneRouteButton: UIButton!
     var locationManager = CLLocationManager()
+    var routeId = 0
+    
     
     var path = GMSMutablePath()
     var trackedLocations : [CLLocation] = []
@@ -36,6 +38,13 @@ class RunViewController: UIViewController, CLLocationManagerDelegate {
         
         doRouteButton.isHidden = false
         doneRouteButton.isHidden = true
+        
+        //Drawing the selected route on map
+        
+        let routeData = RouteDataSource()
+        routeId = routeData.getRouteId()
+        routeData.drawRoute(routeId: routeId, map: MapView)
+
         
         //LOCATIONMANAGER
         self.locationManager.requestAlwaysAuthorization()
@@ -118,22 +127,21 @@ class RunViewController: UIViewController, CLLocationManagerDelegate {
         
         
         
-        
         //Here is the creation of the initial marker
         if stateForFirstLocation == false{
             initialLocation = CLLocation(latitude: lat, longitude: long)
             let initialMarker = GMSMarker()
             initialMarker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
-            
+            initialMarker.isTappable = false
             initialMarker.map = MapView
-            
+        
             stateForFirstLocation = true
         }
         
         
         
         
-        let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 15.0)
+        let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 22.0)
         
         MapView.camera = camera
         
@@ -146,7 +154,10 @@ class RunViewController: UIViewController, CLLocationManagerDelegate {
         
     }
 
-
+    func setRouteIdToDraw(_ id: Int){
+        routeId = id
+    }
+    
     /*
     // MARK: - Navigation
 

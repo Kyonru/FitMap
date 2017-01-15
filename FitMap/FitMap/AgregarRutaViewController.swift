@@ -46,6 +46,8 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
             
         }
         
+        
+        
         // MapView.isMyLocationEnabled = true
     }
     
@@ -68,12 +70,26 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
             switch action.style{
             case .default:
                 
+                /*
+                  Create a route instance, and assign time and distance to it
+                  Then, send this instance to editarRutaViewController
+                */
+                let route = Route()
+                
+                route.setDistance(distance: self.trackedDistance)
+
+                route.setTime(time: Int64(self.endingTime.uptimeNanoseconds)-Int64(self.startingTime.uptimeNanoseconds))
+            
+                
                 
                 let storyBoard : UIStoryboard = UIStoryboard(name: "AgregarRuta", bundle:nil)
                 
                 let nextViewController = storyBoard.instantiateViewController(withIdentifier: "EditarRutaViewController") as! EditarRutaViewController
+
+                nextViewController.getRouteData(route: route) // Sending the route data recorded to the editarRutaViewController
+                
                 self.present(nextViewController, animated:true, completion:nil)
-                //
+                
                 print("default")
                 
             case .cancel:

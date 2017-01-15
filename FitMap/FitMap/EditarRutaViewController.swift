@@ -27,6 +27,9 @@ class EditarRutaViewController: UIViewController {
     
     var discipline = " "
     
+    var timeRecorded: Int64 = 0
+    var distanceRecorded: Double = 0.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
@@ -42,6 +45,8 @@ class EditarRutaViewController: UIViewController {
 //        cosmosView.didFinishTouchingCosmos = { rating in  //route.rating = x }
         
         
+        timeLabel.text =  "\(timeRecorded)"
+        distanceLabel.text = "\(distanceRecorded)"
         
     }
     
@@ -122,7 +127,7 @@ class EditarRutaViewController: UIViewController {
         //Use a f$%@$ slider to catch review value
         
         route.time = Int64(timeLabel.text!)!
-        route.distance = Int(distanceLabel.text!)!
+        route.distance = Double(distanceLabel.text!)!
         route.discipline = discipline
        
         // Send this route object to the model, to insert it into the database
@@ -136,6 +141,12 @@ class EditarRutaViewController: UIViewController {
     }
     
 
+    func getRouteData(route: Route){
+        
+        timeRecorded = route.time
+        distanceRecorded = route.distance
+        
+    }
     
     
     

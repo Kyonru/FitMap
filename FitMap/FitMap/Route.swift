@@ -14,7 +14,7 @@ class Route {
     var id = 0
     var discipline = " "
     var name = " "
-    var distance = 0
+    var distance = 0.0
     var path : [CLLocationCoordinate2D] = []
     var recordTime: Int64 = 0
     var avgTime: Int64 = 0
@@ -47,10 +47,10 @@ class Route {
     }
     
     
-    func setDistance(distance: Int){
+    func setDistance(distance: Double){
         self.distance = distance
     }
-    func getDistance(routeId: Int) -> Int {
+    func getDistance(routeId: Int) -> Double {
         return getRouteDistance(routeId: routeId)
     }
     
@@ -124,12 +124,12 @@ class Route {
         return discipline
     }
     
-    func getRouteDistance(routeId: Int) -> Int {
+    func getRouteDistance(routeId: Int) -> Double {
         
         //Query
         
         //DummyValue
-        let distance = 64
+        let distance = 64.0
         return distance
     }
     

@@ -115,7 +115,13 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
         
         //Updating data in the UI
         currentSpeed = locValue.speed
-        trackedDistance = locValue.distance(from: initialLocation)
+        if(locations.count == 1){
+            trackedDistance = locValue.distance(from: initialLocation)
+        }else{
+            trackedDistance += locations.last!.distance(from: locations[locations.count-2])
+        }
+        
+            //locValue.distance(from: initialLocation)
         currentSpeedLabel.text = "\(currentSpeed)" + " m/s"
         currentDistanceLabel.text = "\(trackedDistance)" + " m"
         

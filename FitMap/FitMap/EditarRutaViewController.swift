@@ -119,10 +119,11 @@ class EditarRutaViewController: UIViewController {
         
         
 //        starView.didFinishTouchingCosmos = { rating in self.route.rating = Int(self.starView.rating)}
-//        
-//        route.time = Int64(timeLabel.text!)!
-//        route.routeDistance = Int(distanceLabel.text!)!
-//        route.routeDiscipline = discipline
+        //Use a f$%@$ slider to catch review value
+        
+        route.time = Int64(timeLabel.text!)!
+        route.distance = Int(distanceLabel.text!)!
+        route.discipline = discipline
        
         // Send this route object to the model, to insert it into the database
         let save = routeSaving()

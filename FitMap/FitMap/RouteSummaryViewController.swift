@@ -13,6 +13,13 @@ class RouteSummaryViewController: UIViewController {
 
     @IBOutlet weak var starView: CosmosView! //Missing method for data capture from stars
     
+     var route = Route() //Route instance. Object to be stored on DB (passed to the model)
+    
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var distanceLabel: UILabel!
+    
+    var timeRecorded: Int64 = 0
+    var distanceRecorded: Double = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +27,9 @@ class RouteSummaryViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         
+        timeLabel.text =  "\(timeRecorded)"
+        distanceLabel.text = "\(distanceRecorded)"
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,17 +39,36 @@ class RouteSummaryViewController: UIViewController {
     
     
     @IBAction func submitButton(_ sender: UIButton) {
+//        
+//        let storyBoard : UIStoryboard = UIStoryboard(name: "DetalleRuta", bundle:nil)
+//        
+//        let prevViewController = storyBoard.instantiateViewController(withIdentifier: "RunViewController") as! RunViewController
+//        
+//        prevViewController.dismiss(animated: true, completion: nil)
         
         self.dismiss(animated: true, completion: nil)
         
         let storyBoard : UIStoryboard = UIStoryboard(name: "DetalleRuta", bundle:nil)
         
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "DetailsReviewViewController") as! DetailsReviewViewController
-        self.present(nextViewController, animated:true, completion:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
     
         
-       
+        navigationController?.pushViewController(nextViewController, animated: true)
+//        self.present(nextViewController, animated:true, completion:nil)
+    
+        
+        
+        
+        
     }
+    
+    func getRouteData(route: Route){
+        
+        timeRecorded = route.time
+        distanceRecorded = route.distance
+        
+    }
+    
 
     /*
     // MARK: - Navigation

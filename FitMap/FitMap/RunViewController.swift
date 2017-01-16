@@ -71,11 +71,24 @@ class RunViewController: UIViewController, CLLocationManagerDelegate {
         cleanData()
         let storyBoard : UIStoryboard = UIStoryboard(name: "DetalleRuta", bundle:nil)
         
+        /*
+         Create a route instance, and assign time and distance to it
+         Then, send this instance to editarRutaViewController
+         */
+        let route = Route()
+        
+        route.setDistance(distance: self.trackedDistance)
+        
+        route.setTime(time: Int64(self.endingTime.uptimeNanoseconds)-Int64(self.startingTime.uptimeNanoseconds))
+        
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "RouteSummaryViewController") as! RouteSummaryViewController
+        
+        
+        nextViewController.getRouteData(route: route) // Sending the route data recorded to the editarRutaViewController
         
         doneRouteButton.isHidden = true
         doRouteButton.isHidden = false
-        
+        self.dismiss(animated: true, completion: nil)
         self.present(nextViewController, animated:true, completion:nil)
         
     }
@@ -95,7 +108,7 @@ class RunViewController: UIViewController, CLLocationManagerDelegate {
     func cleanData(){
         path = GMSMutablePath()
         trackedLocations = []
-        trackedDistance = 0.00
+//        trackedDistance = 0.00
         currentSpeed = 0.00
         stateForFirstLocation = false
         currentDistanceLabel.text = " 0.00 m"
@@ -111,9 +124,15 @@ class RunViewController: UIViewController, CLLocationManagerDelegate {
         
         let locValue = locations.last!
         
+        
         //Updating data in the UI
         currentSpeed = locValue.speed
-        trackedDistance = locValue.distance(from: initialLocation)
+        if(locations.count == 1){
+            trackedDistance = locValue.distance(from: initialLocation)
+        }else{
+            trackedDistance += locations.last!.distance(from: locations[locations.count-2])
+        }
+        
         //currentSpeedLabel.text = "\(currentSpeed)" + " m/s"
         currentDistanceLabel.text = "\(trackedDistance)" + " m"
         

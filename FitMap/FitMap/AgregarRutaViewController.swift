@@ -87,6 +87,7 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
                 
                 let nextViewController = storyBoard.instantiateViewController(withIdentifier: "EditarRutaViewController") as! EditarRutaViewController
 
+                
                 nextViewController.getRouteData(route: route) // Sending the route data recorded to the editarRutaViewController
                 
                 self.present(nextViewController, animated:true, completion:nil)

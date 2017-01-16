@@ -451,7 +451,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="distanceLabel" destination="Wus-Pz-1x2" id="Q1Z-9N-YeG"/>
                         <outlet property="starView" destination="ahq-kz-peK" id="sgH-kg-cL1"/>
+                        <outlet property="timeLabel" destination="plP-yL-NVU" id="oeq-XH-mdR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VvW-hw-6gD" userLabel="First Responder" sceneMemberID="firstResponder"/>

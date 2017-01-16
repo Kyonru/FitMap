@@ -25,6 +25,7 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
     var initialLocation = CLLocation(latitude: 0.00, longitude: 0.00)
     var startingTime = DispatchTime.now()
     var endingTime = DispatchTime.now()
+    var run = RunSpeedTimeDistance()
     
     
     @IBOutlet weak var currentSpeedLabel: UILabel!
@@ -141,10 +142,10 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
         
             //locValue.distance(from: initialLocation)
         currentSpeedLabel.text = "\(currentSpeed)" + " m/s"
-        currentDistanceLabel.text = "\(trackedDistance)" + " m"
+        currentDistanceLabel.text = run.distance(Distance: trackedDistance) + " m"
         
         endingTime = DispatchTime.now()
-        currentTimeLabel.text = "\(endingTime.uptimeNanoseconds-startingTime.uptimeNanoseconds)"
+        currentTimeLabel.text = run.nanoToSeconds(seconds: Double(endingTime.uptimeNanoseconds-startingTime.uptimeNanoseconds))
         
         // Adding locations to a list
         trackedLocations.append(locValue)

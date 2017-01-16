@@ -14,7 +14,7 @@ class RunSpeedTimeDistance{
     var distance: Double = 0.0
     
     func distance(Distance: Double) -> String{
-        return "\(Double(round(1000*Distance)/1000))"
+        return "\(Double(round(10*Distance)/10))"
     }
     
     func nanoToSeconds (seconds : Double) -> String {

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Rdn-vJ-BU2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Rdn-vJ-BU2">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -42,11 +42,11 @@
             </objects>
             <point key="canvasLocation" x="-778" y="1092"/>
         </scene>
-        <!--Me-->
+        <!--Item-->
         <scene sceneID="0de-6i-s9S">
             <objects>
                 <navigationController id="IzN-rL-goQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Me" image="boy" selectedImage="boy" id="xT9-IF-wfO"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="CirleMale" selectedImage="CirleMale" id="rk2-ai-LQr"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="mQC-qX-MvZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -59,11 +59,11 @@
             </objects>
             <point key="canvasLocation" x="-2468" y="1093"/>
         </scene>
-        <!--Detalle-->
+        <!--Navigation Controller-->
         <scene sceneID="TxV-ok-kiQ">
             <objects>
                 <navigationController id="MBo-Bk-caJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Detalle" image="detalle" selectedImage="detalle" id="8B3-JV-uHc">
+                    <tabBarItem key="tabBarItem" image="add-place" selectedImage="add-place" id="8B3-JV-uHc">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Cwb-Ny-jYj">
@@ -78,11 +78,11 @@
             </objects>
             <point key="canvasLocation" x="-2431" y="346"/>
         </scene>
-        <!--Agregar-->
+        <!--Navigation Controller-->
         <scene sceneID="sYf-zJ-AS4">
             <objects>
                 <navigationController id="1dj-Ye-n4X" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Agregar" image="agregar" selectedImage="agregar" id="zki-62-KOM"/>
+                    <tabBarItem key="tabBarItem" image="routeFinder" selectedImage="routeFinder" id="zki-62-KOM"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="4Mb-5e-vQ0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -126,11 +126,11 @@
             </objects>
             <point key="canvasLocation" x="-1162" y="-1067"/>
         </scene>
-        <!--Loop-->
+        <!--Navigation Controller-->
         <scene sceneID="CDD-Uh-g2Q">
             <objects>
                 <navigationController id="xyq-ms-Y0Z" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Loop" image="loop" id="SJN-Ts-9fM"/>
+                    <tabBarItem key="tabBarItem" title="" image="LoopIcon" selectedImage="LoopIcon" id="1nj-6G-42g"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="rsj-Z7-z3j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -145,9 +145,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="agregar" width="50" height="50"/>
-        <image name="boy" width="50" height="50"/>
-        <image name="detalle" width="50" height="50"/>
-        <image name="loop" width="60" height="31"/>
+        <image name="CirleMale" width="32" height="32"/>
+        <image name="LoopIcon" width="32" height="32"/>
+        <image name="add-place" width="32" height="32"/>
+        <image name="routeFinder" width="32" height="32"/>
     </resources>
 </document>

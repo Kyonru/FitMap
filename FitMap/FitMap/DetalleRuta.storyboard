@@ -128,6 +128,7 @@
                                 <segment title="Route Details"/>
                                 <segment title="Reviews"/>
                             </segments>
+                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="ChangeView:" destination="Fzp-Vx-Onu" eventType="valueChanged" id="Pdq-Uw-juF"/>
                             </connections>
@@ -267,7 +268,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUF-C8-Zr7">
                                 <rect key="frame" x="171" y="536" width="32" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="RUN"/>
+                                <state key="normal" title="RUN">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="53l-87-A3Y" kind="show" id="66j-QC-Lel"/>
                                 </connections>
@@ -344,7 +347,9 @@
                                 <rect key="frame" x="161" y="522" width="52" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <state key="normal" title="▶︎"/>
+                                <state key="normal" title="▶︎">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="doButton:" destination="53l-87-A3Y" eventType="touchUpInside" id="ZOH-2P-Bt6"/>
                                 </connections>
@@ -353,7 +358,9 @@
                                 <rect key="frame" x="172" y="528" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <state key="normal" title="||"/>
+                                <state key="normal" title="||">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="doneButton:" destination="53l-87-A3Y" eventType="touchUpInside" id="qtf-l3-OxT"/>
                                 </connections>
@@ -388,7 +395,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dil-4F-EgH">
                                 <rect key="frame" x="282" y="582" width="49" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Submit"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="submitButton:" destination="RXO-BA-r16" eventType="touchUpInside" id="2gl-Hm-iqU"/>
                                 </connections>

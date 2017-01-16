@@ -92,6 +92,9 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate, GM
 //        blurView.frame = disciplinesView.bounds
 //        disciplinesView.addSubview(blurView)
 
+        //Rounding borders
+        disciplinesView.layer.cornerRadius = 10.0
+        disciplinesView.clipsToBounds = true
         
     }
     

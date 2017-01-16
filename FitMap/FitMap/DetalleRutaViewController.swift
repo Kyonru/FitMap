@@ -115,6 +115,7 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate, GM
             initialLocation = CLLocation(latitude: lat, longitude: long)
             let initialMarker = GMSMarker()
             initialMarker.title = "0"
+            initialMarker.icon = UIImage(named: "pin2")
             initialMarker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
             
             initialMarker.map = MapView

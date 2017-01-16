@@ -19,7 +19,7 @@ class RunViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var doneRouteButton: UIButton!
     var locationManager = CLLocationManager()
     var routeId = 0
-    
+    var run = RunSpeedTimeDistance()
     
     var path = GMSMutablePath()
     var trackedLocations : [CLLocation] = []
@@ -134,10 +134,9 @@ class RunViewController: UIViewController, CLLocationManagerDelegate {
         }
         
         //currentSpeedLabel.text = "\(currentSpeed)" + " m/s"
-        currentDistanceLabel.text = "\(trackedDistance)" + " m"
-        
+        currentDistanceLabel.text = run.distance(Distance: trackedDistance) + " m"
         endingTime = DispatchTime.now()
-        currentTimeLabel.text = "\(endingTime.uptimeNanoseconds-startingTime.uptimeNanoseconds)"
+        currentTimeLabel.text = run.nanoToSeconds(seconds: Double(endingTime.uptimeNanoseconds-startingTime.uptimeNanoseconds))
         
         // Adding locations to a list
         trackedLocations.append(locValue)

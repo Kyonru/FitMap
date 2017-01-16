@@ -15,6 +15,7 @@
 		5025C5DE1E298F0400D24332 /* ReviewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5025C5DD1E298F0400D24332 /* ReviewDataSource.swift */; };
 		5025C5E01E29932200D24332 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5025C5DF1E29932200D24332 /* ReviewCell.swift */; };
 		504A1E661E2063AF00D3118A /* DetailsReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504A1E651E2063AF00D3118A /* DetailsReviewViewController.swift */; };
+		507DFBA81E2D646E00D9B299 /* RunSpeedTimeDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507DFBA71E2D646E00D9B299 /* RunSpeedTimeDistance.swift */; };
 		5083DB2E1E01F7F100F4113C /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5083DB2D1E01F7F100F4113C /* Me.storyboard */; };
 		5083DB301E01F84300F4113C /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5083DB2F1E01F84300F4113C /* MeViewController.swift */; };
 		5084F2041E281FD200E33415 /* RouteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5084F2031E281FD200E33415 /* RouteDataSource.swift */; };
@@ -74,6 +75,7 @@
 		5025C5DD1E298F0400D24332 /* ReviewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewDataSource.swift; sourceTree = "<group>"; };
 		5025C5DF1E29932200D24332 /* ReviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
 		504A1E651E2063AF00D3118A /* DetailsReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsReviewViewController.swift; sourceTree = "<group>"; };
+		507DFBA71E2D646E00D9B299 /* RunSpeedTimeDistance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunSpeedTimeDistance.swift; sourceTree = "<group>"; };
 		5083DB2D1E01F7F100F4113C /* Me.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
 		5083DB2F1E01F84300F4113C /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		5084F2031E281FD200E33415 /* RouteDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteDataSource.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			children = (
 				50E017E01E267D4D001BB7B6 /* RouteSummaryViewController.swift */,
 				50E017DE1E266F49001BB7B6 /* RunViewController.swift */,
+				507DFBA71E2D646E00D9B299 /* RunSpeedTimeDistance.swift */,
 			);
 			name = RUN;
 			sourceTree = "<group>";
@@ -605,6 +608,7 @@
 				5025C5D91E298B9700D24332 /* Cells.swift in Sources */,
 				5088E8211E00AAFF0004AB50 /* LoopViewController.swift in Sources */,
 				DDB2E6E71E2953A70098B0AB /* Route.swift in Sources */,
+				507DFBA81E2D646E00D9B299 /* RunSpeedTimeDistance.swift in Sources */,
 				DDE048371DF8CDBB0043085A /* ViewController.swift in Sources */,
 				504A1E661E2063AF00D3118A /* DetailsReviewViewController.swift in Sources */,
 				DDEFC7581E22D26100521809 /* MapLoopViewController.swift in Sources */,

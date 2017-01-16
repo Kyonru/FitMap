@@ -129,7 +129,9 @@ class EditarRutaViewController: UIViewController {
         route.time = Int64(timeLabel.text!)!
         route.distance = Double(distanceLabel.text!)!
         route.discipline = discipline
-       
+        route.rating = Int(starView.rating)
+        //print(route.rating)
+        
         // Send this route object to the model, to insert it into the database
         let save = routeSaving()
         save.insertRoute(route: route)

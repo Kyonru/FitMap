@@ -42,11 +42,11 @@
             </objects>
             <point key="canvasLocation" x="-778" y="1092"/>
         </scene>
-        <!--Item-->
+        <!--Me-->
         <scene sceneID="0de-6i-s9S">
             <objects>
                 <navigationController id="IzN-rL-goQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="CirleMale" selectedImage="CirleMale" id="rk2-ai-LQr"/>
+                    <tabBarItem key="tabBarItem" title="Me" image="CirleMale" selectedImage="CirleMale" id="rk2-ai-LQr"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="mQC-qX-MvZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -59,11 +59,11 @@
             </objects>
             <point key="canvasLocation" x="-2468" y="1093"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Add Route-->
         <scene sceneID="TxV-ok-kiQ">
             <objects>
                 <navigationController id="MBo-Bk-caJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" image="add-place" selectedImage="add-place" id="8B3-JV-uHc">
+                    <tabBarItem key="tabBarItem" title="Add Route" image="add-place" selectedImage="add-place" id="8B3-JV-uHc">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Cwb-Ny-jYj">
@@ -78,11 +78,11 @@
             </objects>
             <point key="canvasLocation" x="-2431" y="346"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Discover-->
         <scene sceneID="sYf-zJ-AS4">
             <objects>
                 <navigationController id="1dj-Ye-n4X" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" image="routeFinder" selectedImage="routeFinder" id="zki-62-KOM"/>
+                    <tabBarItem key="tabBarItem" title="Discover" image="routeFinder" selectedImage="routeFinder" id="zki-62-KOM"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="4Mb-5e-vQ0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -126,11 +126,11 @@
             </objects>
             <point key="canvasLocation" x="-1162" y="-1067"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Loop-->
         <scene sceneID="CDD-Uh-g2Q">
             <objects>
                 <navigationController id="xyq-ms-Y0Z" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="LoopIcon" selectedImage="LoopIcon" id="1nj-6G-42g"/>
+                    <tabBarItem key="tabBarItem" title="Loop" image="LoopIcon" selectedImage="LoopIcon" id="1nj-6G-42g"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="rsj-Z7-z3j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

@@ -21,6 +21,10 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate, GM
     var rectangle = GMSPolyline()
     var rectangle2 = GMSPolyline()
     
+    @IBOutlet weak var cyclingButton: UIButton!
+    @IBOutlet weak var runningButton: UIButton!
+    @IBOutlet weak var skatingButton: UIButton!
+    
     var discipline = "" //discipline selected
     
     @IBOutlet weak var disciplinesView: UIView!
@@ -78,6 +82,16 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate, GM
 //            disciplinesView.backgroundColor = UIColor.clear
 //        }
         
+        
+        /********************************************************************/
+        //My last try to make the disciple view blur. But it hides me the buttons
+        
+        
+//        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
+//        let blurView = UIVisualEffectView(effect: blurEffect)
+//        blurView.frame = disciplinesView.bounds
+//        disciplinesView.addSubview(blurView)
+
         
     }
     
@@ -176,6 +190,7 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate, GM
         default:
             discipline = ""
         }
+        
         
     }
 

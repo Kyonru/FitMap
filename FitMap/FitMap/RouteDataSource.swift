@@ -66,6 +66,9 @@ class RouteDataSource {
                 path.add(route)
                 polyline = GMSPolyline(path: path)
             }
+            polyline.strokeWidth = 3
+            polyline.geodesic = true
+            polyline.strokeColor = UIColor.red//(red:96, green: 255, blue: 29, alpha: 1.0)
             polyline.map = MapView
             setMarker(route: array, map: MapView)
             
@@ -87,6 +90,7 @@ class RouteDataSource {
             initialMarker.title = "0"
         }
     
+        initialMarker.icon = UIImage(named: "pin2")
         initialMarker.position = CLLocationCoordinate2D(latitude:initialLocation.latitude, longitude: initialLocation.longitude)
         initialMarker.map = MapView
         

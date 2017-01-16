@@ -34,7 +34,7 @@
                                         <rect key="frame" x="8" y="3" width="51" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Cycling">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="1" green="0.0" blue="0.056107677723829852" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="disciplineSelected:" destination="SDN-cC-d8Y" eventType="touchUpInside" id="Pv8-cB-Dih"/>
@@ -44,7 +44,7 @@
                                         <rect key="frame" x="67" y="3" width="57" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Running">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="1" green="0.009056978081934508" blue="0.01926035344371968" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="disciplineSelected:" destination="SDN-cC-d8Y" eventType="touchUpInside" id="APH-qg-FZY"/>
@@ -54,7 +54,7 @@
                                         <rect key="frame" x="132" y="3" width="52" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Skating">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="1" green="0.068430770366706417" blue="0.12141622002795061" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="disciplineSelected:" destination="SDN-cC-d8Y" eventType="touchUpInside" id="dYY-Rf-xNF"/>
@@ -69,7 +69,10 @@
                     <navigationItem key="navigationItem" title="Title" id="mCb-sv-9Tz"/>
                     <connections>
                         <outlet property="MapView" destination="fcu-9Y-XPg" id="Kme-0T-jKC"/>
+                        <outlet property="cyclingButton" destination="ouz-ep-VTA" id="GdY-cS-tL9"/>
                         <outlet property="disciplinesView" destination="hUh-U6-Udq" id="kqF-LF-Erl"/>
+                        <outlet property="runningButton" destination="0rs-ip-Hsu" id="zTz-2H-W4W"/>
+                        <outlet property="skatingButton" destination="QVk-37-1WH" id="gR5-ah-f5f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zc6-eq-W1i" userLabel="First Responder" sceneMemberID="firstResponder"/>

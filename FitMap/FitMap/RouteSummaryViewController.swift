@@ -56,9 +56,8 @@ class RouteSummaryViewController: UIViewController {
         navigationController?.pushViewController(nextViewController, animated: true)
 //        self.present(nextViewController, animated:true, completion:nil)
     
-        
-        
-        
+        route.rating = Int(starView.rating)
+        print(route.rating)
         
     }
     

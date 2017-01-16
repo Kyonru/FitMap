@@ -12,11 +12,19 @@ import GoogleMaps
 class DetailsReviewViewController: UIViewController {
 
     
+    @IBOutlet weak var FirstViewContainer: UIView!
+    
+    @IBOutlet weak var SecondViewContainer: UIView!
+    
+    @IBOutlet weak var SegmentedControl: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        FirstViewContainer.isHidden = false
+        SecondViewContainer.isHidden = true
         
     }
 
@@ -25,14 +33,10 @@ class DetailsReviewViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    @IBOutlet weak var FirstViewContainer: UIView!
-    
-    @IBOutlet weak var SecondViewContainer: UIView!
-    
-    @IBOutlet weak var SegmentedControl: UISegmentedControl!
+
     
     //Switching between views (first = details; second = review)
+    
     
     @IBAction func ChangeView(_ sender: UISegmentedControl) {
         

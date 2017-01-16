@@ -12,7 +12,7 @@
         <!--Title-->
         <scene sceneID="Xv7-RT-WRV">
             <objects>
-                <viewController id="SDN-cC-d8Y" customClass="DetalleRutaViewController" customModule="FitMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetalleRutaViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SDN-cC-d8Y" customClass="DetalleRutaViewController" customModule="FitMap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dEj-oV-sba"/>
                         <viewControllerLayoutGuide type="bottom" id="uMr-AO-B6n"/>
@@ -284,7 +284,7 @@
         <!--Run View Controller-->
         <scene sceneID="obu-aF-9p1">
             <objects>
-                <viewController id="53l-87-A3Y" customClass="RunViewController" customModule="FitMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RunViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="53l-87-A3Y" customClass="RunViewController" customModule="FitMap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="U97-rM-rxU"/>
                         <viewControllerLayoutGuide type="bottom" id="GkP-Du-oYZ"/>

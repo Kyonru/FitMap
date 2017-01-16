@@ -27,39 +27,50 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hUh-U6-Udq">
-                                <rect key="frame" x="91" y="64" width="193" height="37"/>
+                                <rect key="frame" x="101" y="314" width="173" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ouz-ep-VTA">
-                                        <rect key="frame" x="8" y="3" width="51" height="30"/>
+                                    <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tQZ-hp-Aq7">
+                                        <rect key="frame" x="-5" y="-7" width="182" height="53"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Cycling">
-                                            <color key="titleColor" red="1" green="0.0" blue="0.056107677723829852" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="disciplineSelected:" destination="SDN-cC-d8Y" eventType="touchUpInside" id="Pv8-cB-Dih"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0rs-ip-Hsu">
-                                        <rect key="frame" x="67" y="3" width="57" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Running">
-                                            <color key="titleColor" red="1" green="0.009056978081934508" blue="0.01926035344371968" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="disciplineSelected:" destination="SDN-cC-d8Y" eventType="touchUpInside" id="APH-qg-FZY"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QVk-37-1WH">
-                                        <rect key="frame" x="132" y="3" width="52" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Skating">
-                                            <color key="titleColor" red="1" green="0.068430770366706417" blue="0.12141622002795061" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="disciplineSelected:" destination="SDN-cC-d8Y" eventType="touchUpInside" id="dYY-Rf-xNF"/>
-                                        </connections>
-                                    </button>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="p3C-Nk-NDD">
+                                            <rect key="frame" x="0.0" y="0.0" width="182" height="53"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QVk-37-1WH">
+                                                    <rect key="frame" x="148" y="15" width="30" height="29"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" image="skateboard-2">
+                                                        <color key="titleColor" red="1" green="0.068430770366706417" blue="0.12141622002795061" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="disciplineSelected:" destination="SDN-cC-d8Y" eventType="touchUpInside" id="dYY-Rf-xNF"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0rs-ip-Hsu">
+                                                    <rect key="frame" x="97" y="13" width="43" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" image="icon">
+                                                        <color key="titleColor" red="1" green="0.009056978081934508" blue="0.01926035344371968" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="disciplineSelected:" destination="SDN-cC-d8Y" eventType="touchUpInside" id="APH-qg-FZY"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ouz-ep-VTA">
+                                                    <rect key="frame" x="52" y="10" width="37" height="37"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" image="bicycle">
+                                                        <color key="titleColor" red="1" green="0.0" blue="0.056107677723829852" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="disciplineSelected:" destination="SDN-cC-d8Y" eventType="touchUpInside" id="Pv8-cB-Dih"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </view>
+                                        <blurEffect style="light"/>
+                                    </visualEffectView>
                                 </subviews>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -464,4 +475,10 @@
             <point key="canvasLocation" x="3357.5999999999999" y="1934.4827586206898"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bicycle" width="37" height="37"/>
+        <image name="icon" width="37" height="37"/>
+        <image name="skateboard-2" width="37" height="37"/>
+    </resources>
+    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
 </document>

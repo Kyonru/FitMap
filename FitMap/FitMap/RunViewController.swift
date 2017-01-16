@@ -68,7 +68,7 @@ class RunViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func doneButton(_ sender: UIButton) {
         
         locationManager.stopUpdatingLocation()
-        cleanData()
+        
         let storyBoard : UIStoryboard = UIStoryboard(name: "DetalleRuta", bundle:nil)
         
         /*
@@ -85,9 +85,11 @@ class RunViewController: UIViewController, CLLocationManagerDelegate {
         
         
         nextViewController.getRouteData(route: route) // Sending the route data recorded to the editarRutaViewController
-        
+        nextViewController.getTimeDistance(time: currentTimeLabel.text!, distance: currentDistanceLabel.text!)
         doneRouteButton.isHidden = true
         doRouteButton.isHidden = false
+        
+         cleanData()
         self.dismiss(animated: true, completion: nil)
         self.present(nextViewController, animated:true, completion:nil)
         

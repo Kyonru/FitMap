@@ -21,14 +21,18 @@ class RouteSummaryViewController: UIViewController {
     var timeRecorded: Int64 = 0
     var distanceRecorded: Double = 0.0
     
+    
+    var timeToShow = " "
+    var distanceToShow = " "
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
         
-        timeLabel.text =  "\(timeRecorded)"
-        distanceLabel.text = "\(distanceRecorded)"
+        timeLabel.text =  timeToShow
+        distanceLabel.text = distanceToShow
 
     }
 
@@ -65,6 +69,13 @@ class RouteSummaryViewController: UIViewController {
         
         timeRecorded = route.time
         distanceRecorded = route.distance
+        
+    }
+    
+    func getTimeDistance(time: String, distance: String){
+        
+        timeToShow = time
+        distanceToShow = distance
         
     }
     

@@ -26,11 +26,17 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
     var startingTime = DispatchTime.now()
     var endingTime = DispatchTime.now()
     var run = RunSpeedTimeDistance()
+    var firstTime = false
+    var wasFirst = false
     
     
     @IBOutlet weak var currentSpeedLabel: UILabel!
     @IBOutlet weak var currentDistanceLabel: UILabel!
     @IBOutlet weak var currentTimeLabel: UILabel!
+    
+    @IBOutlet weak var timeView: UIVisualEffectView!
+    @IBOutlet weak var distanceView: UIView!
+    @IBOutlet weak var speedView: UIVisualEffectView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,10 +53,28 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
             locationManager.requestAlwaysAuthorization()
             
         }
-        
+
+        locationManager.startUpdatingLocation()
+//        locationManager.stopUpdatingLocation()
+
         
         
         // MapView.isMyLocationEnabled = true
+        
+        
+        //Rounding borders
+        timeView.layer.cornerRadius = 15.0
+        timeView.clipsToBounds = true
+//        timeView.backgroundColor = UIColor(red:0.255, green: 0.148, blue: 0.163, alpha: 1.0)
+
+        
+        distanceView.layer.cornerRadius = 15.0
+        distanceView.clipsToBounds = true
+        
+        speedView.layer.cornerRadius = 15.0
+        speedView.clipsToBounds = true
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -108,6 +132,7 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
     }
     
     @IBAction func trackRoute(_ sender: UIButton) {
+        wasFirst = true
         if sender.currentTitle == "Start"{
             sender.setTitle("Stop", for:.normal)
             
@@ -128,60 +153,74 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
     
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-        
+       
         let locValue = locations.last!
-        
-        //Updating data in the UI
-        currentSpeed = locValue.speed
-        if(locations.count == 1){
-            trackedDistance = locValue.distance(from: initialLocation)
-        }else{
-            trackedDistance += locations.last!.distance(from: locations[locations.count-2])
-        }
-        
-            //locValue.distance(from: initialLocation)
-        currentSpeedLabel.text = "\(currentSpeed)" + " m/s"
-        currentDistanceLabel.text = run.distance(Distance: trackedDistance) + " m"
-        
-        endingTime = DispatchTime.now()
-        currentTimeLabel.text = run.nanoToSeconds(seconds: Double(endingTime.uptimeNanoseconds-startingTime.uptimeNanoseconds))
-        
-        // Adding locations to a list
-        trackedLocations.append(locValue)
-        
         let long = locValue.coordinate.longitude
         let lat = locValue.coordinate.latitude
         
-        
-        
-        
-        //Here is the creation of the initial marker
-        if stateForFirstLocation == false{
-            initialLocation = CLLocation(latitude: lat, longitude: long)
-            let initialMarker = GMSMarker()
-            initialMarker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
+        if(!firstTime == false && wasFirst == true){
             
-            initialMarker.map = MapView
+//            let locValue = locations.last!
+            //Updating data in the UI
+            currentSpeed = locValue.speed
+            if(locations.count == 1){
+                trackedDistance = locValue.distance(from: initialLocation)
+            }else{
+                trackedDistance += locations.last!.distance(from: locations[locations.count-2])
+            }
+            
+            //locValue.distance(from: initialLocation)
+            currentSpeedLabel.text = "\(currentSpeed)" + " m/s"
+            currentDistanceLabel.text = run.distance(Distance: trackedDistance) + " m"
+            
+            endingTime = DispatchTime.now()
+            currentTimeLabel.text = run.nanoToSeconds(seconds: Double(endingTime.uptimeNanoseconds-startingTime.uptimeNanoseconds))
+            
+            // Adding locations to a list
+            trackedLocations.append(locValue)
+            
+
+            
+            
+            
+            
+            //Here is the creation of the initial marker
+            if stateForFirstLocation == false{
+                initialLocation = CLLocation(latitude: lat, longitude: long)
+                let initialMarker = GMSMarker()
+                initialMarker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
+                initialMarker.icon = UIImage(named: "pin2")
+                initialMarker.map = MapView
+                
+                camera = GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 15.0)
+                
+                MapView.camera = camera
+                
+                stateForFirstLocation = true
+            }
+            
+            //Following the user location
+            let updateCam = GMSCameraUpdate.setTarget(locations.last!.coordinate)
+            MapView.animate(with: updateCam)
+            
+            
+            
+            MapView.isMyLocationEnabled = true
+            
+            path.add(locValue.coordinate)
+            rectangle = GMSPolyline(path: path)
+            rectangle.map = MapView
+        }else{
             
             camera = GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 15.0)
-            
+            let updateCam = GMSCameraUpdate.setTarget(locations.last!.coordinate)
+            MapView.animate(with: updateCam)
             MapView.camera = camera
+            MapView.isMyLocationEnabled = true
+            firstTime = true
             
-            stateForFirstLocation = true
         }
         
-        //Following the user location
-        let updateCam = GMSCameraUpdate.setTarget(locations.last!.coordinate)
-        MapView.animate(with: updateCam)
-        
-
-        
-        MapView.isMyLocationEnabled = true
-        
-        path.add(locValue.coordinate)
-        rectangle = GMSPolyline(path: path)
-        rectangle.map = MapView
         
         
     }

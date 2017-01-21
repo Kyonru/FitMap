@@ -92,9 +92,11 @@ class RunViewController: UIViewController, CLLocationManagerDelegate {
         self.dismiss(animated: true, completion: nil)
         self.present(nextViewController, animated:true, completion:nil)
         
+        
     }
 
     @IBAction func doButton(_ sender: UIButton) {
+        
         doneRouteButton.isHidden = false
         doRouteButton.isHidden = true
         sender.setTitle("Stop", for:.normal)
@@ -152,6 +154,7 @@ class RunViewController: UIViewController, CLLocationManagerDelegate {
             let initialMarker = GMSMarker()
             initialMarker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
             initialMarker.isTappable = false
+            initialMarker.icon = UIImage(named:"pin2")
             initialMarker.map = MapView
             
             camera = GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 15.0)
@@ -173,6 +176,8 @@ class RunViewController: UIViewController, CLLocationManagerDelegate {
         
         
     }
+    
+    //RECIBO RUTA A MOSTRAR
 
     func setRouteToDraw(route: Route){
         routeDetail = route

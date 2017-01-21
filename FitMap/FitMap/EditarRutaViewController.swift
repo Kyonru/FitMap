@@ -20,10 +20,12 @@ class EditarRutaViewController: UIViewController {
     
     @IBOutlet weak var routeNameTextField: UITextField!
     
-    
     @IBOutlet weak var timeLabel: UILabel!
     
     @IBOutlet weak var distanceLabel: UILabel!
+    
+    
+    @IBOutlet weak var routeCommentTextField: UITextField!
     
     var discipline = " "
     
@@ -36,13 +38,6 @@ class EditarRutaViewController: UIViewController {
 
 
         // Do any additional setup after loading the view.
-        
-        
-        //Capturing the rating data
-        
-        // Called when user finishes changing the rating by lifting the finger from the view.
-        // This may be a good place to save the rating in the database or send to the server.
-//        cosmosView.didFinishTouchingCosmos = { rating in  //route.rating = x }
         
         
         timeLabel.text =  "\(timeRecorded)"
@@ -114,19 +109,19 @@ class EditarRutaViewController: UIViewController {
     
     @IBAction func submitAction(_ sender: UIButton) {
         
+        // Falta validar que el 
         if routeNameTextField.text != nil{
-//            route.routeName = routeNameTextField.text!
+            route.name = routeNameTextField.text!
         }
         
-        
-//        starView.didFinishTouchingCosmos = { rating in self.route.rating = Int(self.starView.rating)}
-        //Use a f$%@$ slider to catch review value
-        
-        route.time = Int64(timeLabel.text!)!
-        route.distance = Double(distanceLabel.text!)!
         route.discipline = discipline
         route.rating = Int(starView.rating)
-        //print(route.rating)
+        route.time = Int64(timeLabel.text!)!
+        route.distance = Double(distanceLabel.text!)!
+        
+        if routeCommentTextField.text != nil {
+            route.comment = routeCommentTextField.text!
+        }
         
         // Send this route object to the model, to insert it into the database
         let save = routeSaving()

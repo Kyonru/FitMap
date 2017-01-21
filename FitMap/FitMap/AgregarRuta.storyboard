@@ -270,6 +270,7 @@
                     <connections>
                         <outlet property="bottomConstraint" destination="EQ7-fj-LD5" id="rpw-qC-25V"/>
                         <outlet property="distanceLabel" destination="DN3-K3-NnQ" id="ndw-pg-8hI"/>
+                        <outlet property="routeCommentTextField" destination="qoh-Kr-8ZF" id="J7k-sc-IQ7"/>
                         <outlet property="routeNameTextField" destination="Vmk-nE-Wsw" id="GgJ-N2-3Of"/>
                         <outlet property="starView" destination="5bQ-sj-b64" id="Nqi-Hd-RKL"/>
                         <outlet property="timeLabel" destination="kmw-Se-bcM" id="nTH-rO-BdX"/>

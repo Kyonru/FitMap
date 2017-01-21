@@ -213,26 +213,26 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qpt-Rl-Jaf">
-                                <rect key="frame" x="275" y="155" width="52" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qpt-Rl-Jaf">
+                                <rect key="frame" x="283" y="152" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Skating"/>
+                                <state key="normal" image="skateboard-2"/>
                                 <connections>
                                     <action selector="disciplineButton:" destination="O39-15-L3j" eventType="touchUpInside" id="igQ-F8-vis"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIQ-TM-We1">
-                                <rect key="frame" x="150" y="155" width="51" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIQ-TM-We1">
+                                <rect key="frame" x="158" y="152" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Cycling"/>
+                                <state key="normal" image="bicycle"/>
                                 <connections>
                                     <action selector="disciplineButton:" destination="O39-15-L3j" eventType="touchUpInside" id="dWY-0L-nnG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5sV-GV-tXj">
-                                <rect key="frame" x="210" y="155" width="57" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5sV-GV-tXj">
+                                <rect key="frame" x="221" y="152" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Running"/>
+                                <state key="normal" image="icon"/>
                                 <connections>
                                     <action selector="disciplineButton:" destination="O39-15-L3j" eventType="touchUpInside" id="bKt-8u-iLe"/>
                                 </connections>
@@ -280,4 +280,9 @@
             <point key="canvasLocation" x="1520.8" y="-483.50824587706148"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bicycle" width="37" height="37"/>
+        <image name="icon" width="37" height="37"/>
+        <image name="skateboard-2" width="37" height="37"/>
+    </resources>
 </document>

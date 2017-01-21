@@ -82,7 +82,8 @@ class EditarRutaViewController: UIViewController {
     
     @IBAction func disciplineButton(_ sender: UIButton) {
         
-        let buttonTouched = sender.currentTitle!
+        let buttonTouched = sender.currentImage!
+        
         
         /*
          Pourpose: when a user tap 1 button, we got to query
@@ -90,19 +91,14 @@ class EditarRutaViewController: UIViewController {
          */
         
         switch buttonTouched {
-        case "Cycling":
-//            route.routeDiscipline = "cycling"
-           discipline = "cycling"
-
-        case "Running":
-//            route.routeDiscipline =  "running"
+        case UIImage(named: "bicycle")!:
+            discipline = "cycling"
+        case UIImage(named: "icon")!:
             discipline = "running"
-        case "Skating":
-//            route.routeDiscipline =  "skating"
+        case UIImage(named: "skateboard-2")!:
             discipline = "skating"
         default:
-//            route.routeDiscipline = ""
-            discipline = " "
+            discipline = ""
         }
 
     }

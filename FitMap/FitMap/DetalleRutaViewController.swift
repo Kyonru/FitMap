@@ -177,23 +177,24 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate, GM
 
     @IBAction func disciplineSelected(_ sender: UIButton){
         
-//        let buttonTouched = sender.currentTitle!
-//        
-//        /*
-//        Pourpose: when a user tap 1 button, we got to query
-//        the routes based on that category
-//        */
-//        
-//        switch buttonTouched {
-//        case "Cycling":
-//            discipline = "cycling"
-//        case "Running":
-//            discipline = "running"
-//        case "Skating":
-//            discipline = "skating"
-//        default:
-//            discipline = ""
-//        }
+        let buttonTouched = sender.currentImage!
+        
+        
+        /*
+        Pourpose: when a user tap 1 button, we got to query
+        the routes based on that category
+        */
+        
+        switch buttonTouched {
+        case UIImage(named: "bicycle")!:
+            discipline = "cycling"
+        case UIImage(named: "icon")!:
+            discipline = "running"
+        case UIImage(named: "skateboard-2")!:
+            discipline = "skating"
+        default:
+            discipline = ""
+        }
         
         
     }

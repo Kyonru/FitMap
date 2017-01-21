@@ -18,7 +18,7 @@ class RunViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var currentTimeLabel: UILabel!
     @IBOutlet weak var doneRouteButton: UIButton!
     var locationManager = CLLocationManager()
-    var routeId = 0
+    var routeDetail = Route()
     var run = RunSpeedTimeDistance()
     
     var path = GMSMutablePath()
@@ -43,8 +43,7 @@ class RunViewController: UIViewController, CLLocationManagerDelegate {
         //Drawing the selected route on map
         
         let routeData = RouteDataSource()
-        routeId = routeData.getRouteId()
-        routeData.drawRoute(routeId: routeId, map: MapView)
+        routeData.drawRoute(route: routeDetail, map: MapView)
 
         
         //LOCATIONMANAGER
@@ -175,8 +174,8 @@ class RunViewController: UIViewController, CLLocationManagerDelegate {
         
     }
 
-    func setRouteIdToDraw(_ id: Int){
-        routeId = id
+    func setRouteToDraw(route: Route){
+        routeDetail = route
     }
     
     /*

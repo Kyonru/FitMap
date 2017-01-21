@@ -15,7 +15,6 @@ class RouteDataSource {
 
     
     var routesArray: [[CLLocationCoordinate2D]] = []
-    
     var locationsArray: [CLLocationCoordinate2D] = []
     
     
@@ -26,6 +25,37 @@ class RouteDataSource {
      *   with the array returned by our API, plus the mapView from the wrapper
      *
      */
+    
+    //Por cada resultado del query, creo un objeto ruta con su id. Por cada ruta, hago un query 
+    // que me traiga los puntos de esa ruta ID, y mando ese arreglo de arreglo de coordenadas (todas las rutas) a retrieve path, que la dibujara en el map 
+    
+    //Creo objetos rutas a partir del query, y ahí mismo pongo la data
+    let testRoute = Route();
+    let testRoute2 = Route();
+    
+    func retrieveRoute(MapView: GMSMapView!){
+        
+        
+        testRoute.id = 0
+        testRoute.discipline = "cycling"
+        testRoute.rating = 4
+        testRoute.name = "First Test Route"
+        testRoute.distance = 102
+        testRoute.recordTime = 45454
+        testRoute.avgTime = 5466543
+        testRoute.comment = "It was an awesome route"
+        
+        testRoute2.id = 1
+        testRoute2.discipline = "skating"
+        testRoute2.rating = 3
+        testRoute2.name = "Second Test Route"
+        testRoute2.distance = 200
+        testRoute2.recordTime = 4545443543
+        testRoute2.avgTime = 5466543453
+        testRoute2.comment = "It was an awesome route"
+
+        retrievePath(MapView: MapView)
+    }
     
     //wrapper
     func retrievePath(MapView: GMSMapView!) {
@@ -49,46 +79,49 @@ class RouteDataSource {
         routesArray.append(locationsArray2)
         //End: Chunk used for testing
         
-        retrievePath(routesArray, map: MapView)
+        retrievePath(routesArray, map: MapView, route: testRoute)
+        
+        retrievePath(routesArray, map: MapView, route: testRoute2)
         
     }
     
-    private func retrievePath(_ routes: [[CLLocationCoordinate2D]], map MapView: GMSMapView!) {
-        
+    
+    private func retrievePath(_ routes: [[CLLocationCoordinate2D]], map MapView: GMSMapView!, route: Route) {
         
         for array in routes {
             
             let path = GMSMutablePath()
             var polyline = GMSPolyline()
             
-            for route in array {
-                
-                path.add(route)
+            for coordinate in array {
+                path.add(coordinate)
                 polyline = GMSPolyline(path: path)
             }
-            polyline.strokeWidth = 3
+            
+            polyline.strokeWidth = 4
             polyline.geodesic = true
             polyline.strokeColor = UIColor.red//(red:96, green: 255, blue: 29, alpha: 1.0)
             polyline.map = MapView
-            setMarker(route: array, map: MapView)
+            setMarker(route: array, map: MapView, routeInfo: route)
             
         }
         
     }
     
     
-    private func setMarker(route: [CLLocationCoordinate2D], map MapView: GMSMapView!) {
+    private func setMarker(route: [CLLocationCoordinate2D], map MapView: GMSMapView!, routeInfo: Route) {
         
-        let initialLocation = route.last!
+        let initialLocation = route.first!
         let initialMarker = GMSMarker()
         
         //Set the marketTitle equals the routeID
+        
   
-        if initialMarker.title == "0" {
-            initialMarker.title = "1"
-        }else{
-            initialMarker.title = "0"
-        }
+//        if initialMarker.title == "\(id)" {
+            initialMarker.title = "\(routeInfo.id)"
+//        }else{
+//            initialMarker.title = "0"
+//        }
     
         initialMarker.icon = UIImage(named: "pin2")
         initialMarker.position = CLLocationCoordinate2D(latitude:initialLocation.latitude, longitude: initialLocation.longitude)
@@ -97,23 +130,12 @@ class RouteDataSource {
         
     }
     
-    ///Get and set the routeId given a marker title
-    var routeId = 0
-    func setRouteId(_ id: Int) {
-        routeId = id
-    }
-    
-    func getRouteId() -> Int {
-        return routeId
-    }
-    ///////
+
     
     
+    //This func draw a route, and center the camera map on it
     
-    
-    //This func draw a route given the ID of that route, and center the camera map on it
-    
-    func drawRoute(routeId: Int, map mapView: GMSMapView){
+    func drawRoute(route: Route, map mapView: GMSMapView){
         
         /*
          Given that ID we got to query the route, AKA:
@@ -128,17 +150,18 @@ class RouteDataSource {
         //End: Chunk used for testing
 
         
-        drawRoute(locationsArray, map: mapView)
+        drawRoute(locationsArray, map: mapView, routeInfo: route)
         
     }
     
      //This func draw a route given the ID of that route, and center the camera map on it
-    private func drawRoute(_ route: [CLLocationCoordinate2D], map mapView: GMSMapView) {
+    private func drawRoute(_ route: [CLLocationCoordinate2D], map mapView: GMSMapView, routeInfo : Route) {
         
         let path = GMSMutablePath()
         var polyline = GMSPolyline()
         
-        setMarker(route: route, map: mapView)
+        setMarker(route: route, map: mapView, routeInfo: routeInfo)
+        
         
         for coordinate in route {
             
@@ -160,6 +183,38 @@ class RouteDataSource {
     
     //Retrieve from database routeData, and send it to the viewController
     
+    
+    
+    
+    
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    
+    ///Get and set the routeId given a marker title
+    var routeId = 0
+    func setRouteId(_ id: Int, mapView: GMSMapView) {
+        routeId = id
+        
+        //Llamar funcion que traiga toda la info de la ruta para crear el objeto ruta
+        
+        //dibujar en base a ese objeto ruta
+        retrievePath(MapView: mapView)
+    }
+    
+    func getRouteId() -> Int {
+        return routeId
+    }
+    ///////
+    
+    
+    
+    /*
+     * Once I got the routeID, I query all the route info based on that ID
+     * And send that route object to detailViewController
+     */
+    
+  
     
     
     

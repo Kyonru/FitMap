@@ -26,7 +26,7 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var mapView: GMSMapView!
     
-    var routeId = 0
+    var routeDetail = Route()
     
 
     override func viewDidLoad() {
@@ -42,8 +42,8 @@ class DetailViewController: UIViewController {
         //Drawing the selected route on map
         
         let routeData = RouteDataSource()
-        routeId = routeData.getRouteId()
-        routeData.drawRoute(routeId: routeId, map: mapView)
+//        routeId = routeData.getRouteId()
+        routeData.drawRoute(route: routeDetail, map: mapView)
 
         
     }
@@ -54,8 +54,8 @@ class DetailViewController: UIViewController {
     }
     
     
-    func setRouteIdToDraw(_ id: Int){
-        routeId = id
+    func setRouteToDraw(route: Route){
+        routeDetail = route
     }
 
 

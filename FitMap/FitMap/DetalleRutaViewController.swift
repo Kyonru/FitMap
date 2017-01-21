@@ -55,43 +55,9 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate, GM
         // Loading polylines to mapView
         
         let routeData = RouteDataSource() //initializing the model RouteDataSource
-        routeData.retrievePath(MapView: MapView) //This method draws the routes on map
-       
+//        routeData.retrievePath(MapView: MapView) //This method draws the routes on map
+        routeData.retrievePath(MapView: MapView)
         
-        
-        // Making the disciplines View blur
-        
-        
-        /*
-        This hides me the buttons I got on top of view
-        Thats why is commented. I (Jhonny) will fix this later
-        */
-        
-        //  only apply the blur if the user hasn't disabled transparency effects
-//        if !UIAccessibilityIsReduceTransparencyEnabled() {
-//            disciplinesView.backgroundColor = UIColor.clear
-//            
-//            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
-//            let blurEffectView = UIVisualEffectView(effect: blurEffect)
-//            //always fill the view
-//            blurEffectView.frame = disciplinesView.bounds
-//            blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//            
-//            disciplinesView.addSubview(blurEffectView) //if you have more UIViews, use an insertSubview API to place it where needed
-//        } else {
-//            disciplinesView.backgroundColor = UIColor.clear
-//        }
-        
-        
-        /********************************************************************/
-        //My last try to make the disciple view blur. But it hides me the buttons
-        
-        
-//        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
-//        let blurView = UIVisualEffectView(effect: blurEffect)
-//        blurView.frame = disciplinesView.bounds
-//        disciplinesView.addSubview(blurView)
-
         //Rounding borders
         disciplinesView.layer.cornerRadius = 10.0
         disciplinesView.clipsToBounds = true
@@ -142,7 +108,7 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate, GM
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         
         /*
-         Given the marker itle (route ID), we will call a method on RouteDataSource
+         Given the marker title (route ID), we will call a method on RouteDataSource
          that will draw the given route on the detailViewController, and will center the camera 
          on the route coordinates
         */
@@ -151,7 +117,8 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate, GM
         markerId = Int(marker.title!)!
         
         let routeData = RouteDataSource()
-        routeData.setRouteId(markerId)
+        routeData.setRouteId(markerId, mapView: MapView)
+        
 
         ////////////
         
@@ -160,7 +127,6 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate, GM
         let storyBoard : UIStoryboard = UIStoryboard(name: "DetalleRuta", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "DetailsReviewViewController") as! DetailsReviewViewController
 
-        
         self.navigationController?.pushViewController(nextViewController, animated: true)
         return true
     }

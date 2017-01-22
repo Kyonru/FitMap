@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import GoogleMaps
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     let APIKey = "AIzaSyDZVSHQcTmR1hxLHSFQJxNC5z1rbREjKbs"
     let themeColor = UIColor.red
-    //UIColor(red:0.1, green: 0.41, blue: 0.22, alpha: 1.0)
+    //UIColor(red:0.0, green: 0.200, blue: 0.100, alpha: 1.0)
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         //   Override point for customization after application launch.
@@ -116,6 +117,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    
+    
+    
+    
 
 }
 

@@ -20,11 +20,15 @@ class UserSaving{
     // Obtendo el id que le asigno la base de datos al user
     //guardo ese int en el iphone con core data
     
+    @available(iOS 10.0, *)
     func user(user: User) {
 
         userObject = user
+        saveUser(id: userObject.id)
         
     }
+    
+    
     
     ///INSERTO EL USER EN LA BASE DE DATOS
     
@@ -34,6 +38,7 @@ class UserSaving{
     //Una vez tengo el id del usuario, guardo ese int en el iphone con CoreData
     
 
+    ///////////
     @available(iOS 10.0, *)
     func saveUser(id: Int) {
         

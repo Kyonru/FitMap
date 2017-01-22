@@ -14,6 +14,11 @@ class LaunchViewController: UIViewController {
     
     @IBOutlet weak var nextButton: UIButton!
     
+    @IBOutlet weak var firstNameTextField: UITextField!
+    
+    @IBOutlet weak var lastNameTextField: UITextField!
+    
+    var user = User();
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,11 +57,21 @@ class LaunchViewController: UIViewController {
         
     }
     
+    @available(iOS 10.0, *)
     @IBAction func registerButton(_ sender: UIButton) {
         
-        //Cierro todo esto
         
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "LaunchScreen", bundle:nil)
+        //Capturing first and last name
+        let firstName = firstNameTextField.text!
+        let lastName = lastNameTextField.text!
+        
+        user.User(id: 0, name: firstName, lastNam: lastName)
+        
+        //Send this user object to the UserSaving moddel
+        
+        let saving = UserSaving();
+        saving.user(user: user)
+        
         
         
         self.dismiss(animated: true, completion: nil)
@@ -67,12 +82,6 @@ class LaunchViewController: UIViewController {
         let storyBoard : UIStoryboard = UIStoryboard(name: "DetalleRuta", bundle:nil)
         let detalleRutaViewController = storyBoard.instantiateViewController(withIdentifier: "DetalleRutaViewController") as! DetalleRutaViewController
         
-        //
-//        let storyBoard2 : UIStoryboard = UIStoryboard(name: "DetalleRuta", bundle:nil)
-//        let launchViewController = storyBoard2.instantiateViewController(withIdentifier: "LaunchViewController") as! LaunchViewController
-//        
-//            launchViewController.navigationController?.dismiss(animated: true, completion: nil)
-//        
         self.navigationController?.pushViewController(detalleRutaViewController, animated: true)
 
     

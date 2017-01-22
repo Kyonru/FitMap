@@ -38,6 +38,8 @@
 		DD82C6031E3460AA0059D668 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD82C6021E3460AA0059D668 /* Review.swift */; };
 		DD82C6051E34634A0059D668 /* ReviewSaving.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD82C6041E34634A0059D668 /* ReviewSaving.swift */; };
 		DD82C60A1E3494D70059D668 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD82C6091E3494D70059D668 /* LaunchViewController.swift */; };
+		DD82C60C1E352C050059D668 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD82C60B1E352C050059D668 /* User.swift */; };
+		DD82C60E1E352CC50059D668 /* UserSaving.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD82C60D1E352CC50059D668 /* UserSaving.swift */; };
 		DDB2E6E71E2953A70098B0AB /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB2E6E61E2953A70098B0AB /* Route.swift */; };
 		DDE048351DF8CDBB0043085A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE048341DF8CDBB0043085A /* AppDelegate.swift */; };
 		DDE048371DF8CDBB0043085A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE048361DF8CDBB0043085A /* ViewController.swift */; };
@@ -101,6 +103,8 @@
 		DD82C6021E3460AA0059D668 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		DD82C6041E34634A0059D668 /* ReviewSaving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewSaving.swift; sourceTree = "<group>"; };
 		DD82C6091E3494D70059D668 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		DD82C60B1E352C050059D668 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DD82C60D1E352CC50059D668 /* UserSaving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSaving.swift; sourceTree = "<group>"; };
 		DDB2E6E61E2953A70098B0AB /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		DDE048311DF8CDBB0043085A /* FitMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDE048341DF8CDBB0043085A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -217,6 +221,8 @@
 				50E9AB291E2571740028DAB2 /* DetailViewController.swift */,
 				5084F2031E281FD200E33415 /* RouteDataSource.swift */,
 				DDB2E6E61E2953A70098B0AB /* Route.swift */,
+				DD82C60B1E352C050059D668 /* User.swift */,
+				DD82C60D1E352CC50059D668 /* UserSaving.swift */,
 			);
 			name = DetalleRuta;
 			sourceTree = "<group>";
@@ -609,6 +615,7 @@
 				5025C5D71E298B3500D24332 /* MeDataSourse.swift in Sources */,
 				50E9AB2A1E2571740028DAB2 /* DetailViewController.swift in Sources */,
 				509BDD071E29999A0083E490 /* routeSaving.swift in Sources */,
+				DD82C60E1E352CC50059D668 /* UserSaving.swift in Sources */,
 				50CD9B811E008EB000B79DF9 /* DetalleRutaViewController.swift in Sources */,
 				1AD78E771E26632200CDFF7B /* EditarRutaViewController.swift in Sources */,
 				50E9AB2C1E2577470028DAB2 /* ReviewViewController.swift in Sources */,
@@ -625,6 +632,7 @@
 				504A1E661E2063AF00D3118A /* DetailsReviewViewController.swift in Sources */,
 				DDEFC7581E22D26100521809 /* MapLoopViewController.swift in Sources */,
 				DDE0483D1DF8CDBB0043085A /* FitMap.xcdatamodeld in Sources */,
+				DD82C60C1E352C050059D668 /* User.swift in Sources */,
 				5090D1761E00AAFD00331A5C /* AgregarRutaViewController.swift in Sources */,
 				50886A9F1E1AECE100B2E6AB /* ALoopViewController.swift in Sources */,
 				5025C5DE1E298F0400D24332 /* ReviewDataSource.swift in Sources */,

@@ -13,7 +13,9 @@ class RouteSummaryViewController: UIViewController {
 
     @IBOutlet weak var starView: CosmosView! //Missing method for data capture from stars
     
-     var route = Route() //Route instance. Object to be stored on DB (passed to the model)
+     var route = Route() //Route instance.
+    
+    var review = Review() // Review instance. Object to be sended to the model to be inserted on the DB
     
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
@@ -43,32 +45,41 @@ class RouteSummaryViewController: UIViewController {
     
     
     @IBAction func submitButton(_ sender: UIButton) {
-//        
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "DetalleRuta", bundle:nil)
-//        
-//        let prevViewController = storyBoard.instantiateViewController(withIdentifier: "RunViewController") as! RunViewController
-//        
-//        prevViewController.dismiss(animated: true, completion: nil)
+
         
         self.dismiss(animated: true, completion: nil)
         
         let storyBoard : UIStoryboard = UIStoryboard(name: "DetalleRuta", bundle:nil)
-        
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
     
+        /*
+        *fill the review object, and send it to the ReviewSaving model
+        */
+        
+        review.userId = 1 //set this later
+        review.routeId = route.id
+//        review.comment
+        review.rating = Int(starView.rating)
+        
+        let reviewData = ReviewSaving();
+        reviewData.saveReview(rev: review)
+        
         
         navigationController?.pushViewController(nextViewController, animated: true)
-//        self.present(nextViewController, animated:true, completion:nil)
     
-        route.rating = Int(starView.rating)
-        print(route.rating)
+//        route.rating = Int(starView.rating)
+//        print(route.rating)
         
     }
     
-    func getRouteData(route: Route){
+    
+    
+    func getRouteData(routeData: Route){
         
+        route = routeData
         timeRecorded = route.time
         distanceRecorded = route.distance
+        
         
     }
     

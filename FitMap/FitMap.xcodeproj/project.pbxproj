@@ -35,6 +35,8 @@
 		50E9AB2C1E2577470028DAB2 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E9AB2B1E2577470028DAB2 /* ReviewViewController.swift */; };
 		8C9C4158300A2971CB11C7D6 /* Pods_FitMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D55EA507A77E411923E6F90 /* Pods_FitMap.framework */; };
 		B3C5B1E894B07DCAF2B161D2 /* Pods_FitMapUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B06BAD84722B5DA0BE8C0C5 /* Pods_FitMapUITests.framework */; };
+		DD82C6031E3460AA0059D668 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD82C6021E3460AA0059D668 /* Review.swift */; };
+		DD82C6051E34634A0059D668 /* ReviewSaving.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD82C6041E34634A0059D668 /* ReviewSaving.swift */; };
 		DDB2E6E71E2953A70098B0AB /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB2E6E61E2953A70098B0AB /* Route.swift */; };
 		DDE048351DF8CDBB0043085A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE048341DF8CDBB0043085A /* AppDelegate.swift */; };
 		DDE048371DF8CDBB0043085A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE048361DF8CDBB0043085A /* ViewController.swift */; };
@@ -95,6 +97,8 @@
 		69CA57A03EA753CF45B82EAA /* Pods-FitMapUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitMapUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FitMapUITests/Pods-FitMapUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6D55EA507A77E411923E6F90 /* Pods_FitMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FitMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C71A6AB28C1EF04E0E6A9D48 /* Pods-FitMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-FitMap/Pods-FitMap.release.xcconfig"; sourceTree = "<group>"; };
+		DD82C6021E3460AA0059D668 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		DD82C6041E34634A0059D668 /* ReviewSaving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewSaving.swift; sourceTree = "<group>"; };
 		DDB2E6E61E2953A70098B0AB /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		DDE048311DF8CDBB0043085A /* FitMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDE048341DF8CDBB0043085A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +153,8 @@
 				50E017E01E267D4D001BB7B6 /* RouteSummaryViewController.swift */,
 				50E017DE1E266F49001BB7B6 /* RunViewController.swift */,
 				507DFBA71E2D646E00D9B299 /* RunSpeedTimeDistance.swift */,
+				DD82C6021E3460AA0059D668 /* Review.swift */,
+				DD82C6041E34634A0059D668 /* ReviewSaving.swift */,
 			);
 			name = RUN;
 			sourceTree = "<group>";
@@ -604,7 +610,9 @@
 				50E9AB2C1E2577470028DAB2 /* ReviewViewController.swift in Sources */,
 				50E017DF1E266F49001BB7B6 /* RunViewController.swift in Sources */,
 				5083DB301E01F84300F4113C /* MeViewController.swift in Sources */,
+				DD82C6051E34634A0059D668 /* ReviewSaving.swift in Sources */,
 				5084F2041E281FD200E33415 /* RouteDataSource.swift in Sources */,
+				DD82C6031E3460AA0059D668 /* Review.swift in Sources */,
 				5025C5D91E298B9700D24332 /* Cells.swift in Sources */,
 				5088E8211E00AAFF0004AB50 /* LoopViewController.swift in Sources */,
 				DDB2E6E71E2953A70098B0AB /* Route.swift in Sources */,

@@ -34,6 +34,37 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate, GM
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        //Check if its first time openning app
+        //If it is, I will launch the login screen
+        
+        if(UserDefaults.standard.bool(forKey: "HasLaunchedOnce"))
+        {
+             self.dismiss(animated: true, completion: nil)
+            // app already launched
+            let storyBoard : UIStoryboard = UIStoryboard(name: "DetalleRuta", bundle:nil)
+            let launchViewController = storyBoard.instantiateViewController(withIdentifier: "LaunchViewController") as! LaunchViewController
+            
+            self.present(launchViewController, animated:true, completion:nil)
+
+            
+        }
+        else
+        {
+            self.dismiss(animated: true, completion: nil)
+            // This is the first launch ever
+            // Invokes the launch screen
+            let storyBoard : UIStoryboard = UIStoryboard(name: "DetalleRuta", bundle:nil)
+            let launchViewController = storyBoard.instantiateViewController(withIdentifier: "LaunchViewController") as! LaunchViewController
+            
+             self.present(launchViewController, animated:true, completion:nil)
+            
+            
+            UserDefaults.standard.set(true, forKey: "HasLaunchedOnce")
+            UserDefaults.standard.synchronize()
+        }
+        
 
         // Do any additional setup after loading the view.
         
@@ -151,8 +182,10 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate, GM
         the routes based on that category
         */
         
+        
         switch buttonTouched {
         case UIImage(named: "bicycle")!:
+            cyclingButton.setImage(UIImage(named: "bici-selected"), for: .normal)
             discipline = "cycling"
         case UIImage(named: "icon")!:
             discipline = "running"

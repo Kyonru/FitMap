@@ -13,6 +13,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        
+        //Check if its first time openning app
+        //If it is, I will launch the login screen
+
+        
     }
 
     override func didReceiveMemoryWarning() {

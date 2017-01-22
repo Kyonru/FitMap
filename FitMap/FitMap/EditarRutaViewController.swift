@@ -87,6 +87,7 @@ class EditarRutaViewController: UIViewController {
         
         switch buttonTouched {
         case UIImage(named: "bicycle")!:
+            
             discipline = "cycling"
         case UIImage(named: "icon")!:
             discipline = "running"

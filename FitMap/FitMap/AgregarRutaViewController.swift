@@ -105,6 +105,7 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
                 route.setDistance(distance: self.trackedDistance)
 
                 route.setTime(time: Int64(self.endingTime.uptimeNanoseconds)-Int64(self.startingTime.uptimeNanoseconds))
+                
             
                 
                 

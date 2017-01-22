@@ -74,8 +74,8 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.00 m/s" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIR-6h-wwt">
-                                            <rect key="frame" x="7" y="49" width="101" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.00 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c38-Nh-Pzs">
+                                            <rect key="frame" x="4" y="40" width="95" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -99,8 +99,8 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.00 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c38-Nh-Pzs">
-                                            <rect key="frame" x="13" y="48" width="95" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.00 m/s" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIR-6h-wwt">
+                                            <rect key="frame" x="8" y="48" width="101" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -269,9 +269,12 @@
                     </view>
                     <connections>
                         <outlet property="bottomConstraint" destination="EQ7-fj-LD5" id="rpw-qC-25V"/>
+                        <outlet property="cyclingButton" destination="bIQ-TM-We1" id="jKd-yP-wH5"/>
                         <outlet property="distanceLabel" destination="DN3-K3-NnQ" id="ndw-pg-8hI"/>
                         <outlet property="routeCommentTextField" destination="qoh-Kr-8ZF" id="J7k-sc-IQ7"/>
                         <outlet property="routeNameTextField" destination="Vmk-nE-Wsw" id="GgJ-N2-3Of"/>
+                        <outlet property="runningButton" destination="5sV-GV-tXj" id="xe6-CX-t6n"/>
+                        <outlet property="skatingButton" destination="qpt-Rl-Jaf" id="bJl-Xm-cOG"/>
                         <outlet property="starView" destination="5bQ-sj-b64" id="Nqi-Hd-RKL"/>
                         <outlet property="timeLabel" destination="kmw-Se-bcM" id="nTH-rO-BdX"/>
                     </connections>

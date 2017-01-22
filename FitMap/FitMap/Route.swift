@@ -23,10 +23,6 @@ class Route {
     var comment = " "
     
     
-    
-    
-    
-    
     func setRouteId(id: Int) {
         self.id = id
     }

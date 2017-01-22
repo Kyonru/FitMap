@@ -26,7 +26,7 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var mapView: GMSMapView!
     
-    var routeDetail = Route()
+    var routeDetail = Route() //Route object
     
 
     override func viewDidLoad() {
@@ -57,6 +57,20 @@ class DetailViewController: UIViewController {
     func setRouteToDraw(route: Route){
         routeDetail = route
     }
+    
+    @IBAction func runButton(_ sender: UIButton) {
+        
+        //Instancio el controller de RunView
+        //Paso objeto ruta al runViewController para dibujar y
+        //mostrar la data alla
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "DetalleRuta", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "RunViewController") as! RunViewController
+        
+        nextViewController.setRouteToDraw(route: routeDetail)
+        
+    }
+    
 
 
     /*

@@ -35,6 +35,11 @@
 		50E9AB2C1E2577470028DAB2 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E9AB2B1E2577470028DAB2 /* ReviewViewController.swift */; };
 		8C9C4158300A2971CB11C7D6 /* Pods_FitMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D55EA507A77E411923E6F90 /* Pods_FitMap.framework */; };
 		B3C5B1E894B07DCAF2B161D2 /* Pods_FitMapUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B06BAD84722B5DA0BE8C0C5 /* Pods_FitMapUITests.framework */; };
+		DD82C6031E3460AA0059D668 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD82C6021E3460AA0059D668 /* Review.swift */; };
+		DD82C6051E34634A0059D668 /* ReviewSaving.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD82C6041E34634A0059D668 /* ReviewSaving.swift */; };
+		DD82C60A1E3494D70059D668 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD82C6091E3494D70059D668 /* LaunchViewController.swift */; };
+		DD82C60C1E352C050059D668 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD82C60B1E352C050059D668 /* User.swift */; };
+		DD82C60E1E352CC50059D668 /* UserSaving.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD82C60D1E352CC50059D668 /* UserSaving.swift */; };
 		DDB2E6E71E2953A70098B0AB /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB2E6E61E2953A70098B0AB /* Route.swift */; };
 		DDE048351DF8CDBB0043085A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE048341DF8CDBB0043085A /* AppDelegate.swift */; };
 		DDE048371DF8CDBB0043085A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE048361DF8CDBB0043085A /* ViewController.swift */; };
@@ -95,6 +100,11 @@
 		69CA57A03EA753CF45B82EAA /* Pods-FitMapUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitMapUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FitMapUITests/Pods-FitMapUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6D55EA507A77E411923E6F90 /* Pods_FitMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FitMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C71A6AB28C1EF04E0E6A9D48 /* Pods-FitMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-FitMap/Pods-FitMap.release.xcconfig"; sourceTree = "<group>"; };
+		DD82C6021E3460AA0059D668 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		DD82C6041E34634A0059D668 /* ReviewSaving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewSaving.swift; sourceTree = "<group>"; };
+		DD82C6091E3494D70059D668 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		DD82C60B1E352C050059D668 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DD82C60D1E352CC50059D668 /* UserSaving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSaving.swift; sourceTree = "<group>"; };
 		DDB2E6E61E2953A70098B0AB /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		DDE048311DF8CDBB0043085A /* FitMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDE048341DF8CDBB0043085A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +159,8 @@
 				50E017E01E267D4D001BB7B6 /* RouteSummaryViewController.swift */,
 				50E017DE1E266F49001BB7B6 /* RunViewController.swift */,
 				507DFBA71E2D646E00D9B299 /* RunSpeedTimeDistance.swift */,
+				DD82C6021E3460AA0059D668 /* Review.swift */,
+				DD82C6041E34634A0059D668 /* ReviewSaving.swift */,
 			);
 			name = RUN;
 			sourceTree = "<group>";
@@ -201,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				50CD9B7E1E008D1A00B79DF9 /* DetalleRuta.storyboard */,
+				DD82C6091E3494D70059D668 /* LaunchViewController.swift */,
 				5025C5DA1E298E8300D24332 /* Review */,
 				5025C5D01E2983BD00D24332 /* RUN */,
 				50CD9B801E008EB000B79DF9 /* DetalleRutaViewController.swift */,
@@ -208,6 +221,8 @@
 				50E9AB291E2571740028DAB2 /* DetailViewController.swift */,
 				5084F2031E281FD200E33415 /* RouteDataSource.swift */,
 				DDB2E6E61E2953A70098B0AB /* Route.swift */,
+				DD82C60B1E352C050059D668 /* User.swift */,
+				DD82C60D1E352CC50059D668 /* UserSaving.swift */,
 			);
 			name = DetalleRuta;
 			sourceTree = "<group>";
@@ -387,6 +402,7 @@
 				TargetAttributes = {
 					DDE048301DF8CDBB0043085A = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = ZX5XTRMYJH;
 						LastSwiftMigration = 0810;
 					};
 					DDE048471DF8CDBB0043085A = {
@@ -599,12 +615,15 @@
 				5025C5D71E298B3500D24332 /* MeDataSourse.swift in Sources */,
 				50E9AB2A1E2571740028DAB2 /* DetailViewController.swift in Sources */,
 				509BDD071E29999A0083E490 /* routeSaving.swift in Sources */,
+				DD82C60E1E352CC50059D668 /* UserSaving.swift in Sources */,
 				50CD9B811E008EB000B79DF9 /* DetalleRutaViewController.swift in Sources */,
 				1AD78E771E26632200CDFF7B /* EditarRutaViewController.swift in Sources */,
 				50E9AB2C1E2577470028DAB2 /* ReviewViewController.swift in Sources */,
 				50E017DF1E266F49001BB7B6 /* RunViewController.swift in Sources */,
 				5083DB301E01F84300F4113C /* MeViewController.swift in Sources */,
+				DD82C6051E34634A0059D668 /* ReviewSaving.swift in Sources */,
 				5084F2041E281FD200E33415 /* RouteDataSource.swift in Sources */,
+				DD82C6031E3460AA0059D668 /* Review.swift in Sources */,
 				5025C5D91E298B9700D24332 /* Cells.swift in Sources */,
 				5088E8211E00AAFF0004AB50 /* LoopViewController.swift in Sources */,
 				DDB2E6E71E2953A70098B0AB /* Route.swift in Sources */,
@@ -613,11 +632,13 @@
 				504A1E661E2063AF00D3118A /* DetailsReviewViewController.swift in Sources */,
 				DDEFC7581E22D26100521809 /* MapLoopViewController.swift in Sources */,
 				DDE0483D1DF8CDBB0043085A /* FitMap.xcdatamodeld in Sources */,
+				DD82C60C1E352C050059D668 /* User.swift in Sources */,
 				5090D1761E00AAFD00331A5C /* AgregarRutaViewController.swift in Sources */,
 				50886A9F1E1AECE100B2E6AB /* ALoopViewController.swift in Sources */,
 				5025C5DE1E298F0400D24332 /* ReviewDataSource.swift in Sources */,
 				50E017E11E267D4D001BB7B6 /* RouteSummaryViewController.swift in Sources */,
 				DDE048351DF8CDBB0043085A /* AppDelegate.swift in Sources */,
+				DD82C60A1E3494D70059D668 /* LaunchViewController.swift in Sources */,
 				5025C5E01E29932200D24332 /* ReviewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -768,6 +789,7 @@
 			baseConfigurationReference = 269A282414D6324E2A6DEB3F /* Pods-FitMap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZX5XTRMYJH;
 				INFOPLIST_FILE = FitMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.FormuladoresDiscretos.FitMap;
@@ -781,6 +803,7 @@
 			baseConfigurationReference = C71A6AB28C1EF04E0E6A9D48 /* Pods-FitMap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZX5XTRMYJH;
 				INFOPLIST_FILE = FitMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.FormuladoresDiscretos.FitMap;

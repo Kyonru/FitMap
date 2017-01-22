@@ -47,7 +47,7 @@
             <objects>
                 <navigationController id="IzN-rL-goQ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Me" image="CirleMale" selectedImage="CirleMale" id="rk2-ai-LQr"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="mQC-qX-MvZ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mQC-qX-MvZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -66,7 +66,7 @@
                     <tabBarItem key="tabBarItem" title="Add Route" image="add-place" selectedImage="add-place" id="8B3-JV-uHc">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Cwb-Ny-jYj">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Cwb-Ny-jYj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -83,7 +83,7 @@
             <objects>
                 <navigationController id="1dj-Ye-n4X" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Discover" image="routeFinder" selectedImage="routeFinder" id="zki-62-KOM"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="4Mb-5e-vQ0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4Mb-5e-vQ0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -131,7 +131,7 @@
             <objects>
                 <navigationController id="xyq-ms-Y0Z" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Loop" image="LoopIcon" selectedImage="LoopIcon" id="1nj-6G-42g"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="rsj-Z7-z3j">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rsj-Z7-z3j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

@@ -110,18 +110,32 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9d-3a-6mm">
-                                <rect key="frame" x="162" y="550" width="46" height="30"/>
+                                <rect key="frame" x="166" y="550" width="39" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="NEXT">
                                     <color key="titleColor" red="1" green="0.0" blue="0.056107677719999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="fdE-Vt-vcY" kind="show" id="tdm-Fx-3uV"/>
+                                    <action selector="nextButton:" destination="cw7-xm-wjR" eventType="touchUpInside" id="xRz-Lk-t1d"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gF-nP-5c7">
+                                <rect key="frame" x="166" y="496" width="42" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="DONE">
+                                    <color key="titleColor" red="1" green="0.0090569780820000008" blue="0.019260353439999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneButton:" destination="cw7-xm-wjR" eventType="touchUpInside" id="jPg-GV-wCl"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="doneButton" destination="7gF-nP-5c7" id="kgM-GD-nyn"/>
+                        <outlet property="nextButton" destination="K9d-3a-6mm" id="a3S-6I-JfE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zsQ-Di-7sN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -130,7 +144,7 @@
         <!--Launch View Controller-->
         <scene sceneID="qu9-lP-HyR">
             <objects>
-                <viewController id="fdE-Vt-vcY" customClass="LaunchViewController" customModule="FitMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LaunchViewController2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fdE-Vt-vcY" customClass="LaunchViewController" customModule="FitMap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="74L-MN-no0"/>
                         <viewControllerLayoutGuide type="bottom" id="c7D-NM-AbX"/>
@@ -161,13 +175,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C1w-sf-nZE" colorLabel="IBBuiltInLabel-Red">
-                                <rect key="frame" x="318" y="617" width="39" height="30"/>
+                                <rect key="frame" x="309" y="617" width="57" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="NEXT">
+                                <state key="normal" title="Register">
                                     <color key="titleColor" red="1" green="0.068430770370000005" blue="0.12141622000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="nextButton:" destination="fdE-Vt-vcY" eventType="touchUpInside" id="KR0-qP-gmi"/>
+                                    <action selector="registerButton:" destination="fdE-Vt-vcY" eventType="touchUpInside" id="xtX-fi-c5P"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SeX-Cm-Lik">

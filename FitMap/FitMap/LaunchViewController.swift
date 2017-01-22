@@ -10,10 +10,17 @@ import UIKit
 
 class LaunchViewController: UIViewController {
 
+    @IBOutlet weak var doneButton: UIButton!
+    
+    @IBOutlet weak var nextButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+//        doneButton.isHidden = true
+//        nextButton.isHidden = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,12 +33,22 @@ class LaunchViewController: UIViewController {
     
     @IBAction func nextButton(_ sender: UIButton) {
         
-        self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
         
 //        let storyBoard : UIStoryboard = UIStoryboard(name: "LaunchScreenStoryboard", bundle:nil)
 //        let launchViewController = storyBoard.instantiateViewController(withIdentifier: "LaunchViewController") as! LaunchViewController
 //        self.navigationController?.pushViewController(launchViewController, animated: true)
         
+        
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "DetalleRuta", bundle:nil)
+        let launchRutaViewController = storyBoard.instantiateViewController(withIdentifier: "LaunchViewController2") as! LaunchViewController
+        
+        self.present(launchRutaViewController, animated:true, completion:nil)
+        
+//            self.navigationController?.pushViewController(launchRutaViewController, animated: true)
+        
+//        self.dismiss(animated: true, completion: nil)
         
     }
     
@@ -43,6 +60,9 @@ class LaunchViewController: UIViewController {
         
         
         self.dismiss(animated: true, completion: nil)
+        
+//        doneButton.isHidden = false
+//        nextButton.isHidden = true
         
         let storyBoard : UIStoryboard = UIStoryboard(name: "DetalleRuta", bundle:nil)
         let detalleRutaViewController = storyBoard.instantiateViewController(withIdentifier: "DetalleRutaViewController") as! DetalleRutaViewController
@@ -56,6 +76,11 @@ class LaunchViewController: UIViewController {
         self.navigationController?.pushViewController(detalleRutaViewController, animated: true)
 
     
+    }
+    
+    
+    @IBAction func doneButton(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
 
 

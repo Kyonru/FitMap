@@ -186,10 +186,22 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate, GM
         switch buttonTouched {
         case UIImage(named: "bicycle")!:
             cyclingButton.setImage(UIImage(named: "bici-selected"), for: .normal)
+             runningButton.setImage(UIImage(named: "icon"), for: .normal)
+             skatingButton.setImage(UIImage(named: "skateboard-2"), for: .normal)
+            
             discipline = "cycling"
+            
         case UIImage(named: "icon")!:
+            cyclingButton.setImage(UIImage(named: "bicycle"), for: .normal)
+            runningButton.setImage(UIImage(named: "run-selected"), for: .normal)
+            skatingButton.setImage(UIImage(named: "skateboard-2"), for: .normal)
+            
             discipline = "running"
         case UIImage(named: "skateboard-2")!:
+            cyclingButton.setImage(UIImage(named: "bicycle"), for: .normal)
+            runningButton.setImage(UIImage(named: "icon"), for: .normal)
+            skatingButton.setImage(UIImage(named: "skate-selected"), for: .normal)
+            
             discipline = "skating"
         default:
             discipline = ""

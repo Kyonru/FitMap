@@ -20,10 +20,16 @@ class EditarRutaViewController: UIViewController {
     
     @IBOutlet weak var routeNameTextField: UITextField!
     
+    @IBOutlet weak var cyclingButton: UIButton!
+    @IBOutlet weak var runningButton: UIButton!
+    @IBOutlet weak var skatingButton: UIButton!
+    
+    
+    
     @IBOutlet weak var timeLabel: UILabel!
     
     @IBOutlet weak var distanceLabel: UILabel!
-    
+
     
     @IBOutlet weak var routeCommentTextField: UITextField!
     
@@ -87,11 +93,23 @@ class EditarRutaViewController: UIViewController {
         
         switch buttonTouched {
         case UIImage(named: "bicycle")!:
+            cyclingButton.setImage(UIImage(named: "bici-selected"), for: .normal)
+            runningButton.setImage(UIImage(named: "icon"), for: .normal)
+            skatingButton.setImage(UIImage(named: "skateboard-2"), for: .normal)
             
             discipline = "cycling"
+            
         case UIImage(named: "icon")!:
+            cyclingButton.setImage(UIImage(named: "bicycle"), for: .normal)
+            runningButton.setImage(UIImage(named: "run-selected"), for: .normal)
+            skatingButton.setImage(UIImage(named: "skateboard-2"), for: .normal)
+            
             discipline = "running"
         case UIImage(named: "skateboard-2")!:
+            cyclingButton.setImage(UIImage(named: "bicycle"), for: .normal)
+            runningButton.setImage(UIImage(named: "icon"), for: .normal)
+            skatingButton.setImage(UIImage(named: "skate-selected"), for: .normal)
+            
             discipline = "skating"
         default:
             discipline = ""

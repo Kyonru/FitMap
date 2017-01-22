@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.3.0)
   - Cosmos (7.0.0)
   - GoogleMaps (2.1.1):
     - GoogleMaps/Maps (= 2.1.1)
@@ -10,17 +11,19 @@ PODS:
   - LBTAComponents (0.1.9)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.3)
   - Cosmos (~> 7.0)
   - GoogleMaps
   - GooglePlaces
   - LBTAComponents (~> 0.1.9)
 
 SPEC CHECKSUMS:
+  Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
   Cosmos: 2c8299147138758f6ebbb247cf1aeed77998bdf9
   GoogleMaps: a5b5bbe47734e2443bde781a6aa64e69fdb6d785
   GooglePlaces: 35636d86e5020cba3856eb988c09a5491de0a65a
   LBTAComponents: 9a5d314080d1f80208062ccc81a2d25225c5f572
 
-PODFILE CHECKSUM: 6b60acb3526bfcd58545a0c114ad8e3a1021aa2f
+PODFILE CHECKSUM: 1cb56218d95b9e9c3dc2e67a801e58b6894b9267
 
-COCOAPODS: 1.2.0.beta.1
+COCOAPODS: 1.1.1

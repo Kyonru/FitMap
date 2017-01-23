@@ -9,11 +9,20 @@
 import UIKit
 import GoogleMaps
 import CoreLocation
+import Alamofire
+
 
 class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
     
+    @IBAction func loopButton(_ sender: UIButton) {
+        self.addOverlayToMapView()
+        
+        
+        
+    }
     var locationManager = CLLocationManager()
     let path = GMSMutablePath()
+    var pathString = GMSPath()
     
     @IBOutlet weak var MapView: GMSMapView!
     
@@ -32,6 +41,10 @@ class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.requestAlwaysAuthorization()
             locationManager.startUpdatingLocation()
+            
+        //Cosa
+            //callWebService()
+           // addOverlayToMapView()
     }
 }
 
@@ -50,9 +63,13 @@ class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
         
         //view = MapView
         
-        path.add(locValue.coordinate)
+        //path.add(locValue.coordinate)
+        
+        /*
+        let path: GMSPath = GMSPath(fromEncodedPath: "kyzoBd|~iLyc@aBoIWa@Eq@I@LLB\\DbDJ~ZhAp\\nApHV`@LNNFVPVJj@Dr@QfN@bADpAPnA\\rAj@hANWOUa@_AKa@")!
+       
         rectangle = GMSPolyline(path: path)
-        rectangle.map = MapView
+        rectangle.map = MapView*/
         //locationManager.stopUpdatingLocation()
     }
     
@@ -60,6 +77,63 @@ class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func addOverlayToMapView(){
+        
+        let directionURL = "https://maps.googleapis.com/maps/api/directions/json?origin=\(18.492516),\(-69.958859)&destination=\(18.488095),\(-69.964144)&mode=walking&key=AIzaSyBDw7YtmcgAElskM3KKE0jXWt8gMQeBeYU"
+        
+        Alamofire.request(directionURL, method: .get, parameters: nil).responseJSON { response in
+           
+            print(response.request)  // original URL request
+            print(response.response) // HTTP URL response
+            print(response.data)     // server data
+            print(response.result)   // result of response serialization
+            
+            if let  cjson = response.result.value as? NSDictionary{
+                print("JSON: \(cjson)")
+                print(2312)
+            }
+            
+            let json = "\(response.result.value)"
+            let routesArray = json.components(separatedBy: "\"")
+            let Camino = self.search(withPath: routesArray)
+            let a = "kyzoBd|~iLyc@aBoIWa@Eq@I@LLB\\DbDJ~ZhAp\\nApHV`@LNNFVPVJj@Dr@QfN@bADpAPnA\\rAj@hANWOUa@_AKa@"
+       
+            //self.pathString = GMSPath(fromEncodedPath: Camino.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!)!
+            self.pathString = GMSPath(fromEncodedPath: Camino)!
+            self.DummysetMapviewPath()
+            
+        }
+    
+    }
+    
+    func DummysetMapviewPath(){
+        
+        rectangle = GMSPolyline(path: pathString)
+        rectangle.map = MapView
+        
+        
+    }
+    
+    
+    //Func search for routePath
+    func search(withPath: [String])->String{
+        let encodedpoints = ""
+        let objetive = "overview_polyline"
+        
+        for i in 0..<withPath.count{
+            print("\(i)" + withPath[i])
+            if(withPath[i] == objetive){
+                let a = withPath[i+2]
+                return a.replacingOccurrences(of: "\\\\",with: "\\")
+                
+            }
+        }
+        return encodedpoints
+    }
+    
+    
+    
     
 
     /*
@@ -71,5 +145,7 @@ class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
 
 }

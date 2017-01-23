@@ -89,6 +89,7 @@ class EditarRutaViewController: UIViewController {
         let buttonTouched = sender.currentImage!
         
         
+        
         /*
          Pourpose: when a user tap 1 button, we got to query
          the routes based on that category
@@ -117,6 +118,7 @@ class EditarRutaViewController: UIViewController {
         default:
             discipline = ""
         }
+        
 
     }
     

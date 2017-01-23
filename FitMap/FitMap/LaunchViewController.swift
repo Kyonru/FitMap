@@ -10,16 +10,15 @@ import UIKit
 
 class LaunchViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var doneButton: UIButton!
-    
-    @IBOutlet weak var nextButton: UIButton!
-    
 
     @IBOutlet weak var bottomC: NSLayoutConstraint!
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     
-
+    
+    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var doneButton: UIButton!
+    
     var user = User();
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +28,11 @@ class LaunchViewController: UIViewController, UITextFieldDelegate {
 
 
         // Do any additional setup after loading the view.
-//        doneButton.isHidden = true
-//        nextButton.isHidden = false
+  
+//        self.nextButton.isHidden = false
+//        
+//        self.doneButton.isHidden = true
+    
     }
     
     override func didReceiveMemoryWarning() {
@@ -39,30 +41,22 @@ class LaunchViewController: UIViewController, UITextFieldDelegate {
     }
     
 
-    
-    @IBAction func nextButton(_ sender: UIButton) {
-        
-//        self.dismiss(animated: true, completion: nil)
-        
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "LaunchScreenStoryboard", bundle:nil)
-//        let launchViewController = storyBoard.instantiateViewController(withIdentifier: "LaunchViewController") as! LaunchViewController
-//        self.navigationController?.pushViewController(launchViewController, animated: true)
-        
-        
-        
+    @IBAction func nextButtonAction(_ sender: Any) {
+   
         let storyBoard : UIStoryboard = UIStoryboard(name: "DetalleRuta", bundle:nil)
         let launchRutaViewController = storyBoard.instantiateViewController(withIdentifier: "LaunchViewController2") as! LaunchViewController
         
         self.present(launchRutaViewController, animated:true, completion:nil)
-        
-//            self.navigationController?.pushViewController(launchRutaViewController, animated: true)
-        
-//        self.dismiss(animated: true, completion: nil)
-        
-    }
+     }
+
+
     
     @available(iOS 10.0, *)
     @IBAction func registerButton(_ sender: UIButton) {
+        
+//        //
+//        doneButton.isHidden = false
+//        nextButton.isHidden = true
         
         //Capturing first and last name
         let firstName = "Rafael"
@@ -83,7 +77,10 @@ class LaunchViewController: UIViewController, UITextFieldDelegate {
         
         let storyBoard : UIStoryboard = UIStoryboard(name: "DetalleRuta", bundle:nil)
         let detalleRutaViewController = storyBoard.instantiateViewController(withIdentifier: "DetalleRutaViewController") as! DetalleRutaViewController
-        
+       
+        //
+//        doneButton.isHidden = false
+//        nextButton.isHidden = true
         self.navigationController?.pushViewController(detalleRutaViewController, animated: true)
         
         
@@ -118,7 +115,9 @@ class LaunchViewController: UIViewController, UITextFieldDelegate {
     }
 
     
-    @IBAction func doneButton(_ sender: UIButton) {
+ 
+    @IBAction func doneButtonAction(_ sender: UIButton) {
+    
         self.dismiss(animated: true, completion: nil)
     }
 

@@ -217,25 +217,16 @@
                                 <rect key="frame" x="283" y="152" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="skateboard-2"/>
-                                <connections>
-                                    <action selector="disciplineButton:" destination="O39-15-L3j" eventType="touchUpInside" id="igQ-F8-vis"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIQ-TM-We1">
                                 <rect key="frame" x="158" y="152" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="bicycle"/>
-                                <connections>
-                                    <action selector="disciplineButton:" destination="O39-15-L3j" eventType="touchUpInside" id="dWY-0L-nnG"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5sV-GV-tXj">
                                 <rect key="frame" x="221" y="152" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="icon"/>
-                                <connections>
-                                    <action selector="disciplineButton:" destination="O39-15-L3j" eventType="touchUpInside" id="bKt-8u-iLe"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -269,9 +260,12 @@
                     </view>
                     <connections>
                         <outlet property="bottomConstraint" destination="EQ7-fj-LD5" id="rpw-qC-25V"/>
+                        <outlet property="cyclingButton" destination="bIQ-TM-We1" id="vfZ-98-JCc"/>
                         <outlet property="distanceLabel" destination="DN3-K3-NnQ" id="ndw-pg-8hI"/>
                         <outlet property="routeCommentTextField" destination="qoh-Kr-8ZF" id="J7k-sc-IQ7"/>
                         <outlet property="routeNameTextField" destination="Vmk-nE-Wsw" id="GgJ-N2-3Of"/>
+                        <outlet property="runningButton" destination="5sV-GV-tXj" id="nMi-iT-cFN"/>
+                        <outlet property="skatingButton" destination="qpt-Rl-Jaf" id="WDq-wf-E85"/>
                         <outlet property="starView" destination="5bQ-sj-b64" id="Nqi-Hd-RKL"/>
                         <outlet property="timeLabel" destination="kmw-Se-bcM" id="nTH-rO-BdX"/>
                     </connections>

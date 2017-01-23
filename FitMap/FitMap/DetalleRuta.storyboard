@@ -111,37 +111,37 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9d-3a-6mm">
-                                <rect key="frame" x="166" y="550" width="39" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="NEXT">
-                                    <color key="titleColor" red="1" green="0.0" blue="0.056107677719999999" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="nextButton:" destination="cw7-xm-wjR" eventType="touchUpInside" id="xRz-Lk-t1d"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gF-nP-5c7">
-                                <rect key="frame" x="166" y="496" width="42" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TPI-bl-N4u">
+                                <rect key="frame" x="166" y="562" width="42" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="DONE">
+                                    <color key="titleColor" red="1" green="0.068430770370000005" blue="0.12141622000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneButtonAction:" destination="cw7-xm-wjR" eventType="touchUpInside" id="ZqE-mE-Od4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qu5-WE-bs6">
+                                <rect key="frame" x="166" y="524" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="NEXT">
                                     <color key="titleColor" red="1" green="0.0090569780820000008" blue="0.019260353439999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="doneButton:" destination="cw7-xm-wjR" eventType="touchUpInside" id="jPg-GV-wCl"/>
+                                    <action selector="nextButtonAction:" destination="cw7-xm-wjR" eventType="touchUpInside" id="Hir-Jl-m6x"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="doneButton" destination="7gF-nP-5c7" id="kgM-GD-nyn"/>
-                        <outlet property="nextButton" destination="K9d-3a-6mm" id="a3S-6I-JfE"/>
+                        <outlet property="doneButton" destination="TPI-bl-N4u" id="D9v-F6-oox"/>
+                        <outlet property="nextButton" destination="qu5-WE-bs6" id="E9G-wq-nZX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zsQ-Di-7sN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="410" y="1124"/>
+            <point key="canvasLocation" x="408.80000000000001" y="1123.9880059970017"/>
         </scene>
         <!--Launch View Controller-->
         <scene sceneID="qu9-lP-HyR">

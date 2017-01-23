@@ -21,7 +21,7 @@ class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
     var camera = GMSCameraPosition()
     
     var locationManager = CLLocationManager()
-    let path = GMSMutablePath()
+    var path = GMSMutablePath()
     var pathString = GMSPath()
     
     var rectangle = GMSPolyline()
@@ -53,6 +53,7 @@ class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
         // self.addOverlayToMapView()
         
         self.calculaWaypoints()
+        path = GMSMutablePath()
         MapView.clear()
     }
     
@@ -312,6 +313,10 @@ class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
         rectangle.strokeColor = UIColor.brown
         rectangle.strokeWidth = 4
         rectangle.map = MapView
+        let initialMarker = GMSMarker()
+        initialMarker.position = CLLocationCoordinate2D(latitude: latInicial, longitude: longInicial)
+        initialMarker.icon = UIImage(named: "pin2")
+        initialMarker.map = MapView
         
         
     }
@@ -326,13 +331,16 @@ class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
             let m = " =             {\n"+"points = "
             // print("\(i)" + withPath[i])
             if(withPath[i] == objetive){
-                if(withPath[i+1] != m){
+                
+                let ac = withPath[i+1].components(separatedBy: ";")
+                
+                let a = " =             {\n"+"points = "
+                let b = ";\n"+"};\n"+"summary ="
+                let bb = "\n"+"};\n"+"summary ="
+                if(ac.count == 1){
                     let a = withPath[i+2]
                     return a.replacingOccurrences(of: "\\\\",with: "\\")
                 }else{
-                    let a = " =             {\n"+"points = "
-                    let b = ";\n"+"};\n"+"summary ="
-                    
                     let c = withPath[i+1]
                     c.replacingOccurrences(of: a, with: "")
                     c.replacingOccurrences(of: b, with: "")

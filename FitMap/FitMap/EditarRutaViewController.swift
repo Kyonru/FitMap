@@ -207,7 +207,7 @@ class EditarRutaViewController: UIViewController {
                 "longitude": "\(point.coordinate.longitude)",
                 "latitude": "\(point.coordinate.latitude)"
             ]
-            _ = Alamofire.request("http://0.0.0.0:80/api/v1/points/",method: .post, parameters: parp)
+            _ = Alamofire.request("http://54.244.37.198/api/v1/points/",method: .post, parameters: parp)
             
         }
     }

@@ -187,10 +187,30 @@ class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
         randomNum = arc4random_uniform(500)
         var distanceMeters = Float(randomNum + 150)
         
-        
         calcularFirstwaypoint(bearing: bearing,distanceMeters: distanceMeters)
-        calcularSecondwaypoint(bearing: 0,distanceMeters: 0)
-        calcularThirdwaypoint(bearing: 0,distanceMeters: 0)
+        
+        randomNum = arc4random_uniform(100)
+        bearing = Float(randomNum)
+        elegir = Int(arc4random_uniform(1))
+        if(elegir==1){
+            bearing = bearing * -1
+        }
+        randomNum = arc4random_uniform(500)
+        distanceMeters = Float(randomNum + 150)
+        
+        calcularSecondwaypoint(bearing: bearing,distanceMeters: distanceMeters)
+        
+        randomNum = arc4random_uniform(100)
+        bearing = Float(randomNum)
+        elegir = Int(arc4random_uniform(1))
+        if(elegir==1){
+            bearing = bearing * -1
+        }
+        randomNum = arc4random_uniform(500)
+        distanceMeters = Float(randomNum + 150)
+        
+
+        calcularThirdwaypoint(bearing: bearing,distanceMeters: distanceMeters)
         
         
         //Regresar al inicio

@@ -57,7 +57,11 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
         locationManager.startUpdatingLocation()
 //        locationManager.stopUpdatingLocation()
 
+        navigationController?.navigationBar.barTintColor = UIColor.black
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.red]
         
+        tabBarController?.tabBar.barTintColor = UIColor.black
+        tabBarController?.tabBar.tintColor = UIColor.red
         
         // MapView.isMyLocationEnabled = true
         

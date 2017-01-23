@@ -59,7 +59,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Loop" id="Z2D-kJ-reo" userLabel="Loop"/>
+                    <navigationItem key="navigationItem" title="Loop" id="Z2D-kJ-reo" userLabel="Loop" colorLabel="IBBuiltInLabel-Red"/>
                     <connections>
                         <outlet property="KilometersPicker" destination="nFF-oP-7cT" id="XHV-Wz-g2K"/>
                     </connections>

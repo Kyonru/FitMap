@@ -19,8 +19,12 @@ class LoopViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         
         // Do any additional setup after loading the view.
         
-        
-        
+        navigationController?.navigationBar.barTintColor = UIColor.black
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.red]
+
+        tabBarController?.tabBar.barTintColor = UIColor.black
+        tabBarController?.tabBar.tintColor = UIColor.red
+
         //Data for the pickers
         for j in 0...1{
             var columnaDatos: [Int] = [Int]()

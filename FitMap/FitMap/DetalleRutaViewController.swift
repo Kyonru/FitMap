@@ -36,6 +36,12 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate, GM
         super.viewDidLoad()
         
         
+        navigationController?.navigationBar.barTintColor = UIColor.black
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.red]
+        
+        tabBarController?.tabBar.barTintColor = UIColor.black
+        tabBarController?.tabBar.tintColor = UIColor.red
+        
         //Check if its first time openning app
         //If it is, I will launch the login screen
         

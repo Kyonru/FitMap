@@ -73,6 +73,12 @@ class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.startUpdatingLocation()
             
         }
+        
+        navigationController?.navigationBar.barTintColor = UIColor.black
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.red]
+        
+        tabBarController?.tabBar.barTintColor = UIColor.black
+        tabBarController?.tabBar.tintColor = UIColor.red
     }
     //////////////////////////////
     ///////Track User/////////////

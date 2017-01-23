@@ -25,7 +25,11 @@ class LaunchViewController: UIViewController, UITextFieldDelegate {
         view.addGestureRecognizer(tap)
 
         
-
+        navigationController?.navigationBar.barTintColor = UIColor.black
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.red]
+        
+        tabBarController?.tabBar.barTintColor = UIColor.black
+        tabBarController?.tabBar.tintColor = UIColor.red
 
         // Do any additional setup after loading the view.
   

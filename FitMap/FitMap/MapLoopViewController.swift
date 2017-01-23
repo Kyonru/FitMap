@@ -145,7 +145,7 @@ class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
     
     func calcularFirstwaypoint(bearing: Float, distanceMeters: Float){
         firstCoordinate = CLLocationCoordinate2DMake(latInicial, longInicial)
-        move = locationWithBearing(bearing: bearing, distanceMeters: distanceMeters, origin: firstCoordinate)
+        move = locationWithBearing(bearing: Double(bearing), distanceMeters: Double(distanceMeters), origin: firstCoordinate)
         
         latFirstwaypoint = move.latitude
         longFirswaypoint = move.longitude
@@ -155,7 +155,7 @@ class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
     
     func calcularSecondwaypoint(bearing: Float, distanceMeters: Float){
         secondCoordinate = CLLocationCoordinate2DMake(latFirstwaypoint, longFirswaypoint)
-        move = locationWithBearing(bearing: bearing, distanceMeters: distanceMeters, origin: secondCoordinate)
+        move = locationWithBearing(bearing: Double(bearing), distanceMeters: Double(distanceMeters), origin: secondCoordinate)
         
         latSecondwaypoint = move.latitude
         longSecondwaypoint = move.longitude
@@ -168,7 +168,7 @@ class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
     func calcularThirdwaypoint(bearing: Float, distanceMeters: Float){
         
         thirdCoordinate = CLLocationCoordinate2DMake(latSecondwaypoint, longSecondwaypoint)
-        move = locationWithBearing(bearing: bearing, distanceMeters: distanceMeters, origin: thirdCoordinate)
+        move = locationWithBearing(bearing: Double(bearing), distanceMeters: Double(distanceMeters), origin: thirdCoordinate)
         
         latThirdwaypoint = move.latitude
         longThirdwaypoint = move.longitude

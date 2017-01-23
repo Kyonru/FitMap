@@ -65,8 +65,8 @@ class LaunchViewController: UIViewController, UITextFieldDelegate {
     @IBAction func registerButton(_ sender: UIButton) {
         
         //Capturing first and last name
-        let firstName = firstNameTextField.text!
-        let lastName = lastNameTextField.text!
+        let firstName = "Rafael"
+        let lastName = "Suazo"
         
         user.User(id: 0, name: firstName, lastNam: lastName)
         

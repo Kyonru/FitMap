@@ -40,7 +40,10 @@ class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
     var longThirdwaypoint = CLLocationDegrees()
     var latThirdwaypoint = CLLocationDegrees()
     
-    
+    var firstCoordinate = CLLocationCoordinate2D()
+    var secondCoordinate = CLLocationCoordinate2D()
+    var thirdCoordinate = CLLocationCoordinate2D()
+    var move = CLLocationCoordinate2D()
     
     @IBOutlet weak var MapView: GMSMapView!
     
@@ -97,7 +100,9 @@ class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    
+    func LoadLoop(){
+        
+    }
     
     func addOverlayToMapView(lat: CLLocationDegrees, long: CLLocationDegrees, latFinal: CLLocationDegrees, longFinal: CLLocationDegrees){
         
@@ -138,43 +143,53 @@ class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
     
     
     
-    
-    func calculaWaypoints(){
+    func calcularFirstwaypoint(bearing: Float, distanceMeters: Float){
+        firstCoordinate = CLLocationCoordinate2DMake(latInicial, longInicial)
+        move = locationWithBearing(bearing: bearing, distanceMeters: distanceMeters, origin: firstCoordinate)
         
-        let firstCoordinate = CLLocationCoordinate2DMake(latInicial, longInicial)
-        var move = locationWithBearing(bearing: 14.0, distanceMeters: 400.2, origin: firstCoordinate)
         latFirstwaypoint = move.latitude
         longFirswaypoint = move.longitude
         
-        print(longInicial)
-        print("  ")
-        print(longFirswaypoint)
         self.addOverlayToMapView(lat: latInicial, long: longInicial, latFinal: latFirstwaypoint, longFinal: longFirswaypoint)
-        
-        
-        let secondCoordinate = CLLocationCoordinate2DMake(latFirstwaypoint, longFirswaypoint)
-        move = locationWithBearing(bearing: 50, distanceMeters: 500.2, origin: secondCoordinate)
+    }
+    
+    func calcularSecondwaypoint(bearing: Float, distanceMeters: Float){
+        secondCoordinate = CLLocationCoordinate2DMake(latFirstwaypoint, longFirswaypoint)
+        move = locationWithBearing(bearing: bearing, distanceMeters: distanceMeters, origin: secondCoordinate)
         
         latSecondwaypoint = move.latitude
         longSecondwaypoint = move.longitude
         
         
-        addOverlayToMapView(lat: latFirstwaypoint, long: longFirswaypoint, latFinal: latSecondwaypoint, longFinal: longSecondwaypoint)
+        self.addOverlayToMapView(lat: latFirstwaypoint, long: longFirswaypoint, latFinal: latSecondwaypoint, longFinal: longSecondwaypoint)
         
+    }
+    
+    func calcularThirdwaypoint(bearing: Float, distanceMeters: Float){
         
-        let thirdCoordinate = CLLocationCoordinate2DMake(latSecondwaypoint, longSecondwaypoint)
-        move = locationWithBearing(bearing: -14, distanceMeters: 470, origin: thirdCoordinate)
+        thirdCoordinate = CLLocationCoordinate2DMake(latSecondwaypoint, longSecondwaypoint)
+        move = locationWithBearing(bearing: bearing, distanceMeters: distanceMeters, origin: thirdCoordinate)
         
         latThirdwaypoint = move.latitude
         longThirdwaypoint = move.longitude
         
         addOverlayToMapView(lat: latSecondwaypoint, long: longSecondwaypoint, latFinal: latThirdwaypoint, longFinal: longThirdwaypoint)
         
+    }
+    func calculaWaypoints(){
+        
+        calcularFirstwaypoint(bearing: 0,distanceMeters: 0)
+        calcularSecondwaypoint(bearing: 0,distanceMeters: 0)
+        calcularThirdwaypoint(bearing: 0,distanceMeters: 0)
+        
+        
+        //Regresar al inicio
+        //////////////////////////////
         latFinal = latInicial
         longFinal = longInicial
 
         addOverlayToMapView(lat: latThirdwaypoint, long: longThirdwaypoint, latFinal: latFinal, longFinal: longFinal)
-        
+        //////////////////////////////
     }
     
     func DummysetMapviewPath(){

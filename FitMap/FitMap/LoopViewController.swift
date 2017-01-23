@@ -26,14 +26,14 @@ class LoopViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             var columnaDatos: [Int] = [Int]()
             if(j == 0){
                 var k = 0
-                while k <= 500{
+                while k <= 2000{
                     columnaDatos.append(k)
-                    k += 5
+                    k += 100
                 }
             }
             else{
                 var k = 0
-                while k <= 750{
+                while k <= 2000{
                     columnaDatos.append(k)
                     k += 250
                 }
@@ -79,6 +79,29 @@ class LoopViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     
     @IBAction func fooAction(_ sender: AnyObject) {
+//        
+//        // This function is called before the segue
+//        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//            
+//            // get a reference to the second view controller
+//            let secondViewController = segue.destination as! MapLoopViewController
+//            
+//            // set a variable in the second view controller with the String to pass
+//            secondViewController.LoadLoop(min: 34, max: 34)
+//            
+//            
+//        }
+        
+        self.dismiss(animated: true, completion: nil)
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Loop", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "MapLoopViewController") as! MapLoopViewController
+        
+        nextViewController.LoadLoop(min: KilometersPicker.selectedRow(inComponent: 0) , max: KilometersPicker.selectedRow(inComponent: 1))
+        
+        //self.navigationController?.pushViewController(nextViewController, animated: true)
+        self.navigationController?.present(nextViewController, animated:true)
+        
     }
     
     /*

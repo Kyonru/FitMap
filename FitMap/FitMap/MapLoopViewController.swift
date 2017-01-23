@@ -14,12 +14,6 @@ import Alamofire
 
 class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
     
-    @IBAction func loopButton(_ sender: UIButton) {
-       // self.addOverlayToMapView()
-        
-        self.calculaWaypoints()
-        MapView.clear()
-    }
     
     let directionkey = "AIzaSyCh8ryDtzhxTmOQx8MyS2aybz14oi1M2-w"
     
@@ -30,6 +24,7 @@ class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
     let path = GMSMutablePath()
     var pathString = GMSPath()
     
+    var rectangle = GMSPolyline()
     
     var longFinal = CLLocationDegrees()
     var latFinal = CLLocationDegrees()
@@ -51,15 +46,23 @@ class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
     var thirdCoordinate = CLLocationCoordinate2D()
     var move = CLLocationCoordinate2D()
     
+    var minimo = Int()
+    var maximo = Int()
+    
+    @IBAction func loopButton(_ sender: UIButton) {
+        // self.addOverlayToMapView()
+        
+        self.calculaWaypoints()
+        MapView.clear()
+    }
+    
     @IBOutlet weak var MapView: GMSMapView!
     
-    var rectangle = GMSPolyline()
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
-  
+        
         self.locationManager.requestAlwaysAuthorization()
         self.locationManager.requestWhenInUseAuthorization()
         if(CLLocationManager.locationServicesEnabled()){
@@ -69,32 +72,34 @@ class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.requestAlwaysAuthorization()
             locationManager.startUpdatingLocation()
             
+        }
     }
-}
-
+    //////////////////////////////
+    ///////Track User/////////////
+    //////////////////////////////
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         //Locaciones.append(locations.last!)
         
         let locValue = locations.last!
         var initialLocation = CLLocation(latitude: 0.00, longitude: 0.00)
-
+        
         
         longInicial = (locations.first?.coordinate.longitude)!
         latInicial=(locations.first?.coordinate.latitude)!
         
         let long = locValue.coordinate.longitude
         let lat = locValue.coordinate.latitude
-//        let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 15.0)
+        //        let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 15.0)
         
-         if stateForFirstLocation == false{
+        if stateForFirstLocation == false{
             
             initialLocation = CLLocation(latitude: lat, longitude: long)
             let initialMarker = GMSMarker()
             initialMarker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
             initialMarker.icon = UIImage(named: "pin2")
             initialMarker.map = MapView
-
+            
             
             camera = GMSCameraPosition.camera(withLatitude: latInicial, longitude: longInicial, zoom: 15.0)
             
@@ -102,7 +107,7 @@ class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
             
             stateForFirstLocation = true
         }
-
+        
         //Following the user location
         let updateCam = GMSCameraUpdate.setTarget(locations.last!.coordinate)
         MapView.animate(with: updateCam)
@@ -119,7 +124,7 @@ class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
         rectangle.map = MapView
         
         
-//        MapView.camera = camera
+        //        MapView.camera = camera
         MapView.isMyLocationEnabled = true
         
         
@@ -127,12 +132,13 @@ class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
         //path.add(locValue.coordinate)
         
         /*
-        let path: GMSPath = GMSPath(fromEncodedPath: "kyzoBd|~iLyc@aBoIWa@Eq@I@LLB\\DbDJ~ZhAp\\nApHV`@LNNFVPVJj@Dr@QfN@bADpAPnA\\rAj@hANWOUa@_AKa@")!
-       
-        rectangle = GMSPolyline(path: path)
-        rectangle.map = MapView*/
+         let path: GMSPath = GMSPath(fromEncodedPath: "kyzoBd|~iLyc@aBoIWa@Eq@I@LLB\\DbDJ~ZhAp\\nApHV`@LNNFVPVJj@Dr@QfN@bADpAPnA\\rAj@hANWOUa@_AKa@")!
+         
+         rectangle = GMSPolyline(path: path)
+         rectangle.map = MapView*/
         //locationManager.stopUpdatingLocation()
     }
+    
     
     
     override func didReceiveMemoryWarning() {
@@ -140,9 +146,29 @@ class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func LoadLoop(){
-        
+    
+    //////////////////////////////
+    ///////Instancia/////////////
+    //////////////////////////////
+    
+    @IBAction func Cerrar(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
+    
+    func LoadLoop(min: Int, max: Int){
+        minimo = min
+        maximo = max
+        minimo = minimo * 100
+        maximo = maximo * 250
+        print("//////////////////////////////////////////////")
+        print(minimo)
+        print(maximo)
+    }
+    
+    
+    //////////////////////////////
+    ///////Request JSON///////////
+    //////////////////////////////
     
     func addOverlayToMapView(lat: CLLocationDegrees, long: CLLocationDegrees, latFinal: CLLocationDegrees, longFinal: CLLocationDegrees){
         
@@ -152,7 +178,7 @@ class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
         
         print (directionURL)
         Alamofire.request(directionURL, method: .get, parameters: nil).responseJSON { response in
-        
+            
             
             let json = "\(response.result.value)"
             
@@ -160,12 +186,15 @@ class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
             
             let routesArray = json.components(separatedBy: "\"")
             let Camino = self.search(withPath: routesArray)
+            //Camino.replacingOccurrences(of: " ", with: "+")
             self.pathString = GMSPath(fromEncodedPath: Camino)!
             self.DummysetMapviewPath()
             
         }
-    
+        
     }
+    
+    
     
     func locationWithBearing(bearing:Double, distanceMeters:Double, origin:CLLocationCoordinate2D) -> CLLocationCoordinate2D {
         let distRadians = distanceMeters / (6372797.6)
@@ -218,38 +247,42 @@ class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
     }
     func calculaWaypoints(){
         // Random Number
-        var randomNum = arc4random_uniform(100)
+        var randomNum = arc4random_uniform(360)
         var bearing = Float(randomNum)
-        var elegir = Int(arc4random_uniform(1))
+        var elegir = Int(arc4random_uniform(2))
         if(elegir==1){
             bearing = bearing * -1
         }
-        randomNum = arc4random_uniform(500)
-        var distanceMeters = Float(randomNum + 150)
+        randomNum = arc4random_uniform(UInt32(Int(maximo/4)))
+        var distanceMeters = Float(randomNum + UInt32(Int(minimo/4)))
         
         calcularFirstwaypoint(bearing: bearing,distanceMeters: distanceMeters)
         
-        randomNum = arc4random_uniform(100)
+        randomNum = arc4random_uniform(360)
         bearing = Float(randomNum)
-        elegir = Int(arc4random_uniform(1))
+        elegir = Int(arc4random_uniform(2))
         if(elegir==1){
             bearing = bearing * -1
         }
-        randomNum = arc4random_uniform(500)
-        distanceMeters = Float(randomNum + 150)
+        randomNum = arc4random_uniform(UInt32(Int(maximo/4)))
+        distanceMeters = Float(randomNum + UInt32(Int(minimo/4)))
         
         calcularSecondwaypoint(bearing: bearing,distanceMeters: distanceMeters)
         
-        randomNum = arc4random_uniform(100)
+        randomNum = arc4random_uniform(360)
         bearing = Float(randomNum)
-        elegir = Int(arc4random_uniform(1))
+        elegir = Int(arc4random_uniform(2))
         if(elegir==1){
             bearing = bearing * -1
         }
-        randomNum = arc4random_uniform(500)
-        distanceMeters = Float(randomNum + 150)
         
-
+        randomNum = arc4random_uniform(UInt32(Int(maximo/4)))
+        distanceMeters = Float(randomNum + UInt32(Int(minimo/4)))
+        
+       // randomNum = arc4random_uniform(500)
+       // distanceMeters = Float(randomNum + 150)
+        
+        
         calcularThirdwaypoint(bearing: bearing,distanceMeters: distanceMeters)
         
         
@@ -257,9 +290,13 @@ class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
         //////////////////////////////
         latFinal = latInicial
         longFinal = longInicial
-
+        
         addOverlayToMapView(lat: latThirdwaypoint, long: longThirdwaypoint, latFinal: latFinal, longFinal: longFinal)
         //////////////////////////////
+        
+        print("//////////////////////////////////////////////")
+        print(minimo)
+        print(maximo)
     }
     
     func DummysetMapviewPath(){
@@ -277,30 +314,27 @@ class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
         let objetive = "overview_polyline"
         
         for i in 0..<withPath.count{
-           // print("\(i)" + withPath[i])
+            // print("\(i)" + withPath[i])
             if(withPath[i] == objetive){
                 let a = withPath[i+2]
                 return a.replacingOccurrences(of: "\\\\",with: "\\")
-                
+            
             }
         }
         return encodedpoints
     }
     
     
-    
-    
-
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
     
     
-
+    
 }

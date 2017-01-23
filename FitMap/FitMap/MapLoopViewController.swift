@@ -177,8 +177,18 @@ class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     func calculaWaypoints(){
+        // Random Number
+        var randomNum = arc4random_uniform(100)
+        var bearing = Float(randomNum)
+        var elegir = Int(arc4random_uniform(1))
+        if(elegir==1){
+            bearing = bearing * -1
+        }
+        randomNum = arc4random_uniform(500)
+        var distanceMeters = Float(randomNum + 150)
         
-        calcularFirstwaypoint(bearing: 0,distanceMeters: 0)
+        
+        calcularFirstwaypoint(bearing: bearing,distanceMeters: distanceMeters)
         calcularSecondwaypoint(bearing: 0,distanceMeters: 0)
         calcularThirdwaypoint(bearing: 0,distanceMeters: 0)
         

@@ -44,7 +44,6 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate, GM
 
             // app already launched
 
-
             
         }
         else

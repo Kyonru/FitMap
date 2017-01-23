@@ -25,7 +25,7 @@ class UserSaving{
 
         userObject = user
         saveUser(id: userObject.id)
-        getUserId()
+        _ = getUserId()
         
     }
     
@@ -78,7 +78,7 @@ class UserSaving{
     ////////////////////////////////////////////////////////////////////////
     
     @available(iOS 10.0, *)
-    func getUserId() {
+    func getUserId() -> Int {
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedObjectContext = appDelegate.managedObjectContext
@@ -113,6 +113,8 @@ class UserSaving{
         
         print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
         
+        
+        return (result.value(forKey: "userID")! as! Int)
         
     }
     

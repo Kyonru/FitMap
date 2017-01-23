@@ -20,7 +20,7 @@ class LoopViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         // Do any additional setup after loading the view.
         
         navigationController?.navigationBar.barTintColor = UIColor.black
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.red]
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red:0.8, green: 0.0, blue: 0.0, alpha: 1.0)]
 
         tabBarController?.tabBar.barTintColor = UIColor.black
         tabBarController?.tabBar.tintColor = UIColor.red

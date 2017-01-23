@@ -27,6 +27,7 @@
 		5090D1741E00AA7900331A5C /* AgregarRuta.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5090D1731E00AA7900331A5C /* AgregarRuta.storyboard */; };
 		5090D1761E00AAFD00331A5C /* AgregarRutaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090D1751E00AAFD00331A5C /* AgregarRutaViewController.swift */; };
 		509BDD071E29999A0083E490 /* routeSaving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509BDD061E29999A0083E490 /* routeSaving.swift */; };
+		50BD8BF51E366235002FC086 /* graph-self-loop-symbol-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BD8BF41E366235002FC086 /* graph-self-loop-symbol-2.png */; };
 		50CD9B7F1E008D1A00B79DF9 /* DetalleRuta.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50CD9B7E1E008D1A00B79DF9 /* DetalleRuta.storyboard */; };
 		50CD9B811E008EB000B79DF9 /* DetalleRutaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD9B801E008EB000B79DF9 /* DetalleRutaViewController.swift */; };
 		50E017DF1E266F49001BB7B6 /* RunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E017DE1E266F49001BB7B6 /* RunViewController.swift */; };
@@ -92,6 +93,7 @@
 		5090D1731E00AA7900331A5C /* AgregarRuta.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AgregarRuta.storyboard; sourceTree = "<group>"; };
 		5090D1751E00AAFD00331A5C /* AgregarRutaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgregarRutaViewController.swift; sourceTree = "<group>"; };
 		509BDD061E29999A0083E490 /* routeSaving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = routeSaving.swift; sourceTree = "<group>"; };
+		50BD8BF41E366235002FC086 /* graph-self-loop-symbol-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "graph-self-loop-symbol-2.png"; path = "../../../../../Downloads/graph-self-loop-symbol-2.png"; sourceTree = "<group>"; };
 		50CD9B7E1E008D1A00B79DF9 /* DetalleRuta.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DetalleRuta.storyboard; sourceTree = "<group>"; };
 		50CD9B801E008EB000B79DF9 /* DetalleRutaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalleRutaViewController.swift; sourceTree = "<group>"; };
 		50E017DE1E266F49001BB7B6 /* RunViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunViewController.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 		508824911E0C239300738DC4 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				50BD8BF41E366235002FC086 /* graph-self-loop-symbol-2.png */,
 				DDE048341DF8CDBB0043085A /* AppDelegate.swift */,
 				DDE048401DF8CDBB0043085A /* LaunchScreen.storyboard */,
 				DDE0483E1DF8CDBB0043085A /* Assets.xcassets */,
@@ -457,6 +460,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50CD9B7F1E008D1A00B79DF9 /* DetalleRuta.storyboard in Resources */,
+				50BD8BF51E366235002FC086 /* graph-self-loop-symbol-2.png in Resources */,
 				DDE048421DF8CDBB0043085A /* LaunchScreen.storyboard in Resources */,
 				DDE0483F1DF8CDBB0043085A /* Assets.xcassets in Resources */,
 				5090D1741E00AA7900331A5C /* AgregarRuta.storyboard in Resources */,

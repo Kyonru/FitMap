@@ -21,6 +21,8 @@ class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
         MapView.clear()
     }
     
+    let directionkey = "AIzaSyCh8ryDtzhxTmOQx8MyS2aybz14oi1M2-w"
+    
     var stateForFirstLocation = false
     var camera = GMSCameraPosition()
     
@@ -146,7 +148,7 @@ class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
         
         let firstCoordinate = CLLocationCoordinate2DMake(latFinal, longFinal)
         
-        let directionURL = "https://maps.googleapis.com/maps/api/directions/json?origin=\(lat),\(long)&destination=\(firstCoordinate.latitude),\(firstCoordinate.longitude)&mode=walking&key=AIzaSyBDw7YtmcgAElskM3KKE0jXWt8gMQeBeYU"
+        let directionURL = "https://maps.googleapis.com/maps/api/directions/json?origin=\(lat),\(long)&destination=\(firstCoordinate.latitude),\(firstCoordinate.longitude)&mode=walking&key=\(directionkey)"
         
         print (directionURL)
         Alamofire.request(directionURL, method: .get, parameters: nil).responseJSON { response in

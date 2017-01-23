@@ -16,9 +16,13 @@ class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func loopButton(_ sender: UIButton) {
        // self.addOverlayToMapView()
+        
         self.calculaWaypoints()
         MapView.clear()
     }
+    
+    var stateForFirstLocation = false
+    var camera = GMSCameraPosition()
     
     var locationManager = CLLocationManager()
     let path = GMSMutablePath()
@@ -71,15 +75,49 @@ class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
         //Locaciones.append(locations.last!)
         
         let locValue = locations.last!
+        var initialLocation = CLLocation(latitude: 0.00, longitude: 0.00)
+
         
         longInicial = (locations.first?.coordinate.longitude)!
         latInicial=(locations.first?.coordinate.latitude)!
         
         let long = locValue.coordinate.longitude
         let lat = locValue.coordinate.latitude
-        let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 15.0)
+//        let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 15.0)
         
-        MapView.camera = camera
+         if stateForFirstLocation == false{
+            
+            initialLocation = CLLocation(latitude: lat, longitude: long)
+            let initialMarker = GMSMarker()
+            initialMarker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
+            initialMarker.icon = UIImage(named: "pin2")
+            initialMarker.map = MapView
+
+            
+            camera = GMSCameraPosition.camera(withLatitude: latInicial, longitude: longInicial, zoom: 15.0)
+            
+            MapView.camera = camera
+            
+            stateForFirstLocation = true
+        }
+
+        //Following the user location
+        let updateCam = GMSCameraUpdate.setTarget(locations.last!.coordinate)
+        MapView.animate(with: updateCam)
+        
+        
+        
+        MapView.isMyLocationEnabled = true
+        
+        path.add(locValue.coordinate)
+        rectangle = GMSPolyline(path: path)
+        rectangle.geodesic = true
+        rectangle.strokeColor = UIColor.orange
+        rectangle.strokeWidth = 2
+        rectangle.map = MapView
+        
+        
+//        MapView.camera = camera
         MapView.isMyLocationEnabled = true
         
         

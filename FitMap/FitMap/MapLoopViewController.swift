@@ -314,10 +314,22 @@ class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
         let objetive = "overview_polyline"
         
         for i in 0..<withPath.count{
+            let m = " =             {\n"+"points = "
             // print("\(i)" + withPath[i])
             if(withPath[i] == objetive){
-                let a = withPath[i+2]
-                return a.replacingOccurrences(of: "\\\\",with: "\\")
+                if(withPath[i+1] != m){
+                    let a = withPath[i+2]
+                    return a.replacingOccurrences(of: "\\\\",with: "\\")
+                }else{
+                    let a = " =             {\n"+"points = "
+                    let b = ";\n"+"};\n"+"summary ="
+                    
+                    let c = withPath[i+1]
+                    c.replacingOccurrences(of: a, with: "")
+                    c.replacingOccurrences(of: b, with: "")
+                    
+                    return c
+                }
             
             }
         }

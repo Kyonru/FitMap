@@ -15,14 +15,32 @@ import Alamofire
 class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func loopButton(_ sender: UIButton) {
-        self.addOverlayToMapView()
-        
-        
-        
+       // self.addOverlayToMapView()
+        self.calculaWaypoints()
+        MapView.clear()
     }
+    
     var locationManager = CLLocationManager()
     let path = GMSMutablePath()
     var pathString = GMSPath()
+    
+    
+    var longFinal = CLLocationDegrees()
+    var latFinal = CLLocationDegrees()
+    
+    var longInicial = CLLocationDegrees()
+    var latInicial = CLLocationDegrees()
+    
+    var longFirswaypoint = CLLocationDegrees()
+    var latFirstwaypoint = CLLocationDegrees()
+    
+    var longSecondwaypoint = CLLocationDegrees()
+    var latSecondwaypoint = CLLocationDegrees()
+    
+    var longThirdwaypoint = CLLocationDegrees()
+    var latThirdwaypoint = CLLocationDegrees()
+    
+    
     
     @IBOutlet weak var MapView: GMSMapView!
     
@@ -42,27 +60,27 @@ class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.requestAlwaysAuthorization()
             locationManager.startUpdatingLocation()
             
-        //Cosa
-            //callWebService()
-           // addOverlayToMapView()
     }
 }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         //Locaciones.append(locations.last!)
+        
         let locValue = locations.last!
+        
+        longInicial = (locations.first?.coordinate.longitude)!
+        latInicial=(locations.first?.coordinate.latitude)!
         
         let long = locValue.coordinate.longitude
         let lat = locValue.coordinate.latitude
         let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 15.0)
-        MapView.camera = camera
         
+        MapView.camera = camera
         MapView.isMyLocationEnabled = true
         
         
         //view = MapView
-        
         //path.add(locValue.coordinate)
         
         /*
@@ -73,38 +91,90 @@ class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
         //locationManager.stopUpdatingLocation()
     }
     
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    func addOverlayToMapView(){
+    
+    
+    func addOverlayToMapView(lat: CLLocationDegrees, long: CLLocationDegrees, latFinal: CLLocationDegrees, longFinal: CLLocationDegrees){
         
-        let directionURL = "https://maps.googleapis.com/maps/api/directions/json?origin=\(18.492516),\(-69.958859)&destination=\(18.488095),\(-69.964144)&mode=walking&key=AIzaSyBDw7YtmcgAElskM3KKE0jXWt8gMQeBeYU"
+        let firstCoordinate = CLLocationCoordinate2DMake(latFinal, longFinal)
         
+        let directionURL = "https://maps.googleapis.com/maps/api/directions/json?origin=\(lat),\(long)&destination=\(firstCoordinate.latitude),\(firstCoordinate.longitude)&mode=walking&key=AIzaSyBDw7YtmcgAElskM3KKE0jXWt8gMQeBeYU"
+        
+        print (directionURL)
         Alamofire.request(directionURL, method: .get, parameters: nil).responseJSON { response in
-           
-            print(response.request)  // original URL request
-            print(response.response) // HTTP URL response
-            print(response.data)     // server data
-            print(response.result)   // result of response serialization
-            
-            if let  cjson = response.result.value as? NSDictionary{
-                print("JSON: \(cjson)")
-                print(2312)
-            }
+        
             
             let json = "\(response.result.value)"
+            
+            print (json)
+            
             let routesArray = json.components(separatedBy: "\"")
             let Camino = self.search(withPath: routesArray)
-            let a = "kyzoBd|~iLyc@aBoIWa@Eq@I@LLB\\DbDJ~ZhAp\\nApHV`@LNNFVPVJj@Dr@QfN@bADpAPnA\\rAj@hANWOUa@_AKa@"
-       
-            //self.pathString = GMSPath(fromEncodedPath: Camino.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!)!
             self.pathString = GMSPath(fromEncodedPath: Camino)!
             self.DummysetMapviewPath()
             
         }
     
+    }
+    
+    func locationWithBearing(bearing:Double, distanceMeters:Double, origin:CLLocationCoordinate2D) -> CLLocationCoordinate2D {
+        let distRadians = distanceMeters / (6372797.6)
+        
+        let rbearing = bearing * M_PI / 180.0
+        
+        let lat1 = origin.latitude * M_PI / 180
+        let lon1 = origin.longitude * M_PI / 180
+        
+        let lat2 = asin(sin(lat1) * cos(distRadians) + cos(lat1) * sin(distRadians) * cos(rbearing))
+        let lon2 = lon1 + atan2(sin(rbearing) * sin(distRadians) * cos(lat1), cos(distRadians) - sin(lat1) * sin(lat2))
+        
+        return CLLocationCoordinate2D(latitude: lat2 * 180 / M_PI, longitude: lon2 * 180 / M_PI)
+    }
+    
+    
+    
+    
+    func calculaWaypoints(){
+        
+        let firstCoordinate = CLLocationCoordinate2DMake(latInicial, longInicial)
+        var move = locationWithBearing(bearing: 14.0, distanceMeters: 400.2, origin: firstCoordinate)
+        latFirstwaypoint = move.latitude
+        longFirswaypoint = move.longitude
+        
+        print(longInicial)
+        print("  ")
+        print(longFirswaypoint)
+        self.addOverlayToMapView(lat: latInicial, long: longInicial, latFinal: latFirstwaypoint, longFinal: longFirswaypoint)
+        
+        
+        let secondCoordinate = CLLocationCoordinate2DMake(latFirstwaypoint, longFirswaypoint)
+        move = locationWithBearing(bearing: 50, distanceMeters: 500.2, origin: secondCoordinate)
+        
+        latSecondwaypoint = move.latitude
+        longSecondwaypoint = move.longitude
+        
+        
+        addOverlayToMapView(lat: latFirstwaypoint, long: longFirswaypoint, latFinal: latSecondwaypoint, longFinal: longSecondwaypoint)
+        
+        
+        let thirdCoordinate = CLLocationCoordinate2DMake(latSecondwaypoint, longSecondwaypoint)
+        move = locationWithBearing(bearing: -14, distanceMeters: 470, origin: thirdCoordinate)
+        
+        latThirdwaypoint = move.latitude
+        longThirdwaypoint = move.longitude
+        
+        addOverlayToMapView(lat: latSecondwaypoint, long: longSecondwaypoint, latFinal: latThirdwaypoint, longFinal: longThirdwaypoint)
+        
+        latFinal = latInicial
+        longFinal = longInicial
+
+        addOverlayToMapView(lat: latThirdwaypoint, long: longThirdwaypoint, latFinal: latFinal, longFinal: longFinal)
+        
     }
     
     func DummysetMapviewPath(){
@@ -122,7 +192,7 @@ class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
         let objetive = "overview_polyline"
         
         for i in 0..<withPath.count{
-            print("\(i)" + withPath[i])
+           // print("\(i)" + withPath[i])
             if(withPath[i] == objetive){
                 let a = withPath[i+2]
                 return a.replacingOccurrences(of: "\\\\",with: "\\")

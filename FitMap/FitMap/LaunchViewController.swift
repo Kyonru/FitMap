@@ -68,7 +68,6 @@ class LaunchViewController: UIViewController {
         user.User(id: 0, name: firstName, lastNam: lastName)
         
         //Send this user object to the UserSaving moddel
-        
         let saving = UserSaving();
         saving.user(user: user)
         

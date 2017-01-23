@@ -41,18 +41,16 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate, GM
         
         if(UserDefaults.standard.bool(forKey: "HasLaunchedOnce"))
         {
-             self.dismiss(animated: true, completion: nil)
+
             // app already launched
-            let storyBoard : UIStoryboard = UIStoryboard(name: "DetalleRuta", bundle:nil)
-            let launchViewController = storyBoard.instantiateViewController(withIdentifier: "LaunchViewController") as! LaunchViewController
-            
-            self.present(launchViewController, animated:true, completion:nil)
+
 
             
         }
         else
         {
             self.dismiss(animated: true, completion: nil)
+            
             // This is the first launch ever
             // Invokes the launch screen
             let storyBoard : UIStoryboard = UIStoryboard(name: "DetalleRuta", bundle:nil)

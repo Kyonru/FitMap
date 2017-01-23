@@ -25,6 +25,7 @@ class UserSaving{
 
         userObject = user
         saveUser(id: userObject.id)
+        getUserId()
         
     }
     
@@ -42,8 +43,12 @@ class UserSaving{
     @available(iOS 10.0, *)
     func saveUser(id: Int) {
         
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        let managedObjectContext = appDelegate.managedObjectContext
+        
+         let context = appDelegate.managedObjectContext
 //        let context = getContext()
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+//        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
         //retrieve the entity that we just created
         let entity =  NSEntityDescription.entity(forEntityName: "UserData", in: context)
@@ -52,6 +57,7 @@ class UserSaving{
         
         //set the entity values
         usr.setValue(id, forKey: "userID")
+        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!SAVING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 //        transc.setValue(audioFileUrlString, forKey: "audioFileUrlString")
 //        transc.setValue(textFileUrlString, forKey: "textFileUrlString")
         
@@ -76,12 +82,18 @@ class UserSaving{
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedObjectContext = appDelegate.managedObjectContext
+        let context = appDelegate.managedObjectContext
+        
+        let entity =  NSEntityDescription.entity(forEntityName: "UserData", in: context)
+        
+        let usr = NSManagedObject(entity: entity!, insertInto: context)
+        
         
         // Create Fetch Request
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "UserData")
         
         // Helpers
-        var result = NSManagedObject()
+        var result = NSManagedObject(entity: entity!, insertInto: managedObjectContext)
         
         do {
             // Execute Fetch Request
@@ -97,7 +109,7 @@ class UserSaving{
         
         print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
         
-        print(result)
+        print(result.value(forKey: "userID")!)
         
         print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
         

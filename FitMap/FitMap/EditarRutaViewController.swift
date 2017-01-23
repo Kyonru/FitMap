@@ -154,7 +154,7 @@ class EditarRutaViewController: UIViewController {
         //Hay que anadir el id del user
         let x = UserSaving()
         let parameters: Parameters = [
-            "idUser": "\(x.getUserId())",
+            "idUser": "\(58)",
             "name": "\(route.name)",
             "time": "\(route.time)",
             "rating": "\(route.rating)",

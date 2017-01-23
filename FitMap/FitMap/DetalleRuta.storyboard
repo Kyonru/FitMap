@@ -37,31 +37,37 @@
                                             <rect key="frame" x="0.0" y="0.0" width="181" height="53"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QVk-37-1WH">
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QVk-37-1WH">
                                                     <rect key="frame" x="117" y="10" width="37" height="37"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" image="skateboard-2">
-                                                        <color key="titleColor" red="1" green="0.068430770366706417" blue="0.12141622002795061" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="tintColor" red="0.81112974476439792" green="0.033294397695632263" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" image="skateboard-2"/>
+                                                    <state key="focused">
+                                                        <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="disciplineSelected:" destination="SDN-cC-d8Y" eventType="touchUpInside" id="dYY-Rf-xNF"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0rs-ip-Hsu">
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0rs-ip-Hsu">
                                                     <rect key="frame" x="72" y="10" width="37" height="37"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" image="icon">
-                                                        <color key="titleColor" red="1" green="0.009056978081934508" blue="0.01926035344371968" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="tintColor" red="0.81112974476439792" green="0.033294397695632263" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" image="icon"/>
+                                                    <state key="focused">
+                                                        <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="disciplineSelected:" destination="SDN-cC-d8Y" eventType="touchUpInside" id="APH-qg-FZY"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ouz-ep-VTA">
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ouz-ep-VTA">
                                                     <rect key="frame" x="27" y="10" width="37" height="37"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" image="bicycle">
-                                                        <color key="titleColor" red="1" green="0.0" blue="0.056107677723829852" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="tintColor" red="0.81112974476439792" green="0.033294397695632263" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" image="bicycle"/>
+                                                    <state key="focused">
+                                                        <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="disciplineSelected:" destination="SDN-cC-d8Y" eventType="touchUpInside" id="Pv8-cB-Dih"/>

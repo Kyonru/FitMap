@@ -8,6 +8,7 @@
 
 import UIKit
 import Cosmos
+import Alamofire
 
 class EditarRutaViewController: UIViewController {
     
@@ -33,7 +34,7 @@ class EditarRutaViewController: UIViewController {
     
     @IBOutlet weak var routeCommentTextField: UITextField!
     
-    var discipline = " "
+    var discipline = ""
     
     var timeRecorded: Int64 = 0
     var distanceRecorded: Double = 0.0
@@ -133,7 +134,7 @@ class EditarRutaViewController: UIViewController {
             route.name = routeNameTextField.text!
         }
         
-        route.discipline = discipline
+        route.discipline = self.discipline
         route.rating = Int(starView.rating)
         route.time = Int64(timeLabel.text!)!
         route.distance = Double(distanceLabel.text!)!
@@ -146,8 +147,23 @@ class EditarRutaViewController: UIViewController {
         let save = routeSaving()
         save.insertRoute(route: route)
         
+        //Hay que anadir el id del user
+        let parameters: Parameters = [
+            "idUser": "\(46)",
+            "name": "\(route.name)",
+            "time": "\(route.time)",
+            "rating": "\(route.rating)",
+            "comment": "\(route.comment)",
+            "discipline": "\(route.discipline)"
+        ]
+        
+        
+        let urlString = "http://0.0.0.0:80/api/v1/routes/"
+        _ = Alamofire.request(urlString,method: .post, parameters: parameters)
+        
         
         self.dismiss(animated: true, completion: nil)
+
 
         
     }

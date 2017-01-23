@@ -8,33 +8,37 @@
 
 import UIKit
 
-class LaunchViewController: UIViewController {
+class LaunchViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var doneButton: UIButton!
     
     @IBOutlet weak var nextButton: UIButton!
     
+
+    @IBOutlet weak var bottomC: NSLayoutConstraint!
     @IBOutlet weak var firstNameTextField: UITextField!
-    
     @IBOutlet weak var lastNameTextField: UITextField!
     
+
     var user = User();
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        
+
+
 
         // Do any additional setup after loading the view.
 //        doneButton.isHidden = true
 //        nextButton.isHidden = false
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    
-    
+
     
     @IBAction func nextButton(_ sender: UIButton) {
         
@@ -60,7 +64,6 @@ class LaunchViewController: UIViewController {
     @available(iOS 10.0, *)
     @IBAction func registerButton(_ sender: UIButton) {
         
-        
         //Capturing first and last name
         let firstName = firstNameTextField.text!
         let lastName = lastNameTextField.text!
@@ -75,17 +78,45 @@ class LaunchViewController: UIViewController {
         
         self.dismiss(animated: true, completion: nil)
         
-//        doneButton.isHidden = false
-//        nextButton.isHidden = true
+        //        doneButton.isHidden = false
+        //        nextButton.isHidden = true
         
         let storyBoard : UIStoryboard = UIStoryboard(name: "DetalleRuta", bundle:nil)
         let detalleRutaViewController = storyBoard.instantiateViewController(withIdentifier: "DetalleRutaViewController") as! DetalleRutaViewController
         
         self.navigationController?.pushViewController(detalleRutaViewController, animated: true)
-
-    
+        
+        
+    }
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    
+    func keyboardNotification(notification: NSNotification) {
+        if let userInfo = notification.userInfo {
+            let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+            let duration:TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+            let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber
+            let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIViewAnimationOptions.curveEaseInOut.rawValue
+            let animationCurve:UIViewAnimationOptions = UIViewAnimationOptions(rawValue: animationCurveRaw)
+            if (endFrame?.origin.y)! >= UIScreen.main.bounds.size.height {
+                self.bottomC?.constant = 0.0
+            } else {
+                self.bottomC?.constant = endFrame?.size.height ?? 0.0
+            }
+            UIView.animate(withDuration: duration,
+                           delay: TimeInterval(0),
+                           options: animationCurve,
+                           animations: { self.view.layoutIfNeeded() },
+                           completion: nil)
+        }
+    }
+
     
     @IBAction func doneButton(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)

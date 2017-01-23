@@ -36,7 +36,7 @@ class RouteDataSource {
     func retrieveRoute(MapView: GMSMapView!){
         
         
-        let urlString = "http://0.0.0.0/api/v1/routes/unique/id"
+        let urlString = "http://54.244.37.198/api/v1/routes/unique/id"
         
         _ = Alamofire.request(urlString, method: .get).responseJSON(completionHandler:{                   Respuesta in
 
@@ -52,7 +52,7 @@ class RouteDataSource {
     //wrapper
     func retrievePath(MapView: GMSMapView!) {
         for route in routesList{
-            let urlString = "http://0.0.0.0:80/api/v1/points/"
+            let urlString = "http://54.244.37.198/api/v1/points/"
             let parameters:Parameters = [
                 "idRoute" : "\(route)"]
             

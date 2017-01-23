@@ -52,7 +52,7 @@ class UserSaving{
             "lastName": "\(self.userObject.lastName)"
         ]
         
-        let urlString = "http://0.0.0.0:80/api/v1/users/"
+        let urlString = "http://54.244.37.198/api/v1/users/"
         
         _ = Alamofire.request(urlString, method: .post, parameters: parameters).responseJSON(completionHandler:{                   Respuesta in
             print("\(Respuesta.result.value)")

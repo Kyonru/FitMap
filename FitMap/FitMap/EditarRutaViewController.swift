@@ -154,21 +154,23 @@ class EditarRutaViewController: UIViewController {
         //Hay que anadir el id del user
         let x = UserSaving()
         let parameters: Parameters = [
-            "idUser": "\(58)",
+            "idUser": "\(x.getUserId())",
             "name": "\(route.name)",
             "time": "\(route.time)",
             "rating": "\(route.rating)",
             "comment": "\(route.comment)",
             "discipline": "\(route.discipline)"
         ]
+        print("AAaaaaaaajasbfksdahjfhdfjkhdjhdjjhksdfhjsdfhlhsdfkgasfghjasdgfhgghjdkhjdkg")
         print(x.getUserId())
         
-        let urlString = "http://0.0.0.0:80/api/v1/routes/"
+        let urlString = "http://54.244.37.198/api/v1/routes/"
         
         _ = Alamofire.request(urlString, method: .post, parameters: parameters).responseJSON(completionHandler:{            Respuesta in
             print("\(Respuesta.result.value)")
             
             DispatchQueue.main.async {
+                            print(Respuesta)
                             self.route.id = Int((String("\(Respuesta)")?.replacingOccurrences(of: "SUCCESS: ", with: ""))!)!
                             self.insertPoints()
             }

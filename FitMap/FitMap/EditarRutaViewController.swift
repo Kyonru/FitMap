@@ -9,6 +9,7 @@
 import UIKit
 import Cosmos
 import Alamofire
+import GoogleMaps
 
 class EditarRutaViewController: UIViewController {
     
@@ -34,6 +35,7 @@ class EditarRutaViewController: UIViewController {
     
     @IBOutlet weak var routeCommentTextField: UITextField!
     
+    var myPoints : [CLLocation] = []
     var discipline = ""
     
     var timeRecorded: Int64 = 0
@@ -128,8 +130,7 @@ class EditarRutaViewController: UIViewController {
     
     
     @IBAction func submitAction(_ sender: UIButton) {
-        
-        // Falta validar que el 
+
         if routeNameTextField.text != nil{
             route.name = routeNameTextField.text!
         }
@@ -146,7 +147,7 @@ class EditarRutaViewController: UIViewController {
         // Send this route object to the model, to insert it into the database
         let save = routeSaving()
         save.insertRoute(route: route)
-        
+
         //Hay que anadir el id del user
         let parameters: Parameters = [
             "idUser": "\(46)",
@@ -159,16 +160,25 @@ class EditarRutaViewController: UIViewController {
         
         
         let urlString = "http://0.0.0.0:80/api/v1/routes/"
-        _ = Alamofire.request(urlString,method: .post, parameters: parameters)
         
-        
+        _ = Alamofire.request(urlString, method: .post, parameters: parameters).responseJSON(completionHandler:{            Respuesta in
+            print("\(Respuesta.result.value)")
+            
+            DispatchQueue.main.async {
+                            self.route.id = Int((String("\(Respuesta)")?.replacingOccurrences(of: "SUCCESS: ", with: ""))!)!
+                            self.insertPoints()
+            }
+
+            
+            } )
+
         self.dismiss(animated: true, completion: nil)
 
-
-        
     }
     
 
+    
+    
     func getRouteData(route: Route){
         
         timeRecorded = route.time
@@ -176,6 +186,21 @@ class EditarRutaViewController: UIViewController {
         
     }
     
+    func getPoints(trackedLocations: [CLLocation]){
+        myPoints = trackedLocations
+    }
+    
+    func insertPoints(){
+        for point in myPoints{
+            let parp: Parameters = [
+                "idRoute": "\(route.id)",
+                "longitude": "\(point.coordinate.longitude)",
+                "latitude": "\(point.coordinate.latitude)"
+            ]
+            _ = Alamofire.request("http://0.0.0.0:80/api/v1/points/",method: .post, parameters: parp)
+            
+        }
+    }
     
     
     

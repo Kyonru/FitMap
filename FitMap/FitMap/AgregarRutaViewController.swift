@@ -116,6 +116,15 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
                 
                 nextViewController.getRouteData(route: route) // Sending the route data recorded to the editarRutaViewController
                 
+                //Sending the route data recorded to the editarRutaViewController
+                nextViewController.getPoints(trackedLocations: self.trackedLocations)
+                                    print("///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////")
+                for point in self.trackedLocations{
+
+                    print(point.coordinate.latitude)
+                    print(point.coordinate.longitude)
+                }
+                
                 self.present(nextViewController, animated:true, completion:nil)
                 
                 print("default")
@@ -124,7 +133,8 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
                 print("cancel")
                 
             case .destructive:
-                self.cleanData()
+                print("")
+//                self.cleanData()
                 
             }
         }))
@@ -180,11 +190,6 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
             // Adding locations to a list
             trackedLocations.append(locValue)
             
-
-            
-            
-            
-            
             //Here is the creation of the initial marker
             if stateForFirstLocation == false{
                 initialLocation = CLLocation(latitude: lat, longitude: long)
@@ -228,7 +233,7 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
     
     func cleanData(){
         path = GMSMutablePath()
-        trackedLocations = []
+//        trackedLocations = []
 //        trackedDistance = 0.00
         currentSpeed = 0.00
         stateForFirstLocation = false

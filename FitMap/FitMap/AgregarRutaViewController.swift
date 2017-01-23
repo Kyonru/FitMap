@@ -118,7 +118,7 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
                 
                 //Sending the route data recorded to the editarRutaViewController
                 nextViewController.getPoints(trackedLocations: self.trackedLocations)
-                                    print("///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////")
+                
                 for point in self.trackedLocations{
 
                     print(point.coordinate.latitude)
@@ -134,7 +134,7 @@ class AgregarRutaViewController: UIViewController, CLLocationManagerDelegate{
                 
             case .destructive:
                 print("")
-//                self.cleanData()
+               self.cleanData()
                 
             }
         }))

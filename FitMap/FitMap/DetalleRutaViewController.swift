@@ -41,21 +41,21 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate, GM
         
         if(UserDefaults.standard.bool(forKey: "HasLaunchedOnce"))
         {
-//
-//            // app already launched
-//            self.dismiss(animated: true, completion: nil)
-//            
-//            // This is the first launch ever
-//            // Invokes the launch screen
-//            let storyBoard : UIStoryboard = UIStoryboard(name: "DetalleRuta", bundle:nil)
-//            let launchViewController = storyBoard.instantiateViewController(withIdentifier: "LaunchViewController") as! LaunchViewController
-//            
-//            self.present(launchViewController, animated:true, completion:nil)
-//            
-//            
-//            UserDefaults.standard.set(true, forKey: "HasLaunchedOnce")
-//            UserDefaults.standard.synchronize()
-//
+
+            // app already launched
+            self.dismiss(animated: true, completion: nil)
+            
+            // This is the first launch ever
+            // Invokes the launch screen
+            let storyBoard : UIStoryboard = UIStoryboard(name: "DetalleRuta", bundle:nil)
+            let launchViewController = storyBoard.instantiateViewController(withIdentifier: "LaunchViewController") as! LaunchViewController
+            
+            self.present(launchViewController, animated:true, completion:nil)
+            
+            
+            UserDefaults.standard.set(true, forKey: "HasLaunchedOnce")
+            UserDefaults.standard.synchronize()
+
 
             
         }
@@ -98,6 +98,7 @@ class DetalleRutaViewController: UIViewController, CLLocationManagerDelegate, GM
         let routeData = RouteDataSource() //initializing the model RouteDataSource
 //        routeData.retrievePath(MapView: MapView) //This method draws the routes on map
         routeData.retrievePath(MapView: MapView)
+        routeData.retrieveRoute(MapView: MapView)
         
         //Rounding borders
         disciplinesView.layer.cornerRadius = 10.0

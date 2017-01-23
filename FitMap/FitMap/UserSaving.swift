@@ -58,7 +58,7 @@ class UserSaving{
             print("\(Respuesta.result.value)")
             
             DispatchQueue.main.async {
-                self.userObject.id = Int((String("\(Respuesta)")?.replacingOccurrences(of: "SUCCESS: ", with: ""))!)!			
+                self.userObject.id = Int((String("\(Respuesta)")?.replacingOccurrences(of: "SUCCESS: ", with: ""))!)!
                 print(self.userObject.id)
                 self.registrar(id: id)
 

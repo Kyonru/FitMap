@@ -302,6 +302,9 @@ class MapLoopViewController: UIViewController, CLLocationManagerDelegate {
     func DummysetMapviewPath(){
         
         rectangle = GMSPolyline(path: pathString)
+        rectangle.geodesic = true
+        rectangle.strokeColor = UIColor.brown
+        rectangle.strokeWidth = 4
         rectangle.map = MapView
         
         

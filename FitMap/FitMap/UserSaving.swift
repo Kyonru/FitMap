@@ -58,40 +58,17 @@ class UserSaving{
             print("\(Respuesta.result.value)")
             
             DispatchQueue.main.async {
-                self.userObject.id = Int((String("\(Respuesta)")?.replacingOccurrences(of: "SUCCESS: ", with: ""))!)!
+                self.userObject.id = Int((String("\(Respuesta)")?.replacingOccurrences(of: "SUCCESS: ", with: ""))!)!			
+                print(self.userObject.id)
+                self.registrar(id: id)
 
             }
             
             
         } )
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        let managedObjectContext = appDelegate.managedObjectContext
-        
-         let context = appDelegate.managedObjectContext
-//        let context = getContext()
-//        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+ 
 
-        //retrieve the entity that we just created
-        let entity =  NSEntityDescription.entity(forEntityName: "UserData", in: context)
-        
-        let usr = NSManagedObject(entity: entity!, insertInto: context)
-        
-        //set the entity values
-        usr.setValue(id, forKey: "userID")
-        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!SAVING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-//        transc.setValue(audioFileUrlString, forKey: "audioFileUrlString")
-//        transc.setValue(textFileUrlString, forKey: "textFileUrlString")
-        
-        //save the object
-        do {
-            try context.save()
-            print("saved!")
-        } catch let error as NSError  {
-            print("Could not save \(error), \(error.userInfo)")
-        } catch {
-            
-        }
     }
     
     
@@ -139,7 +116,36 @@ class UserSaving{
         return (result.value(forKey: "userID")! as! Int)
         
     }
-    
+    func registrar(id: Int){
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        //        let managedObjectContext = appDelegate.managedObjectContext
+        
+        let context = appDelegate.managedObjectContext
+        //        let context = getContext()
+        //        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        //retrieve the entity that we just created
+        let entity =  NSEntityDescription.entity(forEntityName: "UserData", in: context)
+        
+        let usr = NSManagedObject(entity: entity!, insertInto: context)
+        
+        //set the entity values
+        usr.setValue(id, forKey: "userID")
+        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!SAVING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        //        transc.setValue(audioFileUrlString, forKey: "audioFileUrlString")
+        //        transc.setValue(textFileUrlString, forKey: "textFileUrlString")
+        
+        //save the object
+        do {
+            try context.save()
+            print("saved!")
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+        } catch {
+            
+        }
+    }
     
     
     

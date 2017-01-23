@@ -34,6 +34,7 @@
 		50E9AB2A1E2571740028DAB2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E9AB291E2571740028DAB2 /* DetailViewController.swift */; };
 		50E9AB2C1E2577470028DAB2 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E9AB2B1E2577470028DAB2 /* ReviewViewController.swift */; };
 		8C9C4158300A2971CB11C7D6 /* Pods_FitMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D55EA507A77E411923E6F90 /* Pods_FitMap.framework */; };
+		B291C9311E35478000969D78 /* AlgoLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = B291C9301E35478000969D78 /* AlgoLoop.swift */; };
 		B3C5B1E894B07DCAF2B161D2 /* Pods_FitMapUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B06BAD84722B5DA0BE8C0C5 /* Pods_FitMapUITests.framework */; };
 		DD82C6031E3460AA0059D668 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD82C6021E3460AA0059D668 /* Review.swift */; };
 		DD82C6051E34634A0059D668 /* ReviewSaving.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD82C6041E34634A0059D668 /* ReviewSaving.swift */; };
@@ -99,6 +100,7 @@
 		5B06BAD84722B5DA0BE8C0C5 /* Pods_FitMapUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FitMapUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69CA57A03EA753CF45B82EAA /* Pods-FitMapUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitMapUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FitMapUITests/Pods-FitMapUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6D55EA507A77E411923E6F90 /* Pods_FitMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FitMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B291C9301E35478000969D78 /* AlgoLoop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlgoLoop.swift; sourceTree = "<group>"; };
 		C71A6AB28C1EF04E0E6A9D48 /* Pods-FitMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-FitMap/Pods-FitMap.release.xcconfig"; sourceTree = "<group>"; };
 		DD82C6021E3460AA0059D668 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		DD82C6041E34634A0059D668 /* ReviewSaving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewSaving.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				5088E8201E00AAFF0004AB50 /* LoopViewController.swift */,
 				50886A9E1E1AECE100B2E6AB /* ALoopViewController.swift */,
 				DDEFC7571E22D26000521809 /* MapLoopViewController.swift */,
+				B291C9301E35478000969D78 /* AlgoLoop.swift */,
 			);
 			name = Loop;
 			sourceTree = "<group>";
@@ -623,6 +626,7 @@
 				5083DB301E01F84300F4113C /* MeViewController.swift in Sources */,
 				DD82C6051E34634A0059D668 /* ReviewSaving.swift in Sources */,
 				5084F2041E281FD200E33415 /* RouteDataSource.swift in Sources */,
+				B291C9311E35478000969D78 /* AlgoLoop.swift in Sources */,
 				DD82C6031E3460AA0059D668 /* Review.swift in Sources */,
 				5025C5D91E298B9700D24332 /* Cells.swift in Sources */,
 				5088E8211E00AAFF0004AB50 /* LoopViewController.swift in Sources */,

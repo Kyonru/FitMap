@@ -10,11 +10,10 @@ import UIKit
 
 class LaunchViewController: UIViewController, UITextFieldDelegate {
 
-
-    @IBOutlet weak var bottomC: NSLayoutConstraint!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
-    
     
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var doneButton: UIButton!
@@ -22,9 +21,10 @@ class LaunchViewController: UIViewController, UITextFieldDelegate {
     var user = User();
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
-        
+         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
 
+        
 
 
         // Do any additional setup after loading the view.
@@ -33,6 +33,11 @@ class LaunchViewController: UIViewController, UITextFieldDelegate {
 //        
 //        self.doneButton.isHidden = true
     
+    }
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -52,7 +57,7 @@ class LaunchViewController: UIViewController, UITextFieldDelegate {
 
     
     @available(iOS 10.0, *)
-    @IBAction func registerButton(_ sender: UIButton) {
+    @IBAction func registerButton(_ sender: AnyObject) {
         
 //        //
 //        doneButton.isHidden = false
@@ -85,41 +90,59 @@ class LaunchViewController: UIViewController, UITextFieldDelegate {
         
         
     }
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
-    
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
-    
-    func keyboardNotification(notification: NSNotification) {
-        if let userInfo = notification.userInfo {
-            let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
-            let duration:TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
-            let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber
-            let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIViewAnimationOptions.curveEaseInOut.rawValue
-            let animationCurve:UIViewAnimationOptions = UIViewAnimationOptions(rawValue: animationCurveRaw)
-            if (endFrame?.origin.y)! >= UIScreen.main.bounds.size.height {
-                self.bottomC?.constant = 0.0
-            } else {
-                self.bottomC?.constant = endFrame?.size.height ?? 0.0
-            }
-            UIView.animate(withDuration: duration,
-                           delay: TimeInterval(0),
-                           options: animationCurve,
-                           animations: { self.view.layoutIfNeeded() },
-                           completion: nil)
-        }
-    }
 
-    
  
     @IBAction func doneButtonAction(_ sender: UIButton) {
     
         self.dismiss(animated: true, completion: nil)
     }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        switch textField.tag {
+            
+        case 0:
+            
+            print ("do nothing")
+            
+        default:
+            
+            scrollView.setContentOffset(CGPoint(x: 0, y: 100), animated: true)
+            
+        }
+        
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        scrollView.setContentOffset(CGPoint(x: 0, y:0), animated: true)
+        
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if textField.tag == 0{
+            
+            firstNameTextField.becomeFirstResponder()
+            
+        }else if textField.tag == 1 {
+            
+            lastNameTextField.becomeFirstResponder()
+            
+        }
+        
+        return true
+        
+    }
+    
+    
+
+    }
+    
 
 
     /*
@@ -132,4 +155,4 @@ class LaunchViewController: UIViewController, UITextFieldDelegate {
     }
     */
 
-}
+

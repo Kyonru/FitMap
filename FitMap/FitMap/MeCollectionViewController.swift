@@ -90,13 +90,13 @@ class MeCollectionViewController: UICollectionViewController, UICollectionViewDe
         profileImageView.anchor(cell.topAnchor, left: cell.leftAnchor, bottom: nil, right: nil, topConstant: 12, leftConstant: 12, bottomConstant: 0, rightConstant: 0, widthConstant: 100, heightConstant: 100)
         
         
-        TextT.anchor(profileImageView.topAnchor, left: profileImageView.rightAnchor, bottom: nil, right: cell.rightAnchor, topConstant: 0, leftConstant: 4, bottomConstant: 0, rightConstant: 12, widthConstant: 0, heightConstant: 25)
+      //  TextT.anchor(profileImageView.topAnchor, left: profileImageView.rightAnchor, bottom: nil, right: cell.rightAnchor, topConstant: 0, leftConstant: 4, bottomConstant: 0, rightConstant: 12, widthConstant: 0, heightConstant: 25)
         
         
-        TextFecha.anchor(TextT.bottomAnchor, left: profileImageView.rightAnchor, bottom: nil, right: cell.rightAnchor, topConstant: 10, leftConstant: 4, bottomConstant: 0, rightConstant: 12, widthConstant: 0, heightConstant: 25)
+     //  TextFecha.anchor(TextT.bottomAnchor, left: profileImageView.rightAnchor, bottom: nil, right: cell.rightAnchor, topConstant: 10, leftConstant: 4, bottomConstant: 0, rightConstant: 12, widthConstant: 0, heightConstant: 25)
         
         
-        TextTiempo.anchor(TextFecha.bottomAnchor, left: profileImageView.rightAnchor, bottom: nil, right: cell.rightAnchor, topConstant: 10, leftConstant: 4, bottomConstant: 0, rightConstant: 12, widthConstant: 0, heightConstant: 25 )
+    //    TextTiempo.anchor(TextFecha.bottomAnchor, left: profileImageView.rightAnchor, bottom: nil, right: cell.rightAnchor, topConstant: 10, leftConstant: 4, bottomConstant: 0, rightConstant: 12, widthConstant: 0, heightConstant: 25 )
         
         
         return cell

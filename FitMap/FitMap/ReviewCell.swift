@@ -69,18 +69,18 @@ class ReviewCell: DatasourceCell {
         addSubview(Comment)
         
         //profileImageView.image = Imagen // HIPOTETICA IMAGEN
-        profileImageView.anchor(self.topAnchor, left: self.leftAnchor, bottom: nil, right: nil, topConstant: 12, leftConstant: 12, bottomConstant: 12, rightConstant: 0, widthConstant: 40, heightConstant: 45)
+        profileImageView.anchor(self.topAnchor, left: self.leftAnchor, bottom: self.bottomAnchor, right: nil, topConstant: 12, leftConstant: 12, bottomConstant: 12, rightConstant: 0, widthConstant: 100, heightConstant: 140)
         
         
-        TextT.anchor(self.topAnchor, left: profileImageView.rightAnchor, bottom: nil, right: nil, topConstant: 12, leftConstant: 4, bottomConstant: 0, rightConstant: 0, widthConstant: 45, heightConstant: 25)
+        TextT.anchor(self.topAnchor, left: profileImageView.rightAnchor, bottom: nil, right: nil, topConstant: 12, leftConstant: 4, bottomConstant: 0, rightConstant: 0, widthConstant: 160, heightConstant: 25)
         
         
-        TextFecha.anchor(TextT.bottomAnchor, left: profileImageView.rightAnchor, bottom: nil, right: nil, topConstant: 4, leftConstant: 4, bottomConstant: 0, rightConstant: 0, widthConstant: 45, heightConstant: 25)
+        TextFecha.anchor(TextT.bottomAnchor, left: profileImageView.rightAnchor, bottom: nil, right: nil, topConstant: 4, leftConstant: 4, bottomConstant: 0, rightConstant: 0, widthConstant: 160, heightConstant: 25)
         
         
-        TextTiempo.anchor(self.topAnchor, left: TextT.rightAnchor, bottom:nil, right: self.rightAnchor, topConstant: 12, leftConstant: 4, bottomConstant: 0, rightConstant: 12, widthConstant: 10, heightConstant: 10 )
+        TextTiempo.anchor(self.topAnchor, left: TextFecha.rightAnchor, bottom:nil, right: self.rightAnchor, topConstant: 12, leftConstant: 4, bottomConstant: 0, rightConstant: 10, widthConstant: 85, heightConstant: 54 )
         
-        Comment.anchor(TextFecha.bottomAnchor, left: profileImageView.rightAnchor, bottom: self.bottomAnchor, right: TextTiempo.rightAnchor, topConstant: 4, leftConstant: 4, bottomConstant: 12, rightConstant: 12, widthConstant: 10, heightConstant: 10 )
+        Comment.anchor(TextTiempo.bottomAnchor, left: profileImageView.rightAnchor, bottom: self.bottomAnchor, right: nil, topConstant: 4, leftConstant: 4, bottomConstant: 12, rightConstant: 10, widthConstant: 250, heightConstant: 70 )
         
         
     }

@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 import UIKit
+import Alamofire
 
 class UserSaving{
     
@@ -31,10 +32,10 @@ class UserSaving{
     
     
     
-    ///INSERTO EL USER EN LA BASE DE DATOS
-    
+
+
     // HAGO QUERY PARA OBTENER EL ID DEL USUARIO EN LA BASE DE DATOS
-    
+
     
     //Una vez tengo el id del usuario, guardo ese int en el iphone con CoreData
     
@@ -43,13 +44,34 @@ class UserSaving{
     @available(iOS 10.0, *)
     func saveUser(id: Int) {
         
+        userObject.name = "Rafael"
+        userObject.lastName = "Suazo"
+        ///INSERTO EL USER EN LA BASE DE DATOS
+        let parameters: Parameters = [
+            "firstName": "\(self.userObject.name)",
+            "lastName": "\(self.userObject.lastName)"
+        ]
+        
+        let urlString = "http://0.0.0.0:80/api/v1/users/"
+        
+        _ = Alamofire.request(urlString, method: .post, parameters: parameters).responseJSON(completionHandler:{                   Respuesta in
+            print("\(Respuesta.result.value)")
+            
+            DispatchQueue.main.async {
+                self.userObject.id = Int((String("\(Respuesta)")?.replacingOccurrences(of: "SUCCESS: ", with: ""))!)!
+
+            }
+            
+            
+        } )
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
 //        let managedObjectContext = appDelegate.managedObjectContext
         
          let context = appDelegate.managedObjectContext
 //        let context = getContext()
 //        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
+
         //retrieve the entity that we just created
         let entity =  NSEntityDescription.entity(forEntityName: "UserData", in: context)
         

@@ -55,6 +55,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.saveContext()
     }
 
+    
+//    func getContext () -> NSManagedObjectContext {
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        return appDelegate.persistentContainer.viewContext
+//    }
+    
+    @available(iOS 10.0, *)
+    lazy var persistentContainer: NSPersistentContainer = {
+        
+        let container = NSPersistentContainer(name: "you_model_file_name")
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+//            if let error = error {
+//                
+//                fatalError("Unresolved error \(error), \(error.userInfo)")
+//            }
+        })
+        return container
+    }()
+    
     // MARK: - Core Data stack
 
     lazy var applicationDocumentsDirectory: URL = {
@@ -93,6 +112,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return coordinator
     }()
+    
 
     lazy var managedObjectContext: NSManagedObjectContext = {
         // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.) This property is optional since there are legitimate error conditions that could cause the creation of the context to fail.

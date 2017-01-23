@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Model.xcdatamodeld">
-   </FileRef>
-   <FileRef
       location = "group:FitMap.xcodeproj">
    </FileRef>
    <FileRef

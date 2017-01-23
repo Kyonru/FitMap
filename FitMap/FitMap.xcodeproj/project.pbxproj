@@ -216,7 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				50CD9B7E1E008D1A00B79DF9 /* DetalleRuta.storyboard */,
-				DD82C6091E3494D70059D668 /* LaunchViewController.swift */,
+				DD264BE61E3584D80096E398 /* RegisterScreen */,
 				5025C5DA1E298E8300D24332 /* Review */,
 				5025C5D01E2983BD00D24332 /* RUN */,
 				50CD9B801E008EB000B79DF9 /* DetalleRutaViewController.swift */,
@@ -224,8 +224,6 @@
 				50E9AB291E2571740028DAB2 /* DetailViewController.swift */,
 				5084F2031E281FD200E33415 /* RouteDataSource.swift */,
 				DDB2E6E61E2953A70098B0AB /* Route.swift */,
-				DD82C60B1E352C050059D668 /* User.swift */,
-				DD82C60D1E352CC50059D668 /* UserSaving.swift */,
 			);
 			name = DetalleRuta;
 			sourceTree = "<group>";
@@ -273,6 +271,16 @@
 				5B06BAD84722B5DA0BE8C0C5 /* Pods_FitMapUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DD264BE61E3584D80096E398 /* RegisterScreen */ = {
+			isa = PBXGroup;
+			children = (
+				DD82C6091E3494D70059D668 /* LaunchViewController.swift */,
+				DD82C60B1E352C050059D668 /* User.swift */,
+				DD82C60D1E352CC50059D668 /* UserSaving.swift */,
+			);
+			name = RegisterScreen;
 			sourceTree = "<group>";
 		};
 		DDE048281DF8CDBB0043085A = {

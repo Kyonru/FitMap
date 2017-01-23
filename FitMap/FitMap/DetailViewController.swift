@@ -43,7 +43,7 @@ class DetailViewController: UIViewController {
         
         let routeData = RouteDataSource()
 //        routeId = routeData.getRouteId()
-        routeData.drawRoute(route: routeDetail, map: mapView)
+//        routeData.drawRoute(route: routeDetail, map: mapView)
 
         
     }

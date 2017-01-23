@@ -52,13 +52,13 @@ class UserSaving{
             "lastName": "\(self.userObject.lastName)"
         ]
         
-        let urlString = "http://0.0.0.0:80/api/v1/users/"
+        let urlString = "http://54.244.37.198/api/v1/users/"
         
         _ = Alamofire.request(urlString, method: .post, parameters: parameters).responseJSON(completionHandler:{                   Respuesta in
             print("\(Respuesta.result.value)")
             
             DispatchQueue.main.async {
-                self.userObject.id = Int((String("\(Respuesta)")?.replacingOccurrences(of: "SUCCESS: ", with: ""))!)!			
+                self.userObject.id = Int((String("\(Respuesta)")?.replacingOccurrences(of: "SUCCESS: ", with: ""))!)!
                 print(self.userObject.id)
                 self.registrar(id: id)
 

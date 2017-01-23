@@ -43,7 +43,7 @@ class RunViewController: UIViewController, CLLocationManagerDelegate {
         //Drawing the selected route on map
         
         let routeData = RouteDataSource()
-        routeData.drawRoute(route: routeDetail, map: MapView)
+//        routeData.drawRoute(route: Int, map: MapView)
 
         
         //LOCATIONMANAGER

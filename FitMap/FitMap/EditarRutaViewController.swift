@@ -96,7 +96,7 @@ class EditarRutaViewController: UIViewController {
          */
         
         switch buttonTouched {
-        case UIImage(named: "bicycle")!:
+        case UIImage(named: "bici-selected")!:
             cyclingButton.setImage(UIImage(named: "bici-selected"), for: .normal)
             runningButton.setImage(UIImage(named: "icon"), for: .normal)
             skatingButton.setImage(UIImage(named: "skateboard-2"), for: .normal)
@@ -131,6 +131,7 @@ class EditarRutaViewController: UIViewController {
     
     
     
+    @available(iOS 10.0, *)
     @IBAction func submitAction(_ sender: UIButton) {
 
         if routeNameTextField.text != nil{
@@ -151,22 +152,25 @@ class EditarRutaViewController: UIViewController {
         save.insertRoute(route: route)
 
         //Hay que anadir el id del user
+        let x = UserSaving()
         let parameters: Parameters = [
-            "idUser": "\(46)",
+            "idUser": "\(x.getUserId())",
             "name": "\(route.name)",
             "time": "\(route.time)",
             "rating": "\(route.rating)",
             "comment": "\(route.comment)",
             "discipline": "\(route.discipline)"
         ]
+        print("AAaaaaaaajasbfksdahjfhdfjkhdjhdjjhksdfhjsdfhlhsdfkgasfghjasdgfhgghjdkhjdkg")
+        print(x.getUserId())
         
-        
-        let urlString = "http://0.0.0.0:80/api/v1/routes/"
+        let urlString = "http://54.244.37.198/api/v1/routes/"
         
         _ = Alamofire.request(urlString, method: .post, parameters: parameters).responseJSON(completionHandler:{            Respuesta in
             print("\(Respuesta.result.value)")
             
             DispatchQueue.main.async {
+                            print(Respuesta)
                             self.route.id = Int((String("\(Respuesta)")?.replacingOccurrences(of: "SUCCESS: ", with: ""))!)!
                             self.insertPoints()
             }
